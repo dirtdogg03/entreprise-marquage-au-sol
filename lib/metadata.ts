@@ -19,20 +19,13 @@ export function generateHomeMetadata(): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
-      images: [
-        {
-          url: `${SITE_URL}/images/og-home.webp`,
-          width: 1200,
-          height: 630,
-          alt: 'Entreprise Marquage au Sol - Ile-de-France',
-        },
-      ],
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title: SITE_NAME,
       description: DEFAULT_DESCRIPTION,
-      images: [`${SITE_URL}/images/og-home.webp`],
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: SITE_URL,
@@ -71,19 +64,13 @@ export function generateServiceMetadata(service: Service): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
-      images: [
-        {
-          url: `${SITE_URL}/images/services/${service.slug}.webp`,
-          width: 1200,
-          height: 630,
-          alt: service.name,
-        },
-      ],
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}`,
@@ -160,20 +147,13 @@ export function generateArticleMetadata(article: Article, category: Category): M
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: [article.author],
-      images: [
-        {
-          url: `${SITE_URL}${article.image}`,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ],
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [`${SITE_URL}${article.image}`],
+      // Images generees dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: `${SITE_URL}/blog/${category.slug}/${article.slug}`,

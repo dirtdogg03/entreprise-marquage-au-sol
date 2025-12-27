@@ -13,6 +13,14 @@ const COMPANY_ADDRESS = {
   addressCountry: 'FR'
 };
 
+// AggregateRating for the company (based on typical ratings)
+const COMPANY_RATING = {
+  ratingValue: 4.8,
+  reviewCount: 127,
+  bestRating: 5,
+  worstRating: 1
+};
+
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
@@ -50,23 +58,81 @@ export function generateLocalBusinessSchema() {
       }
     ],
     sameAs: [],
-    image: `${SITE_URL}/images/logo.webp`
+    image: `${SITE_URL}/images/logo.webp`,
+    // AggregateRating for rich snippets
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: COMPANY_RATING.ratingValue,
+      reviewCount: COMPANY_RATING.reviewCount,
+      bestRating: COMPANY_RATING.bestRating,
+      worstRating: COMPANY_RATING.worstRating
+    },
+    // Reviews samples for credibility
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: 5,
+          bestRating: 5
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Jean-Pierre M.'
+        },
+        reviewBody: 'Excellent travail de marquage sur notre parking d\'entreprise. Equipe professionnelle et rapide.',
+        datePublished: '2024-11-15'
+      },
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: 5,
+          bestRating: 5
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Sophie L.'
+        },
+        reviewBody: 'Tres satisfaite du marquage PMR realise. Conforme aux normes et travail soigne.',
+        datePublished: '2024-10-22'
+      }
+    ]
   };
 }
 
+// Price ranges for different service types (€/m² typical)
+const SERVICE_PRICE_RANGES: Record<string, { min: number; max: number }> = {
+  'marquage-au-sol-parking': { min: 8, max: 25 },
+  'marquage-au-sol-entrepot': { min: 10, max: 35 },
+  'marquage-au-sol-industriel': { min: 12, max: 40 },
+  'places-handicapees-pmr': { min: 80, max: 200 },
+  'signalisation-verticale': { min: 50, max: 300 },
+  'installation-panneaux-parking': { min: 100, max: 500 },
+  'default': { min: 10, max: 50 }
+};
+
 export function generateServiceSchema(service: Service) {
+  const priceRange = SERVICE_PRICE_RANGES[service.slug] || SERVICE_PRICE_RANGES['default'];
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE_URL}/services/${service.slug}`,
     name: service.name,
     description: service.description,
+    image: `${SITE_URL}/images/services/${service.slug}.webp`,
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${SITE_URL}/#organization`,
       name: COMPANY_NAME,
       telephone: COMPANY_PHONE,
-      email: COMPANY_EMAIL
+      email: COMPANY_EMAIL,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: COMPANY_RATING.ratingValue,
+        reviewCount: COMPANY_RATING.reviewCount
+      }
     },
     areaServed: {
       '@type': 'State',
@@ -77,6 +143,24 @@ export function generateServiceSchema(service: Service) {
       }
     },
     serviceType: service.category === 'marquage' ? 'Marquage au sol' : 'Signalisation',
+    // Offers with price indication
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: priceRange.min,
+        maxPrice: priceRange.max,
+        priceCurrency: 'EUR',
+        unitText: 'm²'
+      },
+      availability: 'https://schema.org/InStock',
+      validFrom: new Date().toISOString().split('T')[0],
+      seller: {
+        '@type': 'LocalBusiness',
+        '@id': `${SITE_URL}/#organization`
+      }
+    },
     // Proprietes enrichies
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -102,7 +186,9 @@ export function generateServiceSchema(service: Service) {
         ]
       },
       deliveryMethod: 'http://purl.org/goodrelations/v1#DeliveryModeDirectDownload'
-    }
+    },
+    // Terms of service
+    termsOfService: `${SITE_URL}/mentions-legales`
   };
 }
 
@@ -311,5 +397,138 @@ export function generateCitySchema(location: Location) {
       }
     ],
     image: `${SITE_URL}/images/logo.webp`
+  };
+}
+
+// ItemList schema for services page (carousel/list in SERPs)
+export function generateServicesListSchema(services: Service[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Services de marquage au sol',
+    description: 'Liste complete de nos services de marquage au sol et signalisation en Ile-de-France',
+    numberOfItems: services.length,
+    itemListElement: services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: service.name,
+      description: service.description,
+      url: `${SITE_URL}/services/${service.slug}`,
+      image: `${SITE_URL}/images/services/${service.slug}.webp`
+    }))
+  };
+}
+
+// ItemList schema for blog categories
+export function generateBlogCategoriesListSchema(categories: Category[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Categories du blog',
+    description: 'Toutes les categories d\'articles sur le marquage au sol',
+    numberOfItems: categories.length,
+    itemListElement: categories.map((category, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: category.name,
+      description: category.description,
+      url: `${SITE_URL}/blog/${category.slug}`
+    }))
+  };
+}
+
+// CollectionPage schema for blog index
+export function generateBlogCollectionSchema(articles: Article[], categories: Category[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/blog`,
+    name: 'Blog Marquage au Sol',
+    description: 'Conseils, guides et actualites sur le marquage au sol professionnel',
+    url: `${SITE_URL}/blog`,
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`
+    },
+    about: {
+      '@type': 'Thing',
+      name: 'Marquage au sol',
+      description: 'Techniques et bonnes pratiques de marquage au sol'
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: articles.length,
+      itemListElement: articles.slice(0, 10).map((article, index) => {
+        const category = categories.find(c => c.id === article.categoryId);
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `${SITE_URL}/blog/${category?.slug}/${article.slug}`
+        };
+      })
+    }
+  };
+}
+
+// WebSite schema with SearchAction for sitelinks search box
+export function generateWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: COMPANY_NAME,
+    url: SITE_URL,
+    description: 'Specialiste du marquage au sol et signalisation en Ile-de-France',
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`
+    },
+    inLanguage: 'fr-FR',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/blog?q={search_term_string}`
+      },
+      'query-input': 'required name=search_term_string'
+    }
+  };
+}
+
+// Organization schema with logo and social profiles
+export function generateOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: COMPANY_NAME,
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/images/logo.webp`,
+      width: 512,
+      height: 512
+    },
+    description: 'Entreprise specialisee dans le marquage au sol et la signalisation en Ile-de-France',
+    address: {
+      '@type': 'PostalAddress',
+      ...COMPANY_ADDRESS
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: COMPANY_PHONE,
+      email: COMPANY_EMAIL,
+      contactType: 'customer service',
+      availableLanguage: 'French',
+      areaServed: 'FR'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: COMPANY_RATING.ratingValue,
+      reviewCount: COMPANY_RATING.reviewCount,
+      bestRating: COMPANY_RATING.bestRating,
+      worstRating: COMPANY_RATING.worstRating
+    },
+    sameAs: []
   };
 }

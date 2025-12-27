@@ -82,6 +82,16 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
       <head>
+        {/* Preconnect for performance optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+        {/* AI/LLM information file */}
+        <link rel="author" href="/llms.txt" />
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -89,7 +99,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased bg-asphalt-50 text-asphalt-800 min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow pt-16">
+        <main id="main-content" role="main" className="flex-grow pt-16" tabIndex={-1}>
           {children}
         </main>
         <Footer />

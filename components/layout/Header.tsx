@@ -45,13 +45,23 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b-2 border-route-500'
-          : 'bg-white/90 backdrop-blur-sm border-b border-asphalt-200'
-      }`}
-    >
+    <>
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-route-500 focus:text-asphalt-900 focus:font-bold focus:outline-none focus:ring-2 focus:ring-asphalt-900"
+      >
+        Aller au contenu principal
+      </a>
+
+      <header
+        role="banner"
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-md border-b-2 border-route-500'
+            : 'bg-white/90 backdrop-blur-sm border-b border-asphalt-200'
+        }`}
+      >
       <nav ref={menuRef} className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo - Signal Expert Style */}
         <div className="flex lg:flex-1">
@@ -493,5 +503,6 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }
