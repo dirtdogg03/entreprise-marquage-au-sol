@@ -47,47 +47,49 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section className="py-16 lg:py-24 bg-secondary-900/50">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="section-padding bg-white">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="mx-auto max-w-2xl text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Pourquoi choisir <span className="text-primary-500">notre entreprise</span> ?
+          <h2 className="heading-lg text-secondary-900">
+            Pourquoi choisir <span className="text-primary-600">notre entreprise</span> ?
           </h2>
-          <p className="mt-4 text-lg text-secondary-400">
+          <p className="mt-4 text-lg text-secondary-600">
             Des solutions professionnelles pour tous vos besoins en marquage au sol
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.number}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex gap-6 rounded-2xl bg-secondary-900 p-6 ring-1 ring-secondary-800 hover:ring-primary-500/30 transition-all"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="group"
             >
-              {/* Number */}
-              <div className="flex-shrink-0">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300">
-                  {benefit.icon}
+              <div className="card-cream flex gap-5 h-full">
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div className="icon-box group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
+                    {benefit.icon}
+                  </div>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl font-bold text-primary-500/30">{benefit.number}</span>
-                  <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
+                {/* Content */}
+                <div className="flex-grow">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl font-bold text-primary-300">{benefit.number}</span>
+                    <h3 className="text-lg font-semibold text-secondary-900">{benefit.title}</h3>
+                  </div>
+                  <p className="text-secondary-600">{benefit.description}</p>
                 </div>
-                <p className="text-secondary-400">{benefit.description}</p>
               </div>
             </motion.div>
           ))}

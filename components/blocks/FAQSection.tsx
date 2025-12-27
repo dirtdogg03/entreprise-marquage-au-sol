@@ -49,23 +49,23 @@ export default function FAQSection({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 lg:py-24 bg-secondary-950">
+    <section className="section-padding bg-white">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="mx-auto max-w-2xl text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="heading-lg text-secondary-900">
             {title.split(' ').map((word, i) => (
-              <span key={i} className={i === title.split(' ').length - 1 ? 'text-primary-500' : ''}>
+              <span key={i} className={i === title.split(' ').length - 1 ? 'text-primary-600' : ''}>
                 {word}{' '}
               </span>
             ))}
           </h2>
-          <p className="mt-4 text-lg text-secondary-400">
+          <p className="mt-4 text-lg text-secondary-600">
             {description}
           </p>
         </motion.div>
@@ -77,24 +77,24 @@ export default function FAQSection({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <div
-                className={`rounded-2xl bg-secondary-900/50 ring-1 transition-all duration-300 ${
-                  openIndex === index ? 'ring-primary-500/50' : 'ring-secondary-800'
+                className={`rounded-2xl bg-secondary-50 border transition-all duration-200 ${
+                  openIndex === index ? 'border-primary-200 bg-primary-50/50' : 'border-secondary-200'
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="flex w-full items-center justify-between p-6 text-left"
                 >
-                  <span className="text-lg font-medium text-white pr-4">{faq.question}</span>
+                  <span className="text-base font-medium text-secondary-900 pr-4">{faq.question}</span>
                   <span className="flex-shrink-0">
                     <motion.div
                       animate={{ rotate: openIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                       className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                        openIndex === index ? 'bg-primary-500 text-secondary-900' : 'bg-secondary-800 text-primary-500'
+                        openIndex === index ? 'bg-primary-500 text-white' : 'bg-secondary-200 text-secondary-600'
                       }`}
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -110,12 +110,12 @@ export default function FAQSection({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6">
-                        <div className="border-t border-secondary-800 pt-4">
-                          <p className="text-secondary-400 leading-relaxed">{faq.answer}</p>
+                        <div className="border-t border-secondary-200 pt-4">
+                          <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -131,15 +131,15 @@ export default function FAQSection({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 text-center"
         >
-          <p className="text-secondary-400 mb-4">
+          <p className="text-secondary-600 mb-4">
             Vous avez d&apos;autres questions ?
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 text-primary-500 font-semibold hover:text-primary-400 transition-colors"
+            className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-500 transition-colors"
           >
             Contactez-nous
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">

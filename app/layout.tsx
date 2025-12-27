@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import GrainOverlay from "@/components/ui/GrainOverlay";
 import { generateLocalBusinessSchema } from "@/lib/schema";
+
+// ═══════════════════════════════════════════════════════════════
+// DESIGN SYSTEM "SIGNAL EXPERT" - Typography
+// Inter (Black 900) pour titres + JetBrains Mono pour labels
+// ═══════════════════════════════════════════════════════════════
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -61,15 +80,14 @@ export default function RootLayout({
   const jsonLd = generateLocalBusinessSchema();
 
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased bg-secondary-950 text-white min-h-screen flex flex-col">
-        <GrainOverlay />
+      <body className="font-sans antialiased bg-asphalt-50 text-asphalt-800 min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow pt-16">
           {children}

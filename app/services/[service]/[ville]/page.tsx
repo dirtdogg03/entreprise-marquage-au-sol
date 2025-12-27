@@ -4,10 +4,12 @@ import { services, getServiceBySlug } from '@/lib/data/services';
 import { locations, getLocationBySlug } from '@/lib/data/locations';
 import { generateServiceLocationMetadata } from '@/lib/metadata';
 import { generateServiceLocationSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
+import { getServiceLocationContent } from '@/lib/data/content';
 import CTABanner from '@/components/blocks/CTABanner';
 import FAQSection from '@/components/blocks/FAQSection';
 import ServiceHero from '@/components/services/ServiceHero';
 import ServiceBenefits from '@/components/services/ServiceBenefits';
+import ServiceLocalContent from '@/components/services/ServiceLocalContent';
 import NearbyLocations from '@/components/services/NearbyLocations';
 
 interface ServiceLocationPageProps {
@@ -36,6 +38,25 @@ export async function generateMetadata({ params }: ServiceLocationPageProps): Pr
 
   if (!service || !location) return {};
 
+  // Use varied content if available
+  const variedContent = getServiceLocationContent(serviceSlug, villeSlug);
+
+  if (variedContent) {
+    return {
+      title: variedContent.metaTitle,
+      description: variedContent.metaDescription,
+      openGraph: {
+        title: variedContent.metaTitle,
+        description: variedContent.metaDescription,
+        type: 'website',
+        locale: 'fr_FR',
+      },
+      alternates: {
+        canonical: `/services/${serviceSlug}/${villeSlug}`,
+      },
+    };
+  }
+
   return generateServiceLocationMetadata(service, location);
 }
 
@@ -48,7 +69,11 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
     notFound();
   }
 
-  const locationFaqs = [
+  // Get varied content if available
+  const variedContent = getServiceLocationContent(serviceSlug, villeSlug);
+
+  // Use varied FAQs or fall back to template FAQs
+  const locationFaqs = variedContent?.faqs || [
     {
       question: `Ou intervenez-vous a ${location.name} pour ${service.name.toLowerCase()} ?`,
       answer: `Nous intervenons dans tout ${location.name} et les villes environnantes : ${location.nearby.join(', ')}. Notre equipe se deplace gratuitement pour etablir un devis sur site.`,
@@ -93,6 +118,15 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
         service={service}
         location={{ name: location.name, department: location.department }}
       />
+
+      {/* Contenu local varie si disponible */}
+      {variedContent && (
+        <ServiceLocalContent
+          content={variedContent.content}
+          locationName={location.name}
+          serviceName={service.name}
+        />
+      )}
 
       <ServiceBenefits service={service} />
 

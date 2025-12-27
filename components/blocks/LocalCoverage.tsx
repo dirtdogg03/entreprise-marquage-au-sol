@@ -2,17 +2,21 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { locations } from '@/lib/data/locations';
+
+const departments = [
+  { code: '75', name: 'Paris', slug: 'paris' },
+  { code: '92', name: 'Hauts-de-Seine', slug: 'hauts-de-seine' },
+  { code: '93', name: 'Seine-Saint-Denis', slug: 'seine-saint-denis' },
+  { code: '94', name: 'Val-de-Marne', slug: 'val-de-marne' },
+  { code: '91', name: 'Essonne', slug: 'essonne' },
+  { code: '78', name: 'Yvelines', slug: 'yvelines' },
+  { code: '95', name: "Val-d'Oise", slug: 'val-d-oise' },
+  { code: '77', name: 'Seine-et-Marne', slug: 'seine-et-marne' },
+];
 
 export default function LocalCoverage() {
   return (
-    <section className="py-16 lg:py-24 bg-secondary-900/30 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl -translate-y-1/2" />
-      </div>
-
+    <section className="py-16 lg:py-24 bg-asphalt-900 grid-bg-dark relative overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
@@ -22,35 +26,36 @@ export default function LocalCoverage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <span className="label-mono text-route-500 mb-4 block">Zones d&apos;intervention</span>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Intervention dans toute<br />
-              <span className="text-primary-500">l&apos;Ile-de-France</span>
+              <span className="text-route-500">l&apos;Ile-de-France</span>
             </h2>
-            <p className="mt-4 text-lg text-secondary-400">
+            <p className="mt-4 text-lg text-asphalt-300">
               Notre equipe intervient rapidement dans tous les departements d&apos;Ile-de-France : Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d&apos;Oise et Seine-et-Marne.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                <div className="icon-signal w-10 h-10">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">24-48h</div>
-                  <div className="text-sm text-secondary-400">Intervention</div>
+                  <div className="text-sm text-asphalt-400">Intervention</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                <div className="icon-signal w-10 h-10">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">Gratuit</div>
-                  <div className="text-sm text-secondary-400">Devis & visite</div>
+                  <div className="text-sm text-asphalt-400">Devis & visite</div>
                 </div>
               </div>
             </div>
@@ -58,7 +63,7 @@ export default function LocalCoverage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-6 py-3 font-semibold text-secondary-900 shadow-glow hover:bg-primary-400 transition-all duration-300 hover:shadow-glow-lg hover:scale-105"
+                className="btn-orthogonal inline-flex items-center gap-2"
               >
                 Demander un devis
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -68,48 +73,33 @@ export default function LocalCoverage() {
             </div>
           </motion.div>
 
-          {/* Right: Cities grid */}
+          {/* Right: Departments grid */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {locations.map((location, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {departments.map((dept, index) => (
                 <motion.div
-                  key={location.id}
+                  key={dept.code}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
                   <Link
-                    href={`/services/marquage-parking/${location.slug}`}
-                    className="group flex flex-col items-center justify-center p-4 rounded-xl bg-secondary-900/50 ring-1 ring-secondary-800 hover:ring-primary-500/50 hover:bg-secondary-900 transition-all duration-300"
+                    href={`/departements/${dept.slug}`}
+                    className="group flex flex-col items-center justify-center p-6 rounded-xl bg-asphalt-800/50 ring-1 ring-asphalt-700 hover:ring-route-500/50 hover:bg-asphalt-800 transition-all duration-300"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300 mb-2">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-medium text-white group-hover:text-primary-500 transition-colors text-center">
-                      {location.name}
-                    </span>
-                    <span className="text-xs text-secondary-500">
-                      {location.departmentCode}
+                    <span className="text-route-500 font-mono text-2xl font-bold">{dept.code}</span>
+                    <span className="mt-2 text-white font-semibold text-center group-hover:text-route-500 transition-colors text-sm">
+                      {dept.name}
                     </span>
                   </Link>
                 </motion.div>
               ))}
-            </div>
-
-            {/* All departments */}
-            <div className="mt-6 text-center">
-              <p className="text-secondary-400 text-sm">
-                Nous intervenons aussi dans toutes les villes : Versailles, Nanterre, Creteil, Saint-Quentin-en-Yvelines, Evry, Pontoise...
-              </p>
             </div>
           </motion.div>
         </div>

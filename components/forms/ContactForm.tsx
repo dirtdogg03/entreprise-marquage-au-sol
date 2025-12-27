@@ -45,17 +45,17 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="rounded-2xl bg-secondary-900 p-8 ring-1 ring-primary-500/50 text-center"
+        className="prism-border p-8 text-center"
       >
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 mx-auto mb-4">
-          <svg className="w-8 h-8 text-secondary-900" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+        <div className="icon-signal w-16 h-16 mx-auto mb-6">
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-white mb-2">
-          Demande envoyee avec succes !
+        <h3 className="heading-display-md text-asphalt-900 mb-3">
+          Demande envoyee !
         </h3>
-        <p className="text-secondary-400">
+        <p className="text-asphalt-600 max-w-md mx-auto">
           Notre equipe vous recontactera sous 24h pour etablir votre devis gratuit.
         </p>
       </motion.div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-secondary-300 mb-2">
+          <label htmlFor="name" className="label-signal">
             Nom complet *
           </label>
           <input
@@ -77,14 +77,14 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white placeholder-secondary-500 ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all"
+            className="input-signal"
             placeholder="Jean Dupont"
           />
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-secondary-300 mb-2">
+          <label htmlFor="email" className="label-signal">
             Email *
           </label>
           <input
@@ -94,14 +94,14 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white placeholder-secondary-500 ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all"
+            className="input-signal"
             placeholder="jean@entreprise.fr"
           />
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-secondary-300 mb-2">
+          <label htmlFor="phone" className="label-signal">
             Telephone *
           </label>
           <input
@@ -111,14 +111,14 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white placeholder-secondary-500 ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all"
+            className="input-signal"
             placeholder="01 23 45 67 89"
           />
         </div>
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-secondary-300 mb-2">
+          <label htmlFor="company" className="label-signal">
             Entreprise
           </label>
           <input
@@ -127,7 +127,7 @@ export default function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white placeholder-secondary-500 ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all"
+            className="input-signal"
             placeholder="Nom de votre entreprise"
           />
         </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
 
       {/* Service */}
       <div>
-        <label htmlFor="service" className="block text-sm font-medium text-secondary-300 mb-2">
+        <label htmlFor="service" className="label-signal">
           Type de service *
         </label>
         <select
@@ -144,13 +144,13 @@ export default function ContactForm() {
           required
           value={formData.service}
           onChange={handleChange}
-          className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all"
+          className="input-signal"
         >
           <option value="">Selectionnez un service</option>
-          <option value="marquage-parking">Marquage parking</option>
-          <option value="marquage-entrepot">Marquage entrepot</option>
-          <option value="marquage-industriel">Marquage industriel</option>
-          <option value="places-pmr">Places PMR</option>
+          <option value="marquage-parking">Marquage au sol parking</option>
+          <option value="marquage-entrepot">Marquage au sol entrepot</option>
+          <option value="marquage-industriel">Marquage au sol industriel</option>
+          <option value="places-pmr">Places handicapees PMR</option>
           <option value="signalisation">Signalisation verticale</option>
           <option value="autre">Autre</option>
         </select>
@@ -158,7 +158,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-secondary-300 mb-2">
+        <label htmlFor="message" className="label-signal">
           Description du projet *
         </label>
         <textarea
@@ -168,16 +168,21 @@ export default function ContactForm() {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full rounded-xl bg-secondary-900 px-4 py-3 text-white placeholder-secondary-500 ring-1 ring-secondary-800 focus:ring-primary-500 focus:outline-none transition-all resize-none"
+          className="input-signal resize-none"
           placeholder="Decrivez votre projet : surface, type de marquage souhaite, contraintes particulieres..."
         />
       </div>
 
-      {/* Submit button */}
+      {/* Submit button with shimmer effect */}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-xl bg-primary-500 px-8 py-4 text-lg font-semibold text-secondary-900 shadow-glow hover:bg-primary-400 transition-all duration-300 hover:shadow-glow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className={`
+          w-full btn-orthogonal py-4 text-lg
+          disabled:opacity-70 disabled:cursor-not-allowed
+          flex items-center justify-center gap-3
+          ${isSubmitting ? 'shimmer-loading shimmer-loading-dark' : ''}
+        `}
       >
         {isSubmitting ? (
           <>
@@ -185,11 +190,11 @@ export default function ContactForm() {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
             </svg>
-            Envoi en cours...
+            <span>Envoi en cours...</span>
           </>
         ) : (
           <>
-            Envoyer ma demande
+            <span>Envoyer ma demande</span>
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -197,9 +202,8 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="text-xs text-secondary-500 text-center">
+      <p className="label-mono text-center">
         En soumettant ce formulaire, vous acceptez notre politique de confidentialite.
-        Vos donnees sont protegees et ne seront jamais partagees.
       </p>
     </form>
   );

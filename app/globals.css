@@ -1,24 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN SYSTEM "SIGNAL EXPERT"
+   Marquage au sol professionnel - Style technique/industriel
+
+   Palette: route (jaune signalisation vif) + asphalt (slate)
+   Fonts: Inter Black 900 + JetBrains Mono
+   ═══════════════════════════════════════════════════════════════ */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════════════
+   BASE LAYER
+   ═══════════════════════════════════════════════════════════════ */
+
 @layer base {
   :root {
-    --background: #0a0a0f;
-    --foreground: #ffffff;
+    --background: #F8FAFC;
+    --foreground: #1E293B;
 
-    /* Industrial Safety Color Palette */
-    --primary-glow: rgba(245, 158, 11, 0.4);
-    --danger-glow: rgba(239, 68, 68, 0.3);
-    --industrial-dark: #0d0d12;
-    --asphalt: #1a1a24;
-    --concrete: #2a2a36;
+    /* Signal Expert Colors */
+    --route-500: #EAB308;
+    --route-600: #CA8A04;
+    --asphalt-800: #1E293B;
+    --asphalt-500: #64748B;
+    --asphalt-50: #F8FAFC;
 
-    /* Dramatic shadows */
-    --shadow-brutal: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-    --shadow-glow-primary: 0 0 60px rgba(245, 158, 11, 0.25), 0 0 100px rgba(245, 158, 11, 0.1);
+    /* Prism shadow offset */
+    --prism-offset: 8px;
   }
 
   html {
@@ -26,141 +35,291 @@
   }
 
   body {
-    @apply bg-secondary-950 text-white antialiased;
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+    @apply bg-asphalt-50 text-asphalt-800 antialiased;
+    font-family: var(--font-inter), Inter, system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-display {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.02em;
+  /* Headings - Inter Black 900 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter), Inter, system-ui, sans-serif;
+    @apply font-black text-asphalt-900;
+    line-height: 1.1;
   }
 
-  /* Custom scrollbar - industrial style */
+  /* Technical scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--industrial-dark);
-    border-left: 1px solid var(--concrete);
+    @apply bg-asphalt-100;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--concrete) 0%, var(--asphalt) 100%);
-    border-radius: 0;
+    @apply bg-asphalt-300;
     border: 2px solid transparent;
+    background-clip: padding-box;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+    @apply bg-route-500;
   }
 
-  /* Selection style */
+  /* Selection */
   ::selection {
-    background: rgba(245, 158, 11, 0.3);
-    color: white;
+    @apply bg-route-300 text-asphalt-900;
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENTS LAYER - SIGNAL EXPERT
+   ═══════════════════════════════════════════════════════════════ */
+
 @layer components {
-  /* INDUSTRIAL BUTTONS */
-  .btn-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-4 font-bold text-secondary-900 transition-all duration-300;
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    box-shadow: var(--shadow-glow-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+
+  /* ════════════════════════════════════════════════════════════
+     1. GRID BACKGROUND - Grille orthogonale 40x40px
+     ════════════════════════════════════════════════════════════ */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(30, 41, 59, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(30, 41, 59, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
-  .btn-primary::before {
+  .grid-bg-dark {
+    background-image:
+      linear-gradient(to right, rgba(248, 250, 252, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(248, 250, 252, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     2. PRISM BORDER - Border 2px + shadow offset 8px jaune
+     ════════════════════════════════════════════════════════════ */
+  .prism-border {
+    position: relative;
+    border: 2px solid #EAB308;
+    background: white;
+  }
+
+  .prism-border::after {
     content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
-    clip-path: inherit;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid #EAB308;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
   }
 
-  .btn-primary:hover::before {
-    @apply opacity-100;
+  .prism-border:hover::after {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
   }
 
-  .btn-primary:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 0 80px rgba(245, 158, 11, 0.4), 0 0 120px rgba(245, 158, 11, 0.2);
+  /* Prism border dark variant */
+  .prism-border-dark {
+    position: relative;
+    border: 2px solid #1E293B;
+    background: white;
   }
 
-  .btn-secondary {
-    @apply relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300;
-    background: linear-gradient(135deg, var(--asphalt) 0%, var(--industrial-dark) 100%);
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    border: 1px solid var(--concrete);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .prism-border-dark::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid #1E293B;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
   }
 
-  .btn-secondary:hover {
-    border-color: rgba(245, 158, 11, 0.5);
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+  /* ════════════════════════════════════════════════════════════
+     3. BTN-ORTHOGONAL - Coins coupes clip-path
+     ════════════════════════════════════════════════════════════ */
+  .btn-orthogonal {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    @apply inline-flex items-center justify-center px-8 py-4
+           font-bold uppercase tracking-wider
+           bg-route-500 text-asphalt-900
+           transition-all duration-200;
+  }
+
+  .btn-orthogonal:hover {
+    @apply bg-route-400;
     transform: translateY(-2px);
   }
 
-  .btn-outline {
-    @apply relative inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300;
-    background: transparent;
-    border: 2px solid #f59e0b;
-    color: #f59e0b;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .btn-orthogonal:active {
+    transform: translateY(0);
   }
 
-  .btn-outline:hover {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    color: var(--industrial-dark);
-    box-shadow: var(--shadow-glow-primary);
+  /* Inverse variant */
+  .btn-orthogonal-inverse {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    @apply inline-flex items-center justify-center px-8 py-4
+           font-bold uppercase tracking-wider
+           bg-asphalt-900 text-white
+           transition-all duration-200;
   }
 
-  /* INDUSTRIAL CARDS */
-  .card {
-    @apply relative overflow-hidden p-6 transition-all duration-500;
-    background: linear-gradient(145deg, rgba(42, 42, 54, 0.8) 0%, rgba(26, 26, 36, 0.9) 100%);
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  .btn-orthogonal-inverse:hover {
+    @apply bg-asphalt-800;
+    transform: translateY(-2px);
   }
 
-  .card::before {
+  /* Outline variant */
+  .btn-orthogonal-outline {
+    @apply inline-flex items-center justify-center px-8 py-4
+           font-bold uppercase tracking-wider
+           bg-transparent text-asphalt-800
+           border-2 border-route-500
+           transition-all duration-200;
+  }
+
+  .btn-orthogonal-outline:hover {
+    @apply bg-route-50;
+    transform: translateY(-2px);
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     4. DATA CARD - Backdrop blur + border-left jaune
+     ════════════════════════════════════════════════════════════ */
+  .data-card {
+    backdrop-filter: blur(12px);
+    background: rgba(248, 250, 252, 0.9);
+    border-left: 4px solid #EAB308;
+    @apply p-6;
+  }
+
+  .data-card-dark {
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.9);
+    border-left: 4px solid #EAB308;
+    @apply p-6 text-white;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     5. LABEL MONO - JetBrains Mono uppercase
+     ════════════════════════════════════════════════════════════ */
+  .label-mono {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply uppercase tracking-wide text-sm font-medium text-asphalt-600;
+  }
+
+  .label-mono-route {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply uppercase tracking-wide text-sm font-medium text-route-600;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     6. HEADING DISPLAY - Inter Black 900
+     ════════════════════════════════════════════════════════════ */
+  .heading-display {
+    font-family: var(--font-inter), Inter, system-ui;
+    @apply font-black text-asphalt-800;
+    line-height: 1.05;
+  }
+
+  .heading-display-xl {
+    font-family: var(--font-inter), Inter, system-ui;
+    @apply font-black text-asphalt-800;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-display-lg {
+    font-family: var(--font-inter), Inter, system-ui;
+    @apply font-black text-asphalt-800;
+    font-size: clamp(2rem, 6vw, 3.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-display-md {
+    font-family: var(--font-inter), Inter, system-ui;
+    @apply font-black text-asphalt-800;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     7. GRAIN OVERLAY - Texture subtile
+     ════════════════════════════════════════════════════════════ */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     8. STAT BOXES - Donnees chiffrees Signal Expert
+     ════════════════════════════════════════════════════════════ */
+  .stat-box {
+    @apply text-center p-6;
+    border: 2px solid #EAB308;
+    background: white;
+  }
+
+  .stat-box-value {
+    font-family: var(--font-inter), Inter, system-ui;
+    @apply font-black text-4xl text-route-500;
+  }
+
+  .stat-box-label {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply uppercase tracking-wide text-sm text-asphalt-600 mt-2;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     9. CARDS SIGNAL EXPERT
+     ════════════════════════════════════════════════════════════ */
+  .card-signal {
+    @apply relative bg-white p-6;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .card-signal:hover {
+    border-color: #EAB308;
+  }
+
+  .card-signal::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-1;
-    background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.5) 50%, transparent 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #EAB308;
     transform: scaleX(0);
-    transition: transform 0.5s ease;
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
-  .card:hover::before {
+  .card-signal:hover::before {
     transform: scaleX(1);
   }
 
-  .card:hover {
-    border-color: rgba(245, 158, 11, 0.3);
-    box-shadow: var(--shadow-brutal), 0 0 40px rgba(245, 158, 11, 0.1);
-    transform: translateY(-4px);
-  }
-
-  .card-elevated {
-    @apply relative overflow-hidden p-8;
-    background: linear-gradient(160deg, rgba(42, 42, 54, 0.95) 0%, rgba(13, 13, 18, 0.98) 100%);
-    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-    box-shadow: var(--shadow-brutal);
-    border: 1px solid rgba(245, 158, 11, 0.1);
-  }
-
-  .card-elevated:hover {
-    border-color: rgba(245, 158, 11, 0.4);
-    box-shadow: var(--shadow-brutal), var(--shadow-glow-primary);
-  }
-
-  /* Section spacing */
+  /* ════════════════════════════════════════════════════════════
+     10. SECTION LAYOUTS
+     ════════════════════════════════════════════════════════════ */
   .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .section-padding-lg {
     @apply py-20 lg:py-32;
   }
 
@@ -168,112 +327,233 @@
     @apply mx-auto max-w-7xl px-6 lg:px-8;
   }
 
-  /* INDUSTRIAL TEXT EFFECTS */
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #ea580c 100%);
+  /* ════════════════════════════════════════════════════════════
+     11. FORM STYLES - Signal Expert
+     ════════════════════════════════════════════════════════════ */
+  .input-signal {
+    @apply w-full px-4 py-4 bg-white
+           text-asphalt-800 placeholder-asphalt-400
+           border-2 border-asphalt-200
+           focus:outline-none focus:border-route-500
+           transition-colors duration-200;
   }
 
-  .text-gradient-steel {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(180deg, #e5e7eb 0%, #9ca3af 50%, #6b7280 100%);
+  .input-signal:hover {
+    @apply border-asphalt-300;
   }
 
-  /* GLOW EFFECTS - INDUSTRIAL */
-  .glow-primary {
-    box-shadow: var(--shadow-glow-primary);
+  .label-signal {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply block uppercase tracking-wide text-sm font-medium text-asphalt-700 mb-2;
   }
 
-  .glow-danger {
-    box-shadow: 0 0 60px var(--danger-glow);
+  /* ════════════════════════════════════════════════════════════
+     12. BADGES - Signal Expert
+     ════════════════════════════════════════════════════════════ */
+  .badge-signal {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply inline-flex items-center px-3 py-1
+           uppercase tracking-wide text-sm font-medium
+           bg-route-100 text-route-700
+           border border-route-300;
   }
 
-  /* SAFETY STRIPE PATTERN */
-  .safety-stripe {
-    background: repeating-linear-gradient(
-      -45deg,
-      #f59e0b,
-      #f59e0b 20px,
-      #0a0a0f 20px,
-      #0a0a0f 40px
-    );
+  .badge-signal-dark {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply inline-flex items-center px-3 py-1
+           uppercase tracking-wide text-sm font-medium
+           bg-asphalt-800 text-white;
   }
 
-  /* ASPHALT TEXTURE BACKGROUND */
-  .bg-asphalt {
-    background-color: var(--industrial-dark);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-blend-mode: overlay;
+  /* ════════════════════════════════════════════════════════════
+     13. NAVIGATION - Signal Expert
+     ════════════════════════════════════════════════════════════ */
+  .nav-link-signal {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+    @apply uppercase tracking-wider text-sm font-medium
+           text-asphalt-600 hover:text-route-600
+           transition-colors duration-200;
   }
 
-  /* HERO PATTERN */
-  .bg-hero-pattern {
-    background-color: var(--industrial-dark);
-    background-image:
-      linear-gradient(to bottom, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 1) 100%),
-      radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 50%),
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+  .nav-link-signal.active {
+    @apply text-route-600;
   }
 
-  /* GRID PATTERN FOR INDUSTRIAL LOOK */
-  .bg-grid-pattern {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+  /* ════════════════════════════════════════════════════════════
+     14. DIVIDERS - Signal Expert
+     ════════════════════════════════════════════════════════════ */
+  .divider-route {
+    @apply border-t-2 border-route-500;
+  }
+
+  .divider-asphalt {
+    @apply border-t border-asphalt-200;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     15. ICON CONTAINERS
+     ════════════════════════════════════════════════════════════ */
+  .icon-signal {
+    @apply flex items-center justify-center w-14 h-14
+           bg-route-500 text-asphalt-900;
+  }
+
+  .icon-signal-outline {
+    @apply flex items-center justify-center w-14 h-14
+           border-2 border-route-500 text-route-600;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     LEGACY COMPATIBILITY (for existing components)
+     ════════════════════════════════════════════════════════════ */
+  .btn-primary {
+    @apply btn-orthogonal;
+  }
+
+  .btn-secondary {
+    @apply btn-orthogonal-inverse;
+  }
+
+  .btn-outline {
+    @apply btn-orthogonal-outline;
+  }
+
+  .card {
+    @apply card-signal;
+  }
+
+  .input-field {
+    @apply input-signal;
+  }
+
+  .badge {
+    @apply badge-signal;
+  }
+
+  .badge-primary {
+    @apply badge-signal;
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   UTILITIES LAYER
+   ═══════════════════════════════════════════════════════════════ */
+
 @layer utilities {
+  /* Animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* ════════════════════════════════════════════════════════════
+     DRAMATIC ENTRANCE - Hero elements, important reveals
+     Effet blur → sharp avec scale subtil
+     ════════════════════════════════════════════════════════════ */
+  @keyframes dramaticEntrance {
+    0% {
+      opacity: 0;
+      filter: blur(20px);
+      transform: translateY(40px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-dramatic-entrance {
+    opacity: 0;
+    animation: dramaticEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-dramatic-entrance-fast {
+    opacity: 0;
+    animation: dramaticEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     SHIMMER LOADING - Boutons en cours de chargement
+     Bande lumineuse qui traverse l'element
+     ════════════════════════════════════════════════════════════ */
+  @keyframes shimmerMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200%); }
+  }
+
+  .shimmer-loading {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmerMove 1.5s infinite linear;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Shimmer dark variant pour boutons jaunes */
+  .shimmer-loading-dark::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.15),
+      transparent
+    );
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     LABEL ENTER - Animation subtile pour labels de formulaire
+     ════════════════════════════════════════════════════════════ */
+  @keyframes labelSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-label-enter {
+    animation: labelSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     PULSE SUBTLE - Pour attirer l'attention
+     ════════════════════════════════════════════════════════════ */
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  /* Text utilities */
   .text-balance {
     text-wrap: balance;
   }
 
-  /* STAGGERED ANIMATION DELAYS */
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
-  .stagger-7 { animation-delay: 0.7s; }
-  .stagger-8 { animation-delay: 0.8s; }
-
-  /* Legacy animation delays */
-  .animation-delay-100 { animation-delay: 100ms; }
-  .animation-delay-200 { animation-delay: 200ms; }
-  .animation-delay-300 { animation-delay: 300ms; }
-  .animation-delay-500 { animation-delay: 500ms; }
-
-  /* GRADIENT BACKGROUNDS */
-  .bg-gradient-radial {
-    background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-to));
-  }
-
-  .bg-gradient-conic {
-    background: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-from), var(--tw-gradient-to));
-  }
-
-  /* INDUSTRIAL GRADIENT */
-  .bg-gradient-industrial {
-    background: linear-gradient(180deg, var(--industrial-dark) 0%, var(--asphalt) 50%, var(--industrial-dark) 100%);
-  }
-
-  /* GLASS EFFECT - INDUSTRIAL VARIANT */
-  .glass {
-    @apply backdrop-blur-xl border;
-    background: rgba(13, 13, 18, 0.7);
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .glass-primary {
-    @apply backdrop-blur-xl border;
-    background: rgba(245, 158, 11, 0.1);
-    border-color: rgba(245, 158, 11, 0.2);
-  }
-
-  /* LINE CLAMP */
+  /* Line clamp */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -288,78 +568,25 @@
     overflow: hidden;
   }
 
-  /* GRAIN OVERLAY */
-  .grain-overlay {
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
-
-  /* DRAMATIC SHADOWS */
-  .shadow-brutal {
-    box-shadow: var(--shadow-brutal);
-  }
-
-  .shadow-industrial {
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.5),
-      0 20px 25px -5px rgba(0, 0, 0, 0.4),
-      0 40px 60px -15px rgba(0, 0, 0, 0.3);
-  }
-
-  /* CLIP PATHS FOR INDUSTRIAL SHAPES */
-  .clip-industrial-sm {
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-  }
-
-  .clip-industrial {
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-  }
-
-  .clip-industrial-lg {
-    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
-  }
-
-  /* TYPING ANIMATION FOR DRAMATIC TEXT REVEAL */
-  @keyframes reveal-text {
-    from { clip-path: inset(0 100% 0 0); }
-    to { clip-path: inset(0 0 0 0); }
-  }
-
-  .animate-reveal {
-    animation: reveal-text 0.8s ease-out forwards;
-  }
-
-  /* PULSE GLOW FOR CTAs */
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: var(--shadow-glow-primary); }
-    50% { box-shadow: 0 0 80px rgba(245, 158, 11, 0.5), 0 0 120px rgba(245, 158, 11, 0.3); }
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-
-  /* SLIDE UP ANIMATION */
-  @keyframes slide-up-fade {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-slide-up {
-    animation: slide-up-fade 0.6s ease-out forwards;
+  /* Fade in animation for scroll reveal */
+  .animate-on-scroll {
     opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Focus ring for accessibility */
+  .focus-ring-signal {
+    @apply focus:outline-none focus:ring-2 focus:ring-route-500 focus:ring-offset-2;
+  }
+
+  /* Route text highlight */
+  .text-route-highlight {
+    @apply text-route-500;
   }
 }

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { articles, categories, getCategoryBySlug, getArticlesByCategory } from '@/lib/data/articles';
+import { articles, categories, getCategoryBySlug, getArticlesByCategory, getPillarByCategory } from '@/lib/data/articles';
 import ArticleCard from '@/components/blog/ArticleCard';
 import CTABanner from '@/components/blocks/CTABanner';
 

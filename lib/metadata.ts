@@ -59,16 +59,22 @@ export function generateServiceMetadata(service: Service): Metadata {
 }
 
 export function generateServiceLocationMetadata(service: Service, location: Location): Metadata {
-  const title = `${service.name} a ${location.name} | ${SITE_NAME}`;
-  const description = `${service.name} a ${location.name} (${location.departmentCode}). ${service.shortDescription}. Intervention rapide, devis gratuit.`;
+  // SEO Exact Match: Title sans preposition "a" pour matcher les requetes utilisateurs
+  // Ex: "Marquage au Sol Parking Paris - Devis Gratuit 75"
+  const title = `${service.name} ${location.name} - Devis Gratuit ${location.departmentCode}`;
+
+  // Description avec "a" pour langage naturel + code postal
+  const postalCode = location.postalCodes[0] || '';
+  const description = `Expert en ${service.name.toLowerCase()} a ${location.name} (${postalCode}). Intervention rapide en ${location.department}. Devis gratuit sous 24h. Garantie 5 ans.`;
 
   return {
     title,
     description,
     keywords: [
+      `${service.name.toLowerCase()} ${location.name.toLowerCase()}`,
       ...service.keywords.map(k => `${k} ${location.name}`),
       `marquage au sol ${location.name}`,
-      `entreprise marquage ${location.name}`,
+      `entreprise marquage ${location.department}`,
     ],
     openGraph: {
       title,
