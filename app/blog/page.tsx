@@ -38,7 +38,7 @@ export default function BlogPage() {
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-secondary-900/50">
+      <section className="py-8 bg-secondary-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             <Link
@@ -71,7 +71,7 @@ export default function BlogPage() {
       )}
 
       {/* All articles */}
-      <section className="py-12 lg:py-16 bg-secondary-900/30">
+      <section className="py-12 lg:py-16 bg-secondary-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white mb-8">Tous nos articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

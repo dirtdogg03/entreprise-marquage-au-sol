@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Categories navigation */}
-      <section className="py-8 bg-secondary-900/50">
+      <section className="py-8 bg-secondary-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             <Link

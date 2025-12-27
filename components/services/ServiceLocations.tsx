@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/lib/data/services';
 import { Location } from '@/lib/data/locations';
+import { departments, getDepartmentByCode } from '@/lib/data/departments';
 
 interface ServiceLocationsProps {
   service: Service;
@@ -11,6 +13,35 @@ interface ServiceLocationsProps {
 }
 
 export default function ServiceLocations({ service, locations }: ServiceLocationsProps) {
+  // Group locations by department
+  const locationsByDepartment = departments.map(dept => ({
+    department: dept,
+    locations: locations.filter(loc => loc.departmentCode === dept.code)
+  })).filter(group => group.locations.length > 0);
+
+  // State for expanded departments (all collapsed by default)
+  const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set());
+
+  const toggleDepartment = (code: string) => {
+    setExpandedDepts(prev => {
+      const next = new Set(prev);
+      if (next.has(code)) {
+        next.delete(code);
+      } else {
+        next.add(code);
+      }
+      return next;
+    });
+  };
+
+  const expandAll = () => {
+    setExpandedDepts(new Set(locationsByDepartment.map(g => g.department.code)));
+  };
+
+  const collapseAll = () => {
+    setExpandedDepts(new Set());
+  };
+
   return (
     <section className="py-16 lg:py-24 bg-secondary-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -28,39 +59,115 @@ export default function ServiceLocations({ service, locations }: ServiceLocation
           <p className="mt-4 text-lg text-secondary-400">
             Nous intervenons dans toutes les villes de la region parisienne
           </p>
+
+          {/* Expand/Collapse buttons */}
+          <div className="mt-6 flex justify-center gap-4">
+            <button
+              onClick={expandAll}
+              className="px-4 py-2 text-sm font-medium text-primary-500 hover:text-primary-400 transition-colors"
+            >
+              Tout deployer
+            </button>
+            <span className="text-secondary-600">|</span>
+            <button
+              onClick={collapseAll}
+              className="px-4 py-2 text-sm font-medium text-primary-500 hover:text-primary-400 transition-colors"
+            >
+              Tout replier
+            </button>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {locations.map((location, index) => (
-            <motion.div
-              key={location.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-            >
-              <Link
-                href={`/services/${service.slug}/${location.slug}`}
-                className="group flex flex-col items-center p-4 rounded-xl bg-secondary-900/50 ring-1 ring-secondary-800 hover:ring-primary-500/50 hover:bg-secondary-900 transition-all duration-300"
+        {/* Accordion by Department */}
+        <div className="space-y-4">
+          {locationsByDepartment.map((group, groupIndex) => {
+            const isExpanded = expandedDepts.has(group.department.code);
+
+            return (
+              <motion.div
+                key={group.department.code}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: groupIndex * 0.1 }}
+                className="rounded-xl bg-secondary-900/50 ring-1 ring-secondary-800 overflow-hidden"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300 mb-2">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                </div>
-                <span className="text-sm font-medium text-white group-hover:text-primary-500 transition-colors text-center">
-                  {service.name}
-                </span>
-                <span className="text-xs text-primary-500 font-medium">
-                  {location.name}
-                </span>
-                <span className="text-xs text-secondary-500">
-                  ({location.departmentCode})
-                </span>
-              </Link>
-            </motion.div>
-          ))}
+                {/* Department Header (Clickable) */}
+                <button
+                  onClick={() => toggleDepartment(group.department.code)}
+                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-secondary-900/80 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                      <span className="text-lg font-bold">{group.department.code}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {group.department.name}
+                      </h3>
+                      <p className="text-sm text-secondary-400">
+                        {group.locations.length} ville{group.locations.length > 1 ? 's' : ''}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Chevron Icon */}
+                  <motion.svg
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-6 h-6 text-primary-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </motion.svg>
+                </button>
+
+                {/* Collapsible Content */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-2">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                          {group.locations.map((location, index) => (
+                            <motion.div
+                              key={location.id}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.2, delay: index * 0.03 }}
+                            >
+                              <Link
+                                href={`/services/${service.slug}/${location.slug}`}
+                                className="group flex flex-col items-center p-3 rounded-lg bg-secondary-800/50 ring-1 ring-secondary-700 hover:ring-primary-500/50 hover:bg-secondary-800 transition-all duration-300"
+                              >
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300 mb-2">
+                                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                  </svg>
+                                </div>
+                                <span className="text-sm font-medium text-white group-hover:text-primary-500 transition-colors text-center">
+                                  {location.name}
+                                </span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Additional cities mention for SEO */}

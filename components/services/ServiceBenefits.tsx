@@ -30,7 +30,7 @@ const benefitIcons = [
 
 export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
   return (
-    <section className="py-16 lg:py-24 bg-secondary-900/50">
+    <section className="py-16 lg:py-24 bg-secondary-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
             {service.keywords.map((keyword) => (
               <span
                 key={keyword}
-                className="inline-flex items-center rounded-full bg-secondary-800/50 px-4 py-2 text-sm text-secondary-300 ring-1 ring-secondary-700"
+                className="inline-flex items-center rounded-full bg-secondary-800 px-4 py-2 text-sm text-secondary-200 ring-1 ring-secondary-700"
               >
                 {keyword}
               </span>
