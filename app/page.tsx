@@ -6,6 +6,7 @@ import ProcessSteps from '@/components/blocks/ProcessSteps';
 import TestimonialsSection from '@/components/blocks/TestimonialsSection';
 import FAQSection from '@/components/blocks/FAQSection';
 import LocalCoverage from '@/components/blocks/LocalCoverage';
+import BlogPreview from '@/components/blocks/BlogPreview';
 
 export default function HomePage() {
   return (
@@ -32,6 +33,8 @@ export default function HomePage() {
       <LocalCoverage />
 
       <FAQSection />
+
+      <BlogPreview maxItems={3} />
 
       <CTABanner
         title="Votre projet de marquage merite des experts"

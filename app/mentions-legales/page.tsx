@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <section className="py-16 lg:py-24 bg-secondary-950">
+    <section className="py-16 lg:py-24 bg-asphalt-50">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight text-white mb-8">
+        <h1 className="text-4xl font-bold tracking-tight text-asphalt-900 mb-8">
           Mentions Legales
         </h1>
 
-        <div className="prose prose-invert prose-primary max-w-none">
-          <div className="space-y-8 text-secondary-300">
+        <div className="prose prose-lg max-w-none bg-white p-8 rounded-2xl ring-1 ring-asphalt-200">
+          <div className="space-y-8 text-asphalt-600">
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">1. Informations legales</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">1. Informations legales</h2>
               <p>
                 Le site entreprise-marquage-au-sol.fr est edite par :<br />
-                <strong className="text-white">Entreprise Marquage au Sol</strong><br />
+                <strong className="text-asphalt-900">Entreprise Marquage au Sol</strong><br />
                 Siege social : Ile-de-France, France<br />
                 Telephone : 01 23 45 67 89<br />
                 Email : contact@entreprise-marquage-au-sol.fr
@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">2. Hebergement</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">2. Hebergement</h2>
               <p>
                 Ce site est heberge par :<br />
                 [Nom de l&apos;hebergeur]<br />
@@ -45,7 +45,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">3. Propriete intellectuelle</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">3. Propriete intellectuelle</h2>
               <p>
                 L&apos;ensemble du contenu de ce site (textes, images, graphismes, logo, icones, etc.)
                 est la propriete exclusive de Entreprise Marquage au Sol, a l&apos;exception des
@@ -59,7 +59,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">4. Responsabilite</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">4. Responsabilite</h2>
               <p>
                 Entreprise Marquage au Sol s&apos;efforce d&apos;assurer au mieux de ses possibilites
                 l&apos;exactitude et la mise a jour des informations diffusees sur ce site. Toutefois,
@@ -69,7 +69,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">5. Liens hypertextes</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">5. Liens hypertextes</h2>
               <p>
                 Le site peut contenir des liens hypertextes vers d&apos;autres sites. Entreprise
                 Marquage au Sol n&apos;exerce aucun controle sur ces sites et decline toute
@@ -78,7 +78,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">6. Droit applicable</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">6. Droit applicable</h2>
               <p>
                 Les presentes mentions legales sont regies par le droit francais. En cas de
                 litige, les tribunaux francais seront seuls competents.
@@ -86,7 +86,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">7. Protection des donnees personnelles</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">7. Protection des donnees personnelles</h2>
               <p>
                 Conformement au Reglement General sur la Protection des Donnees (RGPD), vous
                 disposez d&apos;un droit d&apos;acces, de rectification, de suppression et d&apos;opposition
@@ -104,7 +104,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">8. Cookies</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">8. Cookies</h2>
               <p>
                 Ce site peut utiliser des cookies a des fins de statistiques et d&apos;amelioration
                 de l&apos;experience utilisateur. Vous pouvez configurer votre navigateur pour
@@ -113,7 +113,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">9. Credits</h2>
+              <h2 className="text-2xl font-semibold text-asphalt-900 mb-4">9. Credits</h2>
               <p>
                 Conception et realisation : Entreprise Marquage au Sol<br />
                 Photographies : [Credits photos]
@@ -122,7 +122,7 @@ export default function MentionsLegalesPage() {
           </div>
         </div>
 
-        <p className="mt-12 text-sm text-secondary-500">
+        <p className="mt-12 text-sm text-asphalt-500">
           Derniere mise a jour : Decembre 2025
         </p>
       </div>

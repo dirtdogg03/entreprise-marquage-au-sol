@@ -30,7 +30,7 @@ const benefitIcons = [
 
 export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
   return (
-    <section className="py-16 lg:py-24 bg-secondary-950">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,11 +39,11 @@ export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-2xl text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-asphalt-900 sm:text-4xl">
             Pourquoi choisir notre service de{' '}
-            <span className="text-primary-500">{service.name}</span> ?
+            <span className="text-route-600">{service.name}</span> ?
           </h2>
-          <p className="mt-4 text-lg text-secondary-400">
+          <p className="mt-4 text-lg text-asphalt-600">
             Des avantages concrets pour votre entreprise
           </p>
         </motion.div>
@@ -58,14 +58,14 @@ export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative rounded-2xl bg-secondary-900 p-6 ring-1 ring-secondary-800 hover:ring-primary-500/50 transition-all duration-300">
+              <div className="relative rounded-2xl bg-asphalt-50 p-6 ring-1 ring-asphalt-200 hover:ring-route-500 hover:shadow-md transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-route-500/10 text-route-600 group-hover:bg-route-500 group-hover:text-asphalt-900 transition-all duration-300">
                     {benefitIcons[index % benefitIcons.length]}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{benefit}</h3>
-                    <p className="mt-2 text-sm text-secondary-400">
+                    <h3 className="text-lg font-semibold text-asphalt-900">{benefit}</h3>
+                    <p className="mt-2 text-sm text-asphalt-600">
                       Notre expertise garantit un resultat professionnel conforme aux normes en vigueur.
                     </p>
                   </div>
@@ -83,14 +83,14 @@ export default function ServiceBenefits({ service }: ServiceBenefitsProps) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <h3 className="text-xl font-semibold text-white mb-4">
+          <h3 className="text-xl font-semibold text-asphalt-900 mb-4">
             Nos specialites pour {service.name.toLowerCase()}
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {service.keywords.map((keyword) => (
               <span
                 key={keyword}
-                className="inline-flex items-center rounded-full bg-secondary-800 px-4 py-2 text-sm text-secondary-200 ring-1 ring-secondary-700"
+                className="inline-flex items-center rounded-full bg-asphalt-100 px-4 py-2 text-sm text-asphalt-700 ring-1 ring-asphalt-200"
               >
                 {keyword}
               </span>

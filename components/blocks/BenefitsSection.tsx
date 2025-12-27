@@ -85,7 +85,7 @@ export default function BenefitsSection() {
                 {/* Content */}
                 <div className="flex-grow">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-2xl font-bold text-primary-300">{benefit.number}</span>
+                    <span className="text-2xl font-bold text-primary-600">{benefit.number}</span>
                     <h3 className="text-lg font-semibold text-secondary-900">{benefit.title}</h3>
                   </div>
                   <p className="text-secondary-600">{benefit.description}</p>

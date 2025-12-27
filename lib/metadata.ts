@@ -19,21 +19,46 @@ export function generateHomeMetadata(): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
+      images: [
+        {
+          url: `${SITE_URL}/images/og-home.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'Entreprise Marquage au Sol - Ile-de-France',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: SITE_NAME,
       description: DEFAULT_DESCRIPTION,
+      images: [`${SITE_URL}/images/og-home.webp`],
     },
     alternates: {
       canonical: SITE_URL,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
 
 export function generateServiceMetadata(service: Service): Metadata {
   const title = `${service.name} | ${SITE_NAME}`;
-  const description = `${service.description} Intervention rapide en Ile-de-France. Devis gratuit.`;
+
+  // Meta description optimisee: <155 caracteres avec benefices et CTA
+  const shortDesc = service.shortDescription.length > 80
+    ? service.shortDescription.substring(0, 77) + '...'
+    : service.shortDescription;
+  const description = `${shortDesc} Intervention 48h en Ile-de-France. Devis gratuit, garantie 5 ans.`;
 
   return {
     title,
@@ -46,6 +71,14 @@ export function generateServiceMetadata(service: Service): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
+      images: [
+        {
+          url: `${SITE_URL}/images/services/${service.slug}.webp`,
+          width: 1200,
+          height: 630,
+          alt: service.name,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -54,6 +87,13 @@ export function generateServiceMetadata(service: Service): Metadata {
     },
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
     },
   };
 }
@@ -98,14 +138,21 @@ export function generateServiceLocationMetadata(service: Service, location: Loca
 export function generateArticleMetadata(article: Article, category: Category): Metadata {
   const title = `${article.title} | Blog ${SITE_NAME}`;
 
+  // Meta description optimisee: <155 caracteres avec CTA
+  // Prendre le debut de l'excerpt et ajouter un CTA
+  const truncatedExcerpt = article.excerpt.length > 120
+    ? article.excerpt.substring(0, 117) + '...'
+    : article.excerpt;
+  const description = `${truncatedExcerpt} Conseils d'experts.`;
+
   return {
     title,
-    description: article.excerpt,
+    description,
     keywords: article.tags,
     authors: [{ name: article.author }],
     openGraph: {
       title,
-      description: article.excerpt,
+      description,
       url: `${SITE_URL}/blog/${category.slug}/${article.slug}`,
       siteName: SITE_NAME,
       locale: 'fr_FR',
@@ -113,21 +160,37 @@ export function generateArticleMetadata(article: Article, category: Category): M
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: [article.author],
+      images: [
+        {
+          url: `${SITE_URL}${article.image}`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description: article.excerpt,
+      description,
+      images: [`${SITE_URL}${article.image}`],
     },
     alternates: {
       canonical: `${SITE_URL}/blog/${category.slug}/${article.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
     },
   };
 }
 
 export function generateContactMetadata(): Metadata {
   const title = `Contact | ${SITE_NAME}`;
-  const description = 'Contactez notre entreprise de marquage au sol pour un devis gratuit. Intervention rapide en Ile-de-France.';
+  const description = 'Demandez un devis gratuit pour vos travaux de marquage au sol. Reponse sous 24h, intervention rapide en Ile-de-France.';
 
   return {
     title,
@@ -140,8 +203,17 @@ export function generateContactMetadata(): Metadata {
       locale: 'fr_FR',
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
     alternates: {
       canonical: `${SITE_URL}/contact`,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

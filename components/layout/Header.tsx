@@ -1,19 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { services } from '@/lib/data/services';
+import { departments } from '@/lib/data/departments';
 
-const navigation = [
-  { name: 'Accueil', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
-];
+// Filter services by category
+const marquageServices = services.filter(s => s.category === 'marquage');
+const signalisationServices = services.filter(s => s.category === 'signalisation');
+
+// Split departments for 2 columns
+const departmentsCol1 = departments.slice(0, 4);
+const departmentsCol2 = departments.slice(4, 8);
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +29,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mega menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const toggleMobileAccordion = (key: string) => {
+    setMobileAccordion(mobileAccordion === key ? null : key);
+  };
+
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
@@ -31,7 +52,7 @@ export default function Header() {
           : 'bg-white/90 backdrop-blur-sm border-b border-asphalt-200'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav ref={menuRef} className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo - Signal Expert Style */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
@@ -68,18 +89,208 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Desktop navigation - JetBrains Mono uppercase */}
-        <div className="hidden lg:flex lg:gap-x-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="nav-link-signal relative py-2"
+        {/* Desktop navigation with Mega Menu */}
+        <div className="hidden lg:flex lg:gap-x-6 lg:items-center">
+          {/* Accueil */}
+          <Link href="/" className="nav-link-signal relative py-2">
+            Accueil
+          </Link>
+
+          {/* Services Mega Menu */}
+          <div className="relative">
+            <button
+              className={`nav-link-signal relative py-2 flex items-center gap-1 ${activeMenu === 'services' ? 'text-route-600' : ''}`}
+              onClick={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}
+              onMouseEnter={() => setActiveMenu('services')}
             >
-              {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-route-500 group-hover:w-full transition-all duration-300" />
-            </Link>
-          ))}
+              Services
+              <svg className={`w-4 h-4 transition-transform ${activeMenu === 'services' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {activeMenu === 'services' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[700px] bg-white border-2 border-asphalt-200 shadow-xl"
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="grid grid-cols-2 gap-0">
+                    {/* Marquage au Sol Column */}
+                    <div className="p-6 border-r border-asphalt-200">
+                      <h3 className="label-mono text-route-600 mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-route-500"></span>
+                        Marquage au Sol
+                      </h3>
+                      <ul className="space-y-2">
+                        {marquageServices.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className="block text-sm text-asphalt-600 hover:text-route-600 hover:bg-asphalt-50 px-3 py-2 transition-colors"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Signalisation Verticale Column */}
+                    <div className="p-6">
+                      <h3 className="label-mono text-route-600 mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-route-500"></span>
+                        Signalisation Verticale
+                      </h3>
+                      <ul className="space-y-2">
+                        {signalisationServices.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className="block text-sm text-asphalt-600 hover:text-route-600 hover:bg-asphalt-50 px-3 py-2 transition-colors"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      {/* View all services link */}
+                      <Link
+                        href="/services"
+                        className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-route-600 hover:text-route-700"
+                        onClick={() => setActiveMenu(null)}
+                      >
+                        Voir tous les services
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Zones d'intervention Mega Menu */}
+          <div className="relative">
+            <button
+              className={`nav-link-signal relative py-2 flex items-center gap-1 ${activeMenu === 'zones' ? 'text-route-600' : ''}`}
+              onClick={() => setActiveMenu(activeMenu === 'zones' ? null : 'zones')}
+              onMouseEnter={() => setActiveMenu('zones')}
+            >
+              Zones d&apos;intervention
+              <svg className={`w-4 h-4 transition-transform ${activeMenu === 'zones' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {activeMenu === 'zones' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white border-2 border-asphalt-200 shadow-xl"
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="grid grid-cols-2 gap-0">
+                    {/* Column 1 - Petite couronne */}
+                    <div className="p-6 border-r border-asphalt-200">
+                      <h3 className="label-mono text-route-600 mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-route-500"></span>
+                        Petite Couronne
+                      </h3>
+                      <ul className="space-y-3">
+                        {departmentsCol1.map((dept) => (
+                          <li key={dept.code}>
+                            <Link
+                              href={`/departements/${dept.slug}`}
+                              className="block group"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              <div className="flex items-center gap-2 text-asphalt-800 group-hover:text-route-600 transition-colors">
+                                <span className="inline-flex items-center justify-center w-8 h-6 bg-asphalt-100 text-xs font-bold text-asphalt-700 group-hover:bg-route-500 group-hover:text-asphalt-900 transition-colors">
+                                  {dept.code}
+                                </span>
+                                <span className="text-sm font-medium">{dept.name}</span>
+                              </div>
+                              <p className="text-xs text-asphalt-500 mt-1 ml-10 line-clamp-1">
+                                {dept.mainCities.slice(0, 3).join(', ')}...
+                              </p>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Column 2 - Grande couronne */}
+                    <div className="p-6">
+                      <h3 className="label-mono text-route-600 mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-route-500"></span>
+                        Grande Couronne
+                      </h3>
+                      <ul className="space-y-3">
+                        {departmentsCol2.map((dept) => (
+                          <li key={dept.code}>
+                            <Link
+                              href={`/departements/${dept.slug}`}
+                              className="block group"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              <div className="flex items-center gap-2 text-asphalt-800 group-hover:text-route-600 transition-colors">
+                                <span className="inline-flex items-center justify-center w-8 h-6 bg-asphalt-100 text-xs font-bold text-asphalt-700 group-hover:bg-route-500 group-hover:text-asphalt-900 transition-colors">
+                                  {dept.code}
+                                </span>
+                                <span className="text-sm font-medium">{dept.name}</span>
+                              </div>
+                              <p className="text-xs text-asphalt-500 mt-1 ml-10 line-clamp-1">
+                                {dept.mainCities.slice(0, 3).join(', ')}...
+                              </p>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Footer with call to action */}
+                  <div className="px-6 py-4 bg-asphalt-50 border-t border-asphalt-200 flex items-center justify-between">
+                    <p className="text-sm text-asphalt-600">
+                      <span className="font-medium text-route-600">8 departements</span> couverts en Ile-de-France
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-route-600 hover:text-route-700"
+                      onClick={() => setActiveMenu(null)}
+                    >
+                      Verifier ma zone
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Blog */}
+          <Link href="/blog" className="nav-link-signal relative py-2">
+            Blog
+          </Link>
+
+          {/* Contact */}
+          <Link href="/contact" className="nav-link-signal relative py-2">
+            Contact
+          </Link>
         </div>
 
         {/* CTA Button - Signal Expert style */}
@@ -102,7 +313,7 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile menu - Signal Expert style */}
+      {/* Mobile menu with accordions */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -110,19 +321,155 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-white border-t-2 border-route-500"
+            className="lg:hidden bg-white border-t-2 border-route-500 max-h-[80vh] overflow-y-auto"
           >
-            <div className="space-y-1 px-6 py-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-3 nav-link-signal border-b border-asphalt-100 last:border-b-0"
-                  onClick={() => setMobileMenuOpen(false)}
+            <div className="px-6 py-4">
+              {/* Accueil */}
+              <Link
+                href="/"
+                className="block px-4 py-3 nav-link-signal border-b border-asphalt-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Accueil
+              </Link>
+
+              {/* Services Accordion */}
+              <div className="border-b border-asphalt-100">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-3 nav-link-signal"
+                  onClick={() => toggleMobileAccordion('services')}
                 >
-                  {item.name}
-                </Link>
-              ))}
+                  <span>Services</span>
+                  <svg className={`w-5 h-5 transition-transform ${mobileAccordion === 'services' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileAccordion === 'services' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="bg-asphalt-50 overflow-hidden"
+                    >
+                      {/* Marquage au Sol */}
+                      <div className="px-4 py-3">
+                        <h4 className="label-mono text-route-600 text-xs mb-2">Marquage au Sol</h4>
+                        <ul className="space-y-1">
+                          {marquageServices.map((service) => (
+                            <li key={service.id}>
+                              <Link
+                                href={`/services/${service.slug}`}
+                                className="block text-sm text-asphalt-600 hover:text-route-600 py-1.5 pl-4"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {service.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {/* Signalisation Verticale */}
+                      <div className="px-4 py-3 border-t border-asphalt-200">
+                        <h4 className="label-mono text-route-600 text-xs mb-2">Signalisation Verticale</h4>
+                        <ul className="space-y-1">
+                          {signalisationServices.map((service) => (
+                            <li key={service.id}>
+                              <Link
+                                href={`/services/${service.slug}`}
+                                className="block text-sm text-asphalt-600 hover:text-route-600 py-1.5 pl-4"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {service.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {/* View all */}
+                      <div className="px-4 py-3 border-t border-asphalt-200">
+                        <Link
+                          href="/services"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-route-600"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Voir tous les services
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Zones d'intervention Accordion */}
+              <div className="border-b border-asphalt-100">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-3 nav-link-signal"
+                  onClick={() => toggleMobileAccordion('zones')}
+                >
+                  <span>Zones d&apos;intervention</span>
+                  <svg className={`w-5 h-5 transition-transform ${mobileAccordion === 'zones' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileAccordion === 'zones' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="bg-asphalt-50 overflow-hidden"
+                    >
+                      <div className="px-4 py-3">
+                        <ul className="space-y-2">
+                          {departments.map((dept) => (
+                            <li key={dept.code}>
+                              <Link
+                                href={`/departements/${dept.slug}`}
+                                className="flex items-center gap-3 py-2 group"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                <span className="inline-flex items-center justify-center w-8 h-6 bg-asphalt-200 text-xs font-bold text-asphalt-700 group-hover:bg-route-500 group-hover:text-asphalt-900 transition-colors">
+                                  {dept.code}
+                                </span>
+                                <div>
+                                  <span className="text-sm font-medium text-asphalt-800 group-hover:text-route-600 transition-colors">{dept.name}</span>
+                                  <p className="text-xs text-asphalt-500">{dept.mainCities.slice(0, 2).join(', ')}...</p>
+                                </div>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Blog */}
+              <Link
+                href="/blog"
+                className="block px-4 py-3 nav-link-signal border-b border-asphalt-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+
+              {/* Contact */}
+              <Link
+                href="/contact"
+                className="block px-4 py-3 nav-link-signal border-b border-asphalt-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              {/* CTA */}
               <div className="pt-4 space-y-3">
                 <a
                   href="tel:+33123456789"

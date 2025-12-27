@@ -67,6 +67,21 @@ const config: Config = {
           700: '#334155',
           800: '#1E293B',
           900: '#0F172A',
+          950: '#020617',
+        },
+
+        // Accent - Orange vif (pour gradients et accents)
+        accent: {
+          50: '#FFF7ED',
+          100: '#FFEDD5',
+          200: '#FED7AA',
+          300: '#FDBA74',
+          400: '#FB923C',
+          500: '#F97316',
+          600: '#EA580C',
+          700: '#C2410C',
+          800: '#9A3412',
+          900: '#7C2D12',
         },
 
         // Couleurs semantiques
@@ -136,6 +151,12 @@ const config: Config = {
         'grid-signal': `
           linear-gradient(to right, rgba(30, 41, 59, 0.05) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(30, 41, 59, 0.05) 1px, transparent 1px)
+        `,
+        // Hero pattern - fond sombre avec grille subtile jaune
+        'hero-pattern': `
+          linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98)),
+          linear-gradient(to right, rgba(234, 179, 8, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(234, 179, 8, 0.03) 1px, transparent 1px)
         `,
       },
 

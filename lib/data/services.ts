@@ -9,6 +9,7 @@ export interface Service {
   keywords: string[];
   benefits: string[];
   searchVolume?: number; // Volume mensuel DataForSEO
+  relatedServices?: string[]; // IDs des services complementaires
 }
 
 export const services: Service[] = [
@@ -26,7 +27,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol parking', 'tracage parking', 'peinture parking'],
     benefits: ['Optimisation de l\'espace', 'Conformite PMR', 'Durabilite 5+ ans'],
-    searchVolume: 320
+    searchVolume: 320,
+    relatedServices: ['places-handicapees-pmr', 'signalisation-verticale', 'installation-panneaux-parking', 'pose-butees-parking']
   },
   {
     id: 'marquage-au-sol-parking-prive',
@@ -38,7 +40,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol parking prive', 'marquage parking residence', 'numerotation places'],
     benefits: ['Places numerotees', 'Gestion optimisee', 'Aspect professionnel'],
-    searchVolume: 320
+    searchVolume: 320,
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'pose-butees-parking', 'installation-panneaux-parking']
   },
   {
     id: 'marquage-au-sol-stationnement',
@@ -50,7 +53,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol stationnement', 'marquage places', 'signalisation stationnement'],
     benefits: ['Conformite reglementaire', 'Organisation claire', 'Duree de vie garantie'],
-    searchVolume: 390
+    searchVolume: 390,
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale', 'installation-bornes-parking']
   },
   {
     id: 'marquage-au-sol-parking-entreprise',
@@ -62,7 +66,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol parking entreprise', 'parking societe', 'marquage professionnel'],
     benefits: ['Image corporate', 'Gestion des flux', 'Places reservees'],
-    searchVolume: 40
+    searchVolume: 40,
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'installation-panneaux-parking', 'signalisation-verticale']
   },
   {
     id: 'marquage-au-sol-entrepot',
@@ -74,7 +79,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol entrepot', 'marquage logistique', 'peinture sol entrepot'],
     benefits: ['Flux optimises', 'Securite renforcee', 'Productivite accrue'],
-    searchVolume: 110
+    searchVolume: 110,
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-zones-pietonnes', 'signalisation-verticale', 'marquage-au-sol-usine']
   },
   {
     id: 'marquage-au-sol-industriel',
@@ -86,7 +92,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol industriel', 'marquage usine', 'peinture industrielle'],
     benefits: ['Resistance extreme', 'Conformite ICPE', 'Securite personnel'],
-    searchVolume: 90
+    searchVolume: 90,
+    relatedServices: ['marquage-au-sol-entrepot', 'marquage-au-sol-usine', 'marquage-zones-pietonnes', 'signalisation-verticale']
   },
   {
     id: 'marquage-au-sol-usine',
@@ -98,7 +105,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage au sol usine', 'marquage atelier', 'peinture sol usine'],
     benefits: ['Resistance chimique', 'Intervention flexible', 'Zones ATEX'],
-    searchVolume: 40
+    searchVolume: 40,
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-entrepot', 'marquage-zones-pietonnes', 'signalisation-verticale']
   },
   {
     id: 'marquage-routier-au-sol',
@@ -110,7 +118,8 @@ export const services: Service[] = [
     category: 'marquage',
     keywords: ['marquage routier au sol', 'ligne circulation', 'signalisation horizontale'],
     benefits: ['Securite routiere', 'Conformite code route', 'Visibilite optimale'],
-    searchVolume: 170
+    searchVolume: 170,
+    relatedServices: ['signalisation-verticale', 'pose-ralentisseur', 'marquage-zones-pietonnes', 'installation-panneaux-parking']
   },
   {
     id: 'marquage-garage-automobile',
@@ -121,7 +130,8 @@ export const services: Service[] = [
     icon: 'wrench',
     category: 'marquage',
     keywords: ['marquage garage', 'peinture sol garage', 'marquage atelier auto'],
-    benefits: ['Organisation optimale', 'Image professionnelle', 'Securite atelier']
+    benefits: ['Organisation optimale', 'Image professionnelle', 'Securite atelier'],
+    relatedServices: ['marquage-au-sol-parking', 'signalisation-verticale', 'pose-butees-parking', 'marquage-zones-pietonnes']
   },
   {
     id: 'marquage-zones-pietonnes',
@@ -132,7 +142,8 @@ export const services: Service[] = [
     icon: 'pedestrian',
     category: 'marquage',
     keywords: ['marquage pieton', 'passage pieton', 'zone pietonne securisee'],
-    benefits: ['Securite maximale', 'Conformite reglementaire', 'Visibilite optimale']
+    benefits: ['Securite maximale', 'Conformite reglementaire', 'Visibilite optimale'],
+    relatedServices: ['marquage-au-sol-industriel', 'signalisation-verticale', 'pose-ralentisseur', 'marquage-routier-au-sol']
   },
   {
     id: 'places-handicapees-pmr',
@@ -143,7 +154,8 @@ export const services: Service[] = [
     icon: 'accessible',
     category: 'marquage',
     keywords: ['place PMR', 'place handicape', 'stationnement PMR', 'marquage PMR'],
-    benefits: ['Conformite legale', 'Accessibilite totale', 'Signalisation normee']
+    benefits: ['Conformite legale', 'Accessibilite totale', 'Signalisation normee'],
+    relatedServices: ['marquage-au-sol-parking', 'signalisation-verticale', 'installation-panneaux-parking', 'marquage-au-sol-parking-entreprise']
   },
 
   // ═══════════════════════════════════════════════════════════════════
@@ -160,7 +172,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['signalisation verticale', 'panneau signalisation', 'signalisation parking'],
     benefits: ['Installation complete', 'Conformite NF', 'Durabilite garantie'],
-    searchVolume: 590
+    searchVolume: 590,
+    relatedServices: ['installation-panneaux-parking', 'pose-miroir-circulation', 'installation-bornes-parking', 'marquage-au-sol-parking']
   },
   {
     id: 'pose-ralentisseur',
@@ -172,7 +185,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['pose ralentisseur', 'installation dos ane', 'ralentisseur parking'],
     benefits: ['Securite renforcee', 'Reduction vitesse', 'Installation rapide'],
-    searchVolume: 110
+    searchVolume: 110,
+    relatedServices: ['signalisation-verticale', 'marquage-routier-au-sol', 'installation-bornes-parking', 'marquage-zones-pietonnes']
   },
   {
     id: 'installation-panneaux-parking',
@@ -184,7 +198,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['panneau parking', 'panneau stationnement', 'signalisation parking'],
     benefits: ['Orientation claire', 'Reglementation visible', 'Pose professionnelle'],
-    searchVolume: 90
+    searchVolume: 90,
+    relatedServices: ['signalisation-verticale', 'marquage-au-sol-parking', 'pose-miroir-circulation', 'places-handicapees-pmr']
   },
   {
     id: 'pose-miroir-circulation',
@@ -196,7 +211,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['miroir circulation', 'miroir convexe', 'miroir securite parking'],
     benefits: ['Visibilite accrue', 'Reduction accidents', 'Installation solide'],
-    searchVolume: 390
+    searchVolume: 390,
+    relatedServices: ['signalisation-verticale', 'installation-panneaux-parking', 'pose-ralentisseur', 'marquage-au-sol-parking']
   },
   {
     id: 'installation-bornes-parking',
@@ -208,7 +224,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['borne parking', 'potelet parking', 'borne anti-stationnement'],
     benefits: ['Protection efficace', 'Delimitation claire', 'Resistance chocs'],
-    searchVolume: 90
+    searchVolume: 90,
+    relatedServices: ['signalisation-verticale', 'pose-butees-parking', 'installation-panneaux-parking', 'marquage-au-sol-parking']
   },
   {
     id: 'pose-butees-parking',
@@ -220,7 +237,8 @@ export const services: Service[] = [
     category: 'signalisation',
     keywords: ['butee parking', 'butee stationnement', 'butee roue'],
     benefits: ['Delimitation precise', 'Protection murs', 'Installation durable'],
-    searchVolume: 170
+    searchVolume: 170,
+    relatedServices: ['marquage-au-sol-parking', 'installation-bornes-parking', 'signalisation-verticale', 'marquage-au-sol-parking-prive']
   }
 ];
 

@@ -60,8 +60,8 @@ export default function FAQSection({
         >
           <h2 className="heading-lg text-secondary-900">
             {title.split(' ').map((word, i) => (
-              <span key={i} className={i === title.split(' ').length - 1 ? 'text-primary-600' : ''}>
-                {word}{' '}
+              <span key={i} className={`inline-block mr-[0.3em] ${i === title.split(' ').length - 1 ? 'text-primary-600' : ''}`}>
+                {word}
               </span>
             ))}
           </h2>

@@ -52,7 +52,7 @@ export default function ContactInfo() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-6">
+        <h2 className="text-2xl font-bold text-asphalt-900 mb-6">
           Nos coordonnees
         </h2>
 
@@ -69,28 +69,28 @@ export default function ContactInfo() {
               {detail.href ? (
                 <a
                   href={detail.href}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-secondary-900/50 ring-1 ring-secondary-800 hover:ring-primary-500/50 transition-all duration-300"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-asphalt-50 ring-1 ring-asphalt-200 hover:ring-route-500 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-secondary-900 transition-all duration-300">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-route-500/10 text-route-600 group-hover:bg-route-500 group-hover:text-asphalt-900 transition-all duration-300">
                     {detail.icon}
                   </div>
                   <div>
-                    <div className="text-sm text-secondary-400">{detail.title}</div>
-                    <div className="text-lg font-semibold text-white group-hover:text-primary-500 transition-colors">
+                    <div className="text-sm text-asphalt-500">{detail.title}</div>
+                    <div className="text-lg font-semibold text-asphalt-900 group-hover:text-route-600 transition-colors">
                       {detail.value}
                     </div>
-                    <div className="text-sm text-secondary-500">{detail.description}</div>
+                    <div className="text-sm text-asphalt-500">{detail.description}</div>
                   </div>
                 </a>
               ) : (
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-secondary-900/50 ring-1 ring-secondary-800">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-asphalt-50 ring-1 ring-asphalt-200">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-route-500/10 text-route-600">
                     {detail.icon}
                   </div>
                   <div>
-                    <div className="text-sm text-secondary-400">{detail.title}</div>
-                    <div className="text-lg font-semibold text-white">{detail.value}</div>
-                    <div className="text-sm text-secondary-500">{detail.description}</div>
+                    <div className="text-sm text-asphalt-500">{detail.title}</div>
+                    <div className="text-lg font-semibold text-asphalt-900">{detail.value}</div>
+                    <div className="text-sm text-asphalt-500">{detail.description}</div>
                   </div>
                 </div>
               )}
@@ -105,18 +105,18 @@ export default function ContactInfo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-2xl bg-gradient-to-br from-primary-500/10 to-accent-500/10 p-6 ring-1 ring-primary-500/20"
+        className="rounded-2xl bg-route-500/10 p-6 ring-1 ring-route-500/20"
       >
-        <h3 className="text-lg font-semibold text-white mb-4">
+        <h3 className="text-lg font-semibold text-asphalt-900 mb-4">
           Pourquoi nous contacter ?
         </h3>
         <ul className="space-y-3">
           {benefits.map((benefit) => (
             <li key={benefit} className="flex items-center gap-3">
-              <svg className="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <svg className="w-5 h-5 text-route-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
-              <span className="text-secondary-300">{benefit}</span>
+              <span className="text-asphalt-700">{benefit}</span>
             </li>
           ))}
         </ul>
@@ -128,26 +128,26 @@ export default function ContactInfo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="rounded-2xl bg-secondary-900 p-6 ring-1 ring-secondary-800"
+        className="rounded-2xl bg-asphalt-50 p-6 ring-1 ring-asphalt-200"
       >
-        <h3 className="text-lg font-semibold text-white mb-4">
+        <h3 className="text-lg font-semibold text-asphalt-900 mb-4">
           Horaires d&apos;ouverture
         </h3>
         <div className="space-y-2">
           <div className="flex justify-between">
-            <span className="text-secondary-400">Lundi - Vendredi</span>
-            <span className="text-white font-medium">8h00 - 18h00</span>
+            <span className="text-asphalt-600">Lundi - Vendredi</span>
+            <span className="text-asphalt-900 font-medium">8h00 - 18h00</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-secondary-400">Samedi</span>
-            <span className="text-white font-medium">Sur rendez-vous</span>
+            <span className="text-asphalt-600">Samedi</span>
+            <span className="text-asphalt-900 font-medium">Sur rendez-vous</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-secondary-400">Dimanche</span>
-            <span className="text-secondary-500">Ferme</span>
+            <span className="text-asphalt-600">Dimanche</span>
+            <span className="text-asphalt-500">Ferme</span>
           </div>
         </div>
-        <p className="mt-4 text-sm text-secondary-500">
+        <p className="mt-4 text-sm text-asphalt-500">
           Interventions possibles en dehors des heures d&apos;ouverture sur demande.
         </p>
       </motion.div>

@@ -433,6 +433,30 @@
   .badge-primary {
     @apply badge-signal;
   }
+
+  /* ════════════════════════════════════════════════════════════
+     16. CLASSES MANQUANTES - Ajoutées pour compatibilité
+     ════════════════════════════════════════════════════════════ */
+
+  .card-cream {
+    @apply bg-asphalt-50 rounded-xl p-6 border border-asphalt-200;
+  }
+
+  .icon-box {
+    @apply flex items-center justify-center w-12 h-12
+           bg-route-100 text-route-600 rounded-lg;
+  }
+
+  .heading-lg {
+    @apply text-2xl lg:text-3xl font-bold text-asphalt-900;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-white text-asphalt-900 font-bold rounded-lg
+           hover:bg-asphalt-50 transition-colors duration-200;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════

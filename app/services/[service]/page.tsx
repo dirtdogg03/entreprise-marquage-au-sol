@@ -10,6 +10,7 @@ import FAQSection from '@/components/blocks/FAQSection';
 import ServiceHero from '@/components/services/ServiceHero';
 import ServiceBenefits from '@/components/services/ServiceBenefits';
 import ServiceLocations from '@/components/services/ServiceLocations';
+import RelatedServices from '@/components/services/RelatedServices';
 
 interface ServicePageProps {
   params: Promise<{ service: string }>;
@@ -81,6 +82,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <ServiceBenefits service={service} />
 
       <ServiceLocations service={service} locations={locations} />
+
+      <RelatedServices service={service} />
 
       <FAQSection
         title={`Questions sur ${service.name}`}

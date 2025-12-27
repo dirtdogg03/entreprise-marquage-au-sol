@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { services } from '@/lib/data/services';
 import { locations, getLocationsByDepartment } from '@/lib/data/locations';
+import { categories } from '@/lib/data/articles';
 
 const departments = [
   { code: '75', name: 'Paris' },
@@ -162,8 +163,27 @@ export default function Footer() {
             </div>
 
             <div className="md:grid md:grid-cols-2 md:gap-8">
-              {/* Entreprise */}
+              {/* Blog */}
               <div>
+                <h3 className="label-mono text-route-500 mb-4">Blog</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/blog" className="text-sm text-asphalt-300 hover:text-white transition-colors font-medium">
+                      Tous les articles
+                    </Link>
+                  </li>
+                  {categories.map((category) => (
+                    <li key={category.id}>
+                      <Link href={`/blog/${category.slug}`} className="text-sm text-asphalt-300 hover:text-white transition-colors">
+                        {category.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Entreprise & Legal */}
+              <div className="mt-10 md:mt-0">
                 <h3 className="label-mono text-route-500 mb-4">Entreprise</h3>
                 <ul className="space-y-3">
                   {footerNavigation.company.map((item) => (
@@ -174,11 +194,8 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              {/* Legal */}
-              <div className="mt-10 md:mt-0">
-                <h3 className="label-mono text-route-500 mb-4">Legal</h3>
+                <h3 className="label-mono text-route-500 mb-4 mt-8">Legal</h3>
                 <ul className="space-y-3">
                   {footerNavigation.legal.map((item) => (
                     <li key={item.name}>

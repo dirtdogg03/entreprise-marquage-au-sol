@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Location } from '@/lib/data/locations';
+import ContactForm from '@/components/forms/ContactForm';
 
 interface CityHeroProps {
   location: Location;
@@ -77,23 +78,16 @@ export default function CityHero({ location }: CityHeroProps) {
               </span>
             </motion.div>
 
-            {/* SEO Exact Match H1 */}
+            {/* SEO Exact Match H1 + Contexte Hub */}
             <motion.h1
               variants={itemVariants}
               className="heading-display-lg"
             >
-              {`Marquage au Sol ${location.name}`.split(' ').map((word, i) => (
-                <span
-                  key={i}
-                  className={`inline-block mr-[0.3em] ${
-                    word.toLowerCase().includes('marquage') || word === location.name
-                      ? 'text-route-500'
-                      : ''
-                  }`}
-                >
-                  {word}
-                </span>
-              ))}
+              <span className="text-route-500">Marquage</span>{' '}
+              au Sol{' '}
+              <span className="text-route-500">{location.name}</span>
+              <br />
+              Tous nos Services
             </motion.h1>
 
             <motion.p
@@ -148,55 +142,71 @@ export default function CityHero({ location }: CityHeroProps) {
             </motion.div>
           </motion.div>
 
-          {/* Stats card */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative"
           >
-            <div className="prism-border p-8">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="stat-box">
-                  <div className="stat-box-value">17</div>
-                  <div className="stat-box-label">Services disponibles</div>
-                </div>
-                <div className="stat-box">
-                  <div className="stat-box-value">24-48h</div>
-                  <div className="stat-box-label">Intervention rapide</div>
-                </div>
-                <div className="stat-box">
-                  <div className="stat-box-value">15+</div>
-                  <div className="stat-box-label">Annees d&apos;experience</div>
-                </div>
-                <div className="stat-box">
-                  <div className="stat-box-value">5 ans</div>
-                  <div className="stat-box-label">Garantie minimum</div>
-                </div>
-              </div>
-
-              {/* Trust badges */}
-              <div className="mt-6 flex items-center justify-center gap-6 pt-6 border-t-2 border-route-500">
-                <div className="flex items-center gap-2">
-                  <div className="icon-signal w-8 h-8">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                    </svg>
-                  </div>
-                  <span className="label-mono text-asphalt-700">Certifie NF</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="icon-signal w-8 h-8">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
-                  </div>
-                  <span className="label-mono text-asphalt-700">Conforme PMR</span>
-                </div>
-              </div>
+            <div className="prism-border p-5 lg:p-6">
+              <h2 className="text-lg font-bold text-asphalt-900 mb-4">
+                Devis Gratuit a {location.name}
+              </h2>
+              <ContactForm />
             </div>
           </motion.div>
         </div>
+
+        {/* Stats horizontales */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+        >
+          <div className="stat-box">
+            <div className="stat-box-value">17</div>
+            <div className="stat-box-label">Services disponibles</div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-box-value">24-48h</div>
+            <div className="stat-box-label">Intervention rapide</div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-box-value">15+</div>
+            <div className="stat-box-label">Annees d&apos;experience</div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-box-value">5 ans</div>
+            <div className="stat-box-label">Garantie minimum</div>
+          </div>
+        </motion.div>
+
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-6 flex items-center justify-center gap-6"
+        >
+          <div className="flex items-center gap-2">
+            <div className="icon-signal w-8 h-8">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
+            </div>
+            <span className="label-mono text-asphalt-700">Certifie NF</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="icon-signal w-8 h-8">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <span className="label-mono text-asphalt-700">Conforme PMR</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

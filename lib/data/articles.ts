@@ -23,6 +23,7 @@ export interface Article {
   featured: boolean;
   isPillar?: boolean;
   relatedArticles?: string[];
+  relatedServices?: string[]; // IDs des services lies
 }
 
 export const categories: Category[] = [
@@ -74,7 +75,8 @@ export const articles: Article[] = [
     tags: ['marquage au sol', 'peinture', 'resine', 'thermoplastique', 'epoxy'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['marquage-exterieur-materiaux']
+    relatedArticles: ['marquage-exterieur-materiaux'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
   },
   {
     id: 'reglementation-parking-2025',
@@ -91,7 +93,8 @@ export const articles: Article[] = [
     tags: ['reglementation', 'parking', 'PMR', 'normes', 'code de la route'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['places-pmr-obligations', 'signalisation-horizontale-verticale']
+    relatedArticles: ['places-pmr-obligations', 'signalisation-horizontale-verticale'],
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale']
   },
   {
     id: 'normes-securite-industriel',
@@ -108,7 +111,8 @@ export const articles: Article[] = [
     tags: ['securite', 'industriel', 'normes', 'couleurs', 'zones danger'],
     featured: true,
     isPillar: true,
-    relatedArticles: []
+    relatedArticles: [],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-zones-pietonnes', 'marquage-au-sol-usine']
   },
   {
     id: 'prix-marquage-guide',
@@ -125,7 +129,8 @@ export const articles: Article[] = [
     tags: ['prix', 'devis', 'budget', 'tarif', 'cout'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['entretien-duree-vie', 'cas-client-parking']
+    relatedArticles: ['entretien-duree-vie', 'cas-client-parking'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'signalisation-verticale']
   },
   {
     id: 'entretien-duree-vie',
@@ -157,7 +162,8 @@ export const articles: Article[] = [
     image: '/images/blog/places-pmr.webp',
     tags: ['PMR', 'handicape', 'accessibilite', 'obligations', 'loi'],
     featured: false,
-    relatedArticles: ['reglementation-parking-2025']
+    relatedArticles: ['reglementation-parking-2025'],
+    relatedServices: ['places-handicapees-pmr', 'marquage-au-sol-parking', 'installation-panneaux-parking']
   },
   {
     id: 'marquage-entrepot-bonnes-pratiques',
@@ -174,7 +180,8 @@ export const articles: Article[] = [
     tags: ['entrepot', 'logistique', 'stockage', 'circulation', 'industrie'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['cas-client-parking']
+    relatedArticles: ['cas-client-parking'],
+    relatedServices: ['marquage-au-sol-entrepot', 'marquage-zones-pietonnes', 'signalisation-verticale']
   },
   {
     id: 'signalisation-horizontale-verticale',
@@ -190,7 +197,8 @@ export const articles: Article[] = [
     image: '/images/blog/signalisation-comparaison.webp',
     tags: ['signalisation', 'horizontale', 'verticale', 'panneaux', 'code'],
     featured: false,
-    relatedArticles: ['reglementation-parking-2025']
+    relatedArticles: ['reglementation-parking-2025'],
+    relatedServices: ['signalisation-verticale', 'marquage-routier-au-sol', 'installation-panneaux-parking']
   },
   {
     id: 'marquage-exterieur-materiaux',
@@ -222,7 +230,8 @@ export const articles: Article[] = [
     image: '/images/blog/cas-client-parking.webp',
     tags: ['cas client', 'parking', 'avant apres', 'temoignage', 'entreprise'],
     featured: true,
-    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'prix-marquage-guide']
+    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'prix-marquage-guide'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-parking-entreprise', 'signalisation-verticale']
   },
   // === NOUVEAUX ARTICLES - Cluster Matériaux ===
   {
@@ -239,7 +248,8 @@ export const articles: Article[] = [
     image: '/images/blog/epoxy-polyurethane.webp',
     tags: ['epoxy', 'polyurethane', 'peinture sol', 'comparatif', 'industrie'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage', 'resine-sol-avantages']
+    relatedArticles: ['choisir-type-marquage', 'resine-sol-avantages'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-entrepot', 'marquage-au-sol-usine']
   },
   {
     id: 'resine-sol-avantages',
@@ -255,7 +265,8 @@ export const articles: Article[] = [
     image: '/images/blog/resine-sol.webp',
     tags: ['resine', 'revetement sol', 'epoxy', 'polyurethane', 'durabilite'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage', 'epoxy-vs-polyurethane']
+    relatedArticles: ['choisir-type-marquage', 'epoxy-vs-polyurethane'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-usine', 'marquage-garage-automobile']
   },
   {
     id: 'thermoplastique-marquage',
@@ -271,7 +282,8 @@ export const articles: Article[] = [
     image: '/images/blog/thermoplastique.webp',
     tags: ['thermoplastique', 'marquage routier', 'durabilite', 'voirie', 'parking'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage', 'marquage-exterieur-materiaux']
+    relatedArticles: ['choisir-type-marquage', 'marquage-exterieur-materiaux'],
+    relatedServices: ['marquage-routier-au-sol', 'marquage-au-sol-parking', 'marquage-zones-pietonnes']
   },
   // === NOUVEAUX ARTICLES - Cluster Applications ===
   {
@@ -288,7 +300,8 @@ export const articles: Article[] = [
     image: '/images/blog/parking-commercial.webp',
     tags: ['parking', 'centre commercial', 'PMR', 'signalisation', 'flux'],
     featured: false,
-    relatedArticles: ['reglementation-parking-2025', 'places-pmr-obligations']
+    relatedArticles: ['reglementation-parking-2025', 'places-pmr-obligations'],
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale']
   },
   {
     id: 'marquage-usine-atelier',
@@ -304,7 +317,8 @@ export const articles: Article[] = [
     image: '/images/blog/usine-atelier.webp',
     tags: ['usine', 'atelier', 'industrie', 'production', 'securite'],
     featured: false,
-    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'normes-securite-industriel']
+    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'normes-securite-industriel'],
+    relatedServices: ['marquage-au-sol-usine', 'marquage-au-sol-industriel', 'marquage-zones-pietonnes']
   },
   {
     id: 'voirie-privee',
@@ -320,7 +334,8 @@ export const articles: Article[] = [
     image: '/images/blog/voirie-privee.webp',
     tags: ['voirie', 'prive', 'entreprise', 'circulation', 'signalisation'],
     featured: false,
-    relatedArticles: ['reglementation-parking-2025', 'thermoplastique-marquage']
+    relatedArticles: ['reglementation-parking-2025', 'thermoplastique-marquage'],
+    relatedServices: ['marquage-routier-au-sol', 'signalisation-verticale', 'pose-ralentisseur']
   },
   // === NOUVEAUX ARTICLES - Cluster Réglementation ===
   {
@@ -370,7 +385,8 @@ export const articles: Article[] = [
     image: '/images/blog/zones-danger.webp',
     tags: ['danger', 'securite', 'zone', 'delimitation', 'pictogramme'],
     featured: true,
-    relatedArticles: ['normes-securite-industriel', 'code-couleur-marquage']
+    relatedArticles: ['normes-securite-industriel', 'code-couleur-marquage'],
+    relatedServices: ['marquage-zones-pietonnes', 'marquage-au-sol-industriel', 'signalisation-verticale']
   },
   {
     id: 'marquage-antiderapant',
@@ -402,7 +418,8 @@ export const articles: Article[] = [
     image: '/images/blog/flux-pietons.webp',
     tags: ['pietons', 'vehicules', 'flux', 'circulation', 'securite'],
     featured: false,
-    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'zones-danger-delimitation']
+    relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'zones-danger-delimitation'],
+    relatedServices: ['marquage-zones-pietonnes', 'pose-ralentisseur', 'marquage-au-sol-entrepot']
   },
   {
     id: 'marquage-evacuation',
@@ -418,7 +435,8 @@ export const articles: Article[] = [
     image: '/images/blog/evacuation.webp',
     tags: ['evacuation', 'secours', 'photoluminescent', 'ERP', 'incendie'],
     featured: false,
-    relatedArticles: ['normes-securite-industriel', 'zones-danger-delimitation']
+    relatedArticles: ['normes-securite-industriel', 'zones-danger-delimitation'],
+    relatedServices: ['marquage-zones-pietonnes', 'signalisation-verticale', 'marquage-au-sol-industriel']
   },
   // === NOUVEAUX ARTICLES - Cluster Budget ===
   {

@@ -64,13 +64,45 @@ export function generateServiceSchema(service: Service) {
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${SITE_URL}/#organization`,
-      name: COMPANY_NAME
+      name: COMPANY_NAME,
+      telephone: COMPANY_PHONE,
+      email: COMPANY_EMAIL
     },
     areaServed: {
       '@type': 'State',
-      name: 'Ile-de-France'
+      name: 'Ile-de-France',
+      containedIn: {
+        '@type': 'Country',
+        name: 'France'
+      }
     },
-    serviceType: service.category === 'marquage' ? 'Marquage au sol' : 'Signalisation'
+    serviceType: service.category === 'marquage' ? 'Marquage au sol' : 'Signalisation',
+    // Proprietes enrichies
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: service.name,
+      itemListElement: service.benefits.map((benefit, index) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: benefit
+        },
+        position: index + 1
+      }))
+    },
+    // Disponibilite et contact
+    potentialAction: {
+      '@type': 'OrderAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/contact`,
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform'
+        ]
+      },
+      deliveryMethod: 'http://purl.org/goodrelations/v1#DeliveryModeDirectDownload'
+    }
   };
 }
 
@@ -135,30 +167,111 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
 }
 
 export function generateArticleSchema(article: Article, category: Category) {
+  // Calculer le nombre de mots (approximatif depuis le contenu)
+  const wordCount = article.content
+    ? article.content.split(/\s+/).filter(word => word.length > 0).length
+    : 0;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     '@id': `${SITE_URL}/blog/${category.slug}/${article.slug}`,
     headline: article.title,
     description: article.excerpt,
-    image: `${SITE_URL}${article.image}`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}${article.image}`,
+      width: 1200,
+      height: 630
+    },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
     author: {
       '@type': 'Organization',
-      name: article.author
+      '@id': `${SITE_URL}/#organization`,
+      name: article.author,
+      url: SITE_URL
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: COMPANY_NAME,
+      url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/images/logo.webp`
+        url: `${SITE_URL}/images/logo.webp`,
+        width: 600,
+        height: 60
       }
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/blog/${category.slug}/${article.slug}`
+    },
+    // Proprietes enrichies pour SEO avance
+    wordCount: wordCount,
+    articleSection: category.name,
+    keywords: article.tags.join(', '),
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    // Speakable pour assistants vocaux (Google Assistant)
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['article h1', 'article h2', 'article p']
+    },
+    // Potentiel d'affichage en position zero
+    isPartOf: {
+      '@type': 'Blog',
+      '@id': `${SITE_URL}/blog`,
+      name: 'Blog Marquage au Sol',
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`
+      }
+    }
+  };
+}
+
+// Schema HowTo pour articles tutoriels (extraction des etapes depuis le contenu)
+export function generateHowToSchema(
+  article: Article,
+  category: Category,
+  steps: { name: string; text: string }[]
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    '@id': `${SITE_URL}/blog/${category.slug}/${article.slug}#howto`,
+    name: article.title,
+    description: article.excerpt,
+    image: `${SITE_URL}${article.image}`,
+    totalTime: `PT${article.readTime}M`,
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'EUR',
+      value: '0'
+    },
+    tool: [
+      {
+        '@type': 'HowToTool',
+        name: 'Peinture de marquage'
+      },
+      {
+        '@type': 'HowToTool',
+        name: 'Pochoirs'
+      }
+    ],
+    step: steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      url: `${SITE_URL}/blog/${category.slug}/${article.slug}#step-${index + 1}`
+    })),
+    author: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: article.author
     }
   };
 }

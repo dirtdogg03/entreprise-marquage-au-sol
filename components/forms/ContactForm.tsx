@@ -63,8 +63,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Name */}
         <div>
           <label htmlFor="name" className="label-signal">
@@ -165,7 +165,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
-          rows={4}
+          rows={3}
           value={formData.message}
           onChange={handleChange}
           className="input-signal resize-none"
@@ -178,7 +178,7 @@ export default function ContactForm() {
         type="submit"
         disabled={isSubmitting}
         className={`
-          w-full btn-orthogonal py-4 text-lg
+          w-full btn-orthogonal py-3 text-base
           disabled:opacity-70 disabled:cursor-not-allowed
           flex items-center justify-center gap-3
           ${isSubmitting ? 'shimmer-loading shimmer-loading-dark' : ''}
@@ -202,9 +202,6 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="label-mono text-center">
-        En soumettant ce formulaire, vous acceptez notre politique de confidentialite.
-      </p>
     </form>
   );
 }

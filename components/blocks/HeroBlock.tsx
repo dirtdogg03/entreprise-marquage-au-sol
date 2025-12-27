@@ -79,9 +79,9 @@ export default function HeroBlock({
             {title.split(' ').map((word, i) => (
               <span
                 key={i}
-                className={`inline-block ${word.toLowerCase().includes('marquage') ? 'text-route-500' : ''}`}
+                className={`inline-block mr-[0.3em] ${word.toLowerCase().includes('marquage') ? 'text-route-500' : ''}`}
               >
-                {word}{' '}
+                {word}
               </span>
             ))}
           </motion.h1>

@@ -106,13 +106,13 @@ export default function ServiceHero({ service, location }: ServiceHeroProps) {
               {title.split(' ').map((word, i) => (
                 <span
                   key={i}
-                  className={`inline-block ${
+                  className={`inline-block mr-[0.3em] ${
                     word.toLowerCase().includes('marquage') || (location && word === location.name)
                       ? 'text-route-500'
                       : ''
                   }`}
                 >
-                  {word}{' '}
+                  {word}
                 </span>
               ))}
             </motion.h1>

@@ -22,11 +22,11 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
       >
         <Link
           href={`/blog/${category?.slug}/${article.slug}`}
-          className="group grid md:grid-cols-2 gap-8 rounded-2xl bg-secondary-900/50 ring-1 ring-secondary-800 p-6 hover:ring-primary-500/50 transition-all duration-300"
+          className="group grid md:grid-cols-2 gap-8 rounded-2xl bg-white ring-1 ring-asphalt-200 p-6 hover:ring-route-500 hover:shadow-lg transition-all duration-300"
         >
           {/* Image placeholder */}
-          <div className="aspect-video rounded-xl bg-gradient-to-br from-secondary-800 to-secondary-900 flex items-center justify-center">
-            <svg className="w-16 h-16 text-secondary-600" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+          <div className="aspect-video rounded-xl bg-gradient-to-br from-asphalt-100 to-asphalt-200 flex items-center justify-center">
+            <svg className="w-16 h-16 text-asphalt-400" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
             </svg>
           </div>
@@ -38,21 +38,21 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
                 {category.name}
               </span>
             )}
-            <h3 className="text-2xl font-bold text-white group-hover:text-primary-500 transition-colors">
+            <h3 className="text-2xl font-bold text-asphalt-900 group-hover:text-route-600 transition-colors">
               {article.title}
             </h3>
-            <p className="mt-4 text-secondary-400 line-clamp-3">
+            <p className="mt-4 text-asphalt-600 line-clamp-3">
               {article.excerpt}
             </p>
             <div className="mt-6 flex items-center justify-between">
-              <span className="text-sm text-secondary-400">
+              <span className="text-sm text-asphalt-500">
                 {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
                 })}
               </span>
-              <span className="text-sm text-secondary-400">
+              <span className="text-sm text-asphalt-500">
                 {article.readTime} min
               </span>
             </div>
@@ -71,11 +71,11 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
     >
       <Link
         href={`/blog/${category?.slug}/${article.slug}`}
-        className="group flex flex-col h-full rounded-2xl bg-secondary-900/50 ring-1 ring-secondary-800 overflow-hidden hover:ring-primary-500/50 transition-all duration-300"
+        className="group flex flex-col h-full rounded-2xl bg-white ring-1 ring-asphalt-200 overflow-hidden hover:ring-route-500 hover:shadow-lg transition-all duration-300"
       >
         {/* Image placeholder */}
-        <div className="aspect-video bg-gradient-to-br from-secondary-800 to-secondary-900 flex items-center justify-center">
-          <svg className="w-12 h-12 text-secondary-600" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+        <div className="aspect-video bg-gradient-to-br from-asphalt-100 to-asphalt-200 flex items-center justify-center">
+          <svg className="w-12 h-12 text-asphalt-400" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
           </svg>
         </div>
@@ -87,13 +87,13 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
               {category.name}
             </span>
           )}
-          <h3 className="text-lg font-semibold text-white group-hover:text-primary-500 transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-asphalt-900 group-hover:text-route-600 transition-colors line-clamp-2">
             {article.title}
           </h3>
-          <p className="mt-2 text-sm text-secondary-400 line-clamp-2 flex-grow">
+          <p className="mt-2 text-sm text-asphalt-600 line-clamp-2 flex-grow">
             {article.excerpt}
           </p>
-          <div className="mt-4 flex items-center justify-between text-sm text-secondary-400">
+          <div className="mt-4 flex items-center justify-between text-sm text-asphalt-500">
             <span>
               {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                 year: 'numeric',

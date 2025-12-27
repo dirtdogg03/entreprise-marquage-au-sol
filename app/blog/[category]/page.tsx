@@ -43,33 +43,33 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       {/* Hero section */}
-      <section className="relative py-16 lg:py-24 bg-hero-pattern">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/10" />
+      <section className="relative py-16 lg:py-24 bg-asphalt-50 grid-bg">
+        <div className="absolute inset-0 bg-gradient-to-br from-route-500/5 via-transparent to-route-500/5" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="mb-8">
-            <ol className="flex items-center gap-2 text-sm text-secondary-400">
+            <ol className="flex items-center gap-2 text-sm text-asphalt-500">
               <li>
-                <Link href="/" className="hover:text-primary-500 transition-colors">
+                <Link href="/" className="hover:text-route-600 transition-colors">
                   Accueil
                 </Link>
               </li>
               <li>/</li>
               <li>
-                <Link href="/blog" className="hover:text-primary-500 transition-colors">
+                <Link href="/blog" className="hover:text-route-600 transition-colors">
                   Blog
                 </Link>
               </li>
               <li>/</li>
-              <li className="text-primary-500">{category.name}</li>
+              <li className="text-route-600">{category.name}</li>
             </ol>
           </nav>
 
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              <span className="text-primary-500">{category.name}</span>
+            <h1 className="text-4xl font-bold tracking-tight text-asphalt-900 sm:text-5xl">
+              <span className="text-route-600">{category.name}</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-secondary-300">
+            <p className="mt-6 text-lg leading-8 text-asphalt-600">
               {category.description}
             </p>
           </div>
@@ -77,12 +77,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Categories navigation */}
-      <section className="py-8 bg-secondary-900">
+      <section className="py-8 bg-white border-b border-asphalt-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/blog"
-              className="inline-flex items-center rounded-full bg-secondary-800 px-4 py-2 text-sm font-medium text-secondary-300 hover:bg-secondary-700 hover:text-white transition-colors"
+              className="inline-flex items-center rounded-full bg-asphalt-100 px-4 py-2 text-sm font-medium text-asphalt-700 hover:bg-asphalt-200 hover:text-asphalt-900 transition-colors"
             >
               Tous les articles
             </Link>
@@ -92,8 +92,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 href={`/blog/${cat.slug}`}
                 className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   cat.id === category.id
-                    ? 'bg-primary-500 text-secondary-900'
-                    : 'bg-secondary-800 text-secondary-300 hover:bg-secondary-700 hover:text-white'
+                    ? 'bg-route-500 text-asphalt-900'
+                    : 'bg-asphalt-100 text-asphalt-700 hover:bg-asphalt-200 hover:text-asphalt-900'
                 }`}
               >
                 {cat.name}
@@ -104,7 +104,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Articles */}
-      <section className="py-12 lg:py-16 bg-secondary-950">
+      <section className="py-12 lg:py-16 bg-asphalt-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {categoryArticles.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -114,7 +114,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-secondary-400">Aucun article dans cette categorie pour le moment.</p>
+              <p className="text-asphalt-500">Aucun article dans cette categorie pour le moment.</p>
             </div>
           )}
         </div>
