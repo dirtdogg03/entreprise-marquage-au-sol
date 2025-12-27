@@ -12,14 +12,17 @@ interface TableOfContentsProps {
   content: string;
 }
 
+const MAX_VISIBLE_ITEMS = 6;
+
 export default function TableOfContents({ content }: TableOfContentsProps) {
   const [tocItems, setTocItems] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isDesktopExpanded, setIsDesktopExpanded] = useState(false);
 
-  // Extract headings from markdown content
+  // Extract H2 headings only from markdown content (not H3)
   useEffect(() => {
-    const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+    const headingRegex = /^(#{2})\s+(.+)$/gm;
     const items: TocItem[] = [];
     let match;
 
@@ -44,6 +47,10 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
       setActiveId(items[0].id);
     }
   }, [content]);
+
+  // Determine visible items for desktop
+  const visibleItems = isDesktopExpanded ? tocItems : tocItems.slice(0, MAX_VISIBLE_ITEMS);
+  const hasMoreItems = tocItems.length > MAX_VISIBLE_ITEMS;
 
   // Setup IntersectionObserver for active section highlighting
   useEffect(() => {
@@ -126,13 +133,11 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
             Sommaire
           </h3>
           <ul className="space-y-1">
-            {tocItems.map((item) => (
+            {visibleItems.map((item) => (
               <li key={item.id}>
                 <button
                   onClick={() => scrollToHeading(item.id)}
-                  className={`w-full text-left text-sm py-1.5 transition-all duration-200 border-l-2 hover:text-route-600 ${
-                    item.level === 3 ? 'pl-6' : 'pl-3'
-                  } ${
+                  className={`w-full text-left text-sm py-1.5 transition-all duration-200 border-l-2 hover:text-route-600 pl-3 ${
                     activeId === item.id
                       ? 'text-route-600 font-medium border-route-500 bg-route-50'
                       : 'text-asphalt-600 border-transparent hover:border-asphalt-300'
@@ -143,6 +148,28 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
               </li>
             ))}
           </ul>
+          {hasMoreItems && (
+            <button
+              onClick={() => setIsDesktopExpanded(!isDesktopExpanded)}
+              className="w-full mt-2 pt-2 border-t border-asphalt-200 text-xs text-asphalt-500 hover:text-route-600 transition-colors flex items-center justify-center gap-1"
+            >
+              {isDesktopExpanded ? (
+                <>
+                  <span>Réduire</span>
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                  </svg>
+                </>
+              ) : (
+                <>
+                  <span>Voir les {tocItems.length - MAX_VISIBLE_ITEMS} autres</span>
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </>
+              )}
+            </button>
+          )}
         </div>
       </nav>
 
@@ -194,8 +221,6 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
                   <button
                     onClick={() => scrollToHeading(item.id)}
                     className={`w-full text-left text-sm py-2 px-3 rounded-md transition-colors ${
-                      item.level === 3 ? 'ml-4' : ''
-                    } ${
                       activeId === item.id
                         ? 'text-route-600 font-medium bg-route-100'
                         : 'text-asphalt-600 hover:bg-asphalt-100 hover:text-asphalt-900'
