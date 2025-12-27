@@ -162,3 +162,41 @@ export function generateArticleSchema(article: Article, category: Category) {
     }
   };
 }
+
+export function generateCitySchema(location: Location) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/villes/${location.slug}`,
+    name: `${COMPANY_NAME} - ${location.name}`,
+    description: `Services de marquage au sol professionnel a ${location.name}. Parking, entrepot, industriel, PMR. Intervention rapide en ${location.department}.`,
+    url: `${SITE_URL}/villes/${location.slug}`,
+    telephone: COMPANY_PHONE,
+    email: COMPANY_EMAIL,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: location.name,
+      addressRegion: location.department,
+      postalCode: location.postalCodes[0],
+      addressCountry: 'FR'
+    },
+    areaServed: {
+      '@type': 'City',
+      name: location.name,
+      containedIn: {
+        '@type': 'AdministrativeArea',
+        name: location.department
+      }
+    },
+    priceRange: '€€',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00'
+      }
+    ],
+    image: `${SITE_URL}/images/logo.webp`
+  };
+}

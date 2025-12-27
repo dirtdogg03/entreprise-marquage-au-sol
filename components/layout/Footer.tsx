@@ -145,8 +145,8 @@ export default function Footer() {
                             {deptLocations.map((location) => (
                               <li key={location.id}>
                                 <Link
-                                  href={`/services/marquage-parking-entreprise/${location.slug}`}
-                                  className="text-xs text-asphalt-400 hover:text-route-500 transition-colors"
+                                  href={`/villes/${location.slug}`}
+                                  className="text-sm text-asphalt-300 hover:text-route-500 transition-colors"
                                 >
                                   {location.name}
                                 </Link>

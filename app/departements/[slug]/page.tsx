@@ -116,33 +116,33 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 bg-asphalt-900 overflow-hidden">
-        <div className="absolute inset-0 grid-bg-dark opacity-50" />
+      <section className="relative py-20 lg:py-28 bg-asphalt-50 grid-bg overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-route-500/5 via-transparent to-route-500/5" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="mb-8">
-            <ol className="flex items-center gap-2 text-sm text-asphalt-400">
+            <ol className="flex items-center gap-2 text-sm text-asphalt-500">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-route-600 transition-colors">
                   Accueil
                 </Link>
               </li>
               <li>/</li>
-              <li className="text-route-500">{department.fullName}</li>
+              <li className="text-route-600">{department.fullName}</li>
             </ol>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-route-500/10 text-route-500 text-sm font-semibold mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-route-500/10 text-route-600 text-sm font-semibold mb-6">
                 <span className="font-mono text-lg">{department.code}</span>
                 Departement
               </span>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-asphalt-900 sm:text-5xl lg:text-6xl">
                 Marquage au Sol<br />
-                <span className="text-route-500">{department.fullName}</span>
+                <span className="text-route-600">{department.fullName}</span>
               </h1>
-              <p className="mt-6 text-lg text-asphalt-300 leading-relaxed">
+              <p className="mt-6 text-lg text-asphalt-600 leading-relaxed">
                 {department.description}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -157,7 +157,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
                 </Link>
                 <a
                   href="tel:+33123456789"
-                  className="inline-flex items-center gap-2 px-6 py-3 ring-1 ring-asphalt-700 text-white font-semibold rounded-lg hover:bg-asphalt-800 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 ring-1 ring-asphalt-300 text-asphalt-700 font-semibold rounded-lg hover:bg-asphalt-100 transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
@@ -169,21 +169,21 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 rounded-xl bg-asphalt-800/50 ring-1 ring-asphalt-700">
-                <div className="text-4xl font-bold text-route-500">{cities.length}</div>
-                <div className="mt-2 text-asphalt-300">Villes desservies</div>
+              <div className="p-6 rounded-xl bg-white ring-1 ring-asphalt-200 shadow-sm">
+                <div className="text-4xl font-bold text-route-600">{cities.length}</div>
+                <div className="mt-2 text-asphalt-600">Villes desservies</div>
               </div>
-              <div className="p-6 rounded-xl bg-asphalt-800/50 ring-1 ring-asphalt-700">
-                <div className="text-4xl font-bold text-route-500">24-48h</div>
-                <div className="mt-2 text-asphalt-300">Intervention rapide</div>
+              <div className="p-6 rounded-xl bg-white ring-1 ring-asphalt-200 shadow-sm">
+                <div className="text-4xl font-bold text-route-600">24-48h</div>
+                <div className="mt-2 text-asphalt-600">Intervention rapide</div>
               </div>
-              <div className="p-6 rounded-xl bg-asphalt-800/50 ring-1 ring-asphalt-700">
-                <div className="text-4xl font-bold text-route-500">5 ans</div>
-                <div className="mt-2 text-asphalt-300">Garantie travaux</div>
+              <div className="p-6 rounded-xl bg-white ring-1 ring-asphalt-200 shadow-sm">
+                <div className="text-4xl font-bold text-route-600">5 ans</div>
+                <div className="mt-2 text-asphalt-600">Garantie travaux</div>
               </div>
-              <div className="p-6 rounded-xl bg-asphalt-800/50 ring-1 ring-asphalt-700">
-                <div className="text-4xl font-bold text-route-500">100%</div>
-                <div className="mt-2 text-asphalt-300">Conforme normes</div>
+              <div className="p-6 rounded-xl bg-white ring-1 ring-asphalt-200 shadow-sm">
+                <div className="text-4xl font-bold text-route-600">100%</div>
+                <div className="mt-2 text-asphalt-600">Conforme normes</div>
               </div>
             </div>
           </div>
@@ -268,12 +268,13 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {cities.map((city) => (
-              <div
+              <Link
                 key={city.id}
-                className="p-3 rounded-lg bg-asphalt-50 text-center"
+                href={`/villes/${city.slug}`}
+                className="group p-3 rounded-lg bg-asphalt-50 text-center hover:bg-route-500/10 hover:ring-1 hover:ring-route-500 transition-all"
               >
-                <span className="text-asphalt-700 text-sm">{city.name}</span>
-              </div>
+                <span className="text-asphalt-700 text-sm group-hover:text-route-600 transition-colors">{city.name}</span>
+              </Link>
             ))}
           </div>
         </div>

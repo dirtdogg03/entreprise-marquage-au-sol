@@ -61,6 +61,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // City pages (villes)
+  const cityPages: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${baseUrl}/villes/${location.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }));
+
   // Blog article pages
   const articlePages: MetadataRoute.Sitemap = articles.map((article) => {
     const category = getCategoryById(article.categoryId);
@@ -75,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...servicePages,
+    ...cityPages,
     ...serviceLocationPages,
     ...articlePages,
   ];

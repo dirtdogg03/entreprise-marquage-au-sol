@@ -145,3 +145,42 @@ export function generateContactMetadata(): Metadata {
     },
   };
 }
+
+export function generateCityMetadata(location: Location): Metadata {
+  // SEO Exact Match: Title sans preposition "a" pour matcher les requetes utilisateurs
+  // Ex: "Marquage au Sol Paris (75001) - Devis Gratuit"
+  const postalCode = location.postalCodes[0] || '';
+  const title = `Marquage au Sol ${location.name} (${postalCode}) - Devis Gratuit`;
+
+  // Description avec "a" pour langage naturel
+  const description = `Expert en marquage au sol a ${location.name} (${location.department}). Parking, entrepot, industriel, PMR. Intervention rapide sous 24-48h. Devis gratuit et garantie 5 ans.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      `marquage au sol ${location.name.toLowerCase()}`,
+      `marquage parking ${location.name.toLowerCase()}`,
+      `peinture sol ${location.name.toLowerCase()}`,
+      `signalisation ${location.name.toLowerCase()}`,
+      `entreprise marquage ${location.department.toLowerCase()}`,
+      `marquage au sol ${location.departmentCode}`,
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/villes/${location.slug}`,
+      siteName: SITE_NAME,
+      locale: 'fr_FR',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/villes/${location.slug}`,
+    },
+  };
+}
