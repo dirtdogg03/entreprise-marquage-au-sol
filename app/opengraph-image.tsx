@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Entreprise Marquage au Sol - Ile-de-France';
+export const alt = 'Entreprise Marquage au Sol - Île-de-France';
 export const size = {
   width: 1200,
   height: 630,
@@ -115,7 +115,7 @@ export default async function Image() {
               fontWeight: 500,
             }}
           >
-            Specialiste du marquage au sol en Ile-de-France
+            Spécialiste du marquage au sol en Île-de-France
           </div>
 
           {/* Services badges */}
@@ -126,7 +126,7 @@ export default async function Image() {
               marginTop: '40px',
             }}
           >
-            {['Parking', 'Entrepot', 'Industriel', 'PMR'].map((service) => (
+            {['Parking', 'Entrepôt', 'Industriel', 'PMR'].map((service) => (
               <div
                 key={service}
                 style={{

@@ -51,16 +51,16 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
       answer: `Nous intervenons dans toutes les communes ${department.fullName === 'Paris' ? 'de Paris' : `du ${department.fullName}`} : ${cities.slice(0, 8).map(c => c.name).join(', ')}${cities.length > 8 ? ' et bien d\'autres' : ''}. Devis gratuit sous 24h.`,
     },
     {
-      question: `Quel est le delai d'intervention ${department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`} ?`,
-      answer: `Nous intervenons sous 24 a 48h pour la visite technique et l'etablissement du devis. Les travaux peuvent demarrer des la semaine suivante selon votre planning.`,
+      question: `Quel est le délai d'intervention ${department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`} ?`,
+      answer: `Nous intervenons sous 24 à 48h pour la visite technique et l'établissement du devis. Les travaux peuvent démarrer dès la semaine suivante selon votre planning.`,
     },
     {
-      question: `Quels types de marquage proposez-vous ${department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`} ?`,
-      answer: `Nous realisons tous types de marquage au sol : parkings, entrepots, places PMR, voies de circulation, zones de securite, signalisation horizontale. Peintures, resines et thermoplastiques disponibles.`,
+      question: `Quels types de marquage proposez-vous ${department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`} ?`,
+      answer: `Nous réalisons tous types de marquage au sol : parkings, entrepôts, places PMR, voies de circulation, zones de sécurité, signalisation horizontale. Peintures, résines et thermoplastiques disponibles.`,
     },
     {
-      question: `Intervenez-vous la nuit ou le week-end ${department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`} ?`,
-      answer: `Oui, nous adaptons nos interventions a votre activite. Travaux possibles de nuit, le week-end ou pendant les periodes de fermeture pour minimiser l'impact sur votre exploitation.`,
+      question: `Intervenez-vous la nuit ou le week-end ${department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`} ?`,
+      answer: `Oui, nous adaptons nos interventions à votre activité. Travaux possibles de nuit, le week-end ou pendant les périodes de fermeture pour minimiser l'impact sur votre exploitation.`,
     },
   ];
 
@@ -95,7 +95,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Departements',
+          name: 'Départements',
           item: 'https://entreprise-marquage-au-sol.fr/departements',
         },
         {
@@ -136,7 +136,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-route-500/10 text-route-600 text-sm font-semibold mb-6">
                 <span className="font-mono text-lg">{department.code}</span>
-                Departement
+                Département
               </span>
               <h1 className="text-4xl font-bold tracking-tight text-asphalt-900 sm:text-5xl lg:text-6xl">
                 Marquage au Sol<br />
@@ -194,7 +194,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
       <section className="py-16 lg:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-asphalt-900 mb-8">
-            Nos interventions {department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`}
+            Nos interventions {department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {department.characteristics.map((characteristic) => (
@@ -219,7 +219,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
             Nos services de marquage
           </h2>
           <p className="text-asphalt-600 mb-8">
-            Solutions completes de marquage au sol {department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`}
+            Solutions complètes de marquage au sol {department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {mainServices.map((service) => (
@@ -261,10 +261,10 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
       <section className="py-16 lg:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-asphalt-900 mb-2">
-            Villes d&apos;intervention {department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`}
+            Villes d&apos;intervention {department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`}
           </h2>
           <p className="text-asphalt-600 mb-8">
-            {cities.length} commune{cities.length > 1 ? 's' : ''} desservie{cities.length > 1 ? 's' : ''} dans le departement {department.code}
+            {cities.length} commune{cities.length > 1 ? 's' : ''} desservie{cities.length > 1 ? 's' : ''} dans le département {department.code}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {cities.map((city) => (
@@ -282,7 +282,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
 
       {/* FAQ */}
       <FAQSection
-        title={`Questions frequentes sur le marquage au sol ${department.fullName === 'Paris' ? 'a Paris' : `dans le ${department.fullName}`}`}
+        title={`Questions fréquentes sur le marquage au sol ${department.fullName === 'Paris' ? 'à Paris' : `dans le ${department.fullName}`}`}
         faqs={departmentFaqs}
       />
 

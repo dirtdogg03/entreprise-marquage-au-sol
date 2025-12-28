@@ -5,8 +5,8 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 import CTABanner from '@/components/blocks/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Marquage au Sol Ile-de-France | Tous les Departements',
-  description: 'Entreprise de marquage au sol intervenant dans les 8 departements d\'Ile-de-France : Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d\'Oise, Seine-et-Marne.',
+  title: 'Marquage au Sol Île-de-France | Tous les Départements',
+  description: 'Entreprise de marquage au sol intervenant dans les 8 départements d\'Île-de-France : Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d\'Oise, Seine-et-Marne.',
   alternates: {
     canonical: '/departements',
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function DepartementsPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Accueil', url: '/' },
-    { name: 'Departements', url: '/departements' },
+    { name: 'Départements', url: '/departements' },
   ]);
 
   // Stats globales
@@ -40,7 +40,7 @@ export default function DepartementsPage() {
                 </Link>
               </li>
               <li className="text-asphalt-400">/</li>
-              <li className="text-route-600">Departements</li>
+              <li className="text-route-600">Départements</li>
             </ol>
           </nav>
         </div>
@@ -52,16 +52,16 @@ export default function DepartementsPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full bg-route-500 px-4 py-1.5 text-sm font-medium text-asphalt-900 mb-6">
-              {totalDepartments} departements couverts
+              {totalDepartments} départements couverts
             </span>
             <h1 className="text-4xl font-bold tracking-tight text-asphalt-900 sm:text-5xl">
               Marquage au sol en{' '}
-              <span className="text-route-600">Ile-de-France</span>
+              <span className="text-route-600">Île-de-France</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-asphalt-600">
-              Notre equipe intervient dans l&apos;ensemble de la region Ile-de-France
-              pour vos projets de marquage au sol : parkings, entrepots, voiries,
-              places PMR. Decouvrez nos zones d&apos;intervention par departement.
+              Notre équipe intervient dans l&apos;ensemble de la région Île-de-France
+              pour vos projets de marquage au sol : parkings, entrepôts, voiries,
+              places PMR. Découvrez nos zones d&apos;intervention par département.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function DepartementsPage() {
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-3xl font-bold text-route-600">{totalDepartments}</div>
-              <div className="text-sm text-asphalt-500">Departements</div>
+              <div className="text-sm text-asphalt-500">Départements</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-route-600">{totalCities}+</div>
@@ -81,7 +81,7 @@ export default function DepartementsPage() {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-route-600">15+</div>
-              <div className="text-sm text-asphalt-500">Ans d&apos;experience</div>
+              <div className="text-sm text-asphalt-500">Ans d&apos;expérience</div>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function DepartementsPage() {
               Nos services de marquage au sol
             </h2>
             <p className="mt-4 text-asphalt-600">
-              Disponibles dans toute l&apos;Ile-de-France
+              Disponibles dans toute l&apos;Île-de-France
             </p>
           </div>
 
@@ -173,22 +173,22 @@ export default function DepartementsPage() {
             {[
               {
                 title: 'Parking',
-                description: 'Tracage de places, fleches directionnelles, numerotation',
+                description: 'Traçage de places, flèches directionnelles, numérotation',
                 href: '/services/marquage-au-sol-parking',
               },
               {
                 title: 'Places PMR',
-                description: 'Places handicapees conformes aux normes NF P 98-351',
+                description: 'Places handicapées conformes aux normes NF P 98-351',
                 href: '/services/places-handicapees-pmr',
               },
               {
-                title: 'Entrepot',
-                description: 'Zones de stockage, allees de circulation, securite',
+                title: 'Entrepôt',
+                description: 'Zones de stockage, allées de circulation, sécurité',
                 href: '/services/marquage-au-sol-entrepot',
               },
               {
                 title: 'Voirie',
-                description: 'Passages pietons, stops, cedez-le-passage',
+                description: 'Passages piétons, stops, cédez-le-passage',
                 href: '/services/marquage-au-sol-exterieur',
               },
             ].map((service) => (
@@ -220,7 +220,7 @@ export default function DepartementsPage() {
       {/* CTA */}
       <CTABanner
         title="Un projet de marquage au sol ?"
-        description="Contactez-nous pour un devis gratuit sous 24h. Intervention rapide dans toute l'Ile-de-France."
+        description="Contactez-nous pour un devis gratuit sous 24h. Intervention rapide dans toute l'Île-de-France."
         ctaText="Demander un devis"
         ctaHref="/contact"
       />

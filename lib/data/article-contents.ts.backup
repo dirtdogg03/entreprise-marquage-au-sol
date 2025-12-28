@@ -1,0 +1,1095 @@
+// Contenu SEO optimise pour les articles du blog
+
+export const articleContents: Record<string, string> = {
+  'choisir-type-marquage': `
+## Introduction au marquage au sol
+
+Le choix du type de marquage au sol est une decision cruciale pour tout projet d'amenagement. Que ce soit pour un parking d'entreprise, un entrepot logistique ou un site industriel, le marquage au sol joue un role essentiel dans l'organisation des espaces et la securite des usagers.
+
+## Les trois principaux types de marquage
+
+### 1. La peinture routiere
+
+La peinture reste la solution la plus repandue pour le marquage au sol. Elle offre un excellent rapport qualite-prix et convient a la plupart des applications.
+
+**Avantages :**
+- Cout accessible
+- Application rapide
+- Large choix de couleurs
+- Sechage rapide (1 a 2 heures)
+
+**Inconvenients :**
+- Duree de vie limitee (1 a 3 ans)
+- Sensible a l'usure du trafic
+- Necessite un renouvellement regulier
+
+### 2. La resine epoxy
+
+La resine epoxy constitue une solution premium pour les environnements exigeants. Elle est particulierement adaptee aux entrepots et sites industriels.
+
+**Avantages :**
+- Excellente resistance mecanique
+- Duree de vie superieure (5 a 10 ans)
+- Resistance aux produits chimiques
+- Finition lisse et esthetique
+
+**Inconvenients :**
+- Cout plus eleve
+- Temps de sechage plus long
+- Application technique
+
+### 3. Le thermoplastique
+
+Le marquage thermoplastique represente la solution la plus durable. Il est ideal pour les zones a fort trafic.
+
+**Avantages :**
+- Duree de vie exceptionnelle (8 a 12 ans)
+- Haute visibilite
+- Resistance extreme au trafic
+- Possibilite d'integration de billes reflechissantes
+
+**Inconvenients :**
+- Investissement initial important
+- Necessite un equipement specifique
+- Application par des professionnels uniquement
+
+## Comment choisir ?
+
+Le choix depend de plusieurs criteres :
+
+1. **Le type d'environnement** : interieur ou exterieur
+2. **L'intensite du trafic** : leger, moyen ou intense
+3. **Le budget disponible** : court terme vs long terme
+4. **Les contraintes reglementaires** : normes PMR, securite
+
+## Notre recommandation
+
+Pour un parking d'entreprise standard, nous recommandons la peinture routiere avec un renouvellement tous les 2-3 ans. Pour un entrepot logistique avec circulation de chariots, la resine epoxy offre le meilleur compromis. Pour les voiries a fort trafic, le thermoplastique reste incontournable.
+
+Contactez notre entreprise de marquage au sol pour une etude personnalisee de votre projet.
+`,
+
+  'reglementation-parking-2025': `
+## La reglementation du marquage de parking en 2025
+
+La reglementation concernant le marquage des parkings d'entreprise a evolue ces dernieres annees. En 2025, plusieurs obligations s'appliquent aux gestionnaires de parkings professionnels.
+
+## Les dimensions reglementaires
+
+### Places de stationnement standard
+
+Les dimensions minimales d'une place de parking sont :
+- **Largeur** : 2,30 metres minimum (2,50 m recommande)
+- **Longueur** : 5,00 metres minimum
+- **Voie de circulation** : 5,00 metres pour manoeuvre
+
+### Places PMR (Personnes a Mobilite Reduite)
+
+Les places handicapees doivent respecter des dimensions specifiques :
+- **Largeur** : 3,30 metres minimum
+- **Longueur** : 5,00 metres minimum
+- **Bande d'acces laterale** : 0,80 metre minimum
+- **Signalisation verticale** : panneau + pictogramme au sol
+
+## Le nombre de places PMR obligatoires
+
+Selon l'arrete du 1er aout 2006 :
+- **Jusqu'a 500 places** : 2% du total (minimum 1 place)
+- **Au-dela de 500 places** : nombre fixe selon etude
+
+## Les couleurs reglementaires
+
+Le marquage au sol doit respecter un code couleur precis :
+- **Blanc** : lignes de stationnement standard
+- **Bleu** : places PMR
+- **Jaune** : zones d'interdiction de stationnement
+- **Vert** : places vehicules electriques
+
+## La signalisation obligatoire
+
+### Signalisation horizontale
+
+- Lignes de delimitation des places
+- Fleches de circulation
+- Pictogrammes PMR
+- Passages pietons
+
+### Signalisation verticale
+
+- Panneaux de stationnement
+- Panneaux PMR
+- Panneaux de limitation de vitesse
+- Miroirs de securite
+
+## Les sanctions en cas de non-conformite
+
+Le non-respect de la reglementation peut entrainer :
+- **Amende administrative** : jusqu'a 45 000 euros
+- **Fermeture de l'etablissement** : en cas de danger
+- **Responsabilite civile** : en cas d'accident
+
+## Notre accompagnement
+
+Notre entreprise de marquage au sol vous accompagne dans la mise en conformite de votre parking. Nous realisons un audit complet et vous proposons des solutions adaptees a votre budget.
+`,
+
+  'normes-securite-industriel': `
+## Les normes de securite pour le marquage industriel
+
+Le marquage au sol industriel repond a des normes strictes visant a garantir la securite des travailleurs. Ces normes sont definies par le Code du travail et diverses reglementations europeennes.
+
+## Le code couleur de securite
+
+### Couleurs normalisees (NF X 08-003)
+
+- **Jaune** : danger, attention, risque de chute ou collision
+- **Rouge** : interdiction, arret, equipements incendie
+- **Vert** : securite, issue de secours, premiers soins
+- **Bleu** : obligation, information
+- **Blanc/Noir** : circulation, stockage
+
+### Applications pratiques
+
+- **Bandes jaunes et noires** : zones de danger, obstacles
+- **Lignes vertes** : cheminements d'evacuation
+- **Zones rouges** : interdiction de passage ou stockage
+- **Bandes blanches** : voies de circulation
+
+## Les zones a delimiter
+
+### Zone de circulation des pietons
+
+- Largeur minimale : 0,80 metre
+- Couleur : blanc ou jaune
+- Separation nette des zones engins
+
+### Zone de circulation des engins
+
+- Largeur adaptee aux vehicules (minimum 3 metres)
+- Marquage des intersections
+- Limitation de vitesse au sol
+
+### Zones de stockage
+
+- Delimitation claire par couleur
+- Identification du type de marchandises
+- Hauteur maximale de stockage indiquee
+
+## L'eclairage et la visibilite
+
+Le marquage doit rester visible en toutes circonstances :
+- **Peinture retroreflechissante** pour les zones peu eclairees
+- **Bandes photoluminescentes** pour les issues de secours
+- **Renouvellement** des le premier signe d'usure
+
+## Le marquage antiderapant
+
+Pour les zones a risque de glissade :
+- Peinture chargee en agregats antiderapants
+- Coefficient de frottement minimum : 0,45
+- Application sur rampes et zones humides
+
+## Nos prestations de marquage industriel
+
+Notre entreprise de marquage au sol realise tous types de marquage industriel conformes aux normes en vigueur. Nous intervenons dans toute l'Ile-de-France pour securiser vos sites.
+`,
+
+  'prix-marquage-guide': `
+## Guide complet des prix du marquage au sol
+
+Le cout d'un projet de marquage au sol depend de nombreux facteurs. Ce guide vous aide a estimer votre budget et comprendre les elements de tarification.
+
+## Les facteurs qui influencent le prix
+
+### 1. Le type de marquage
+
+- **Peinture standard** : 3 a 8 euros/ml
+- **Peinture haute resistance** : 8 a 15 euros/ml
+- **Resine epoxy** : 15 a 30 euros/ml
+- **Thermoplastique** : 20 a 40 euros/ml
+
+### 2. La surface a traiter
+
+- **Petite surface** (< 100 m2) : tarif au forfait
+- **Surface moyenne** (100-500 m2) : tarif au metre lineaire
+- **Grande surface** (> 500 m2) : tarif degressif
+
+### 3. La complexite du projet
+
+- Travaux de nuit : +30% a +50%
+- Acces difficile : supplement selon conditions
+- Effacement de l'ancien marquage : 2 a 5 euros/ml
+
+## Exemples de tarifs
+
+### Parking de 50 places
+
+- Lignes de delimitation : 800 a 1 500 euros
+- Places PMR (2) : 200 a 400 euros
+- Fleches et pictogrammes : 300 a 600 euros
+- **Total estime** : 1 300 a 2 500 euros
+
+### Entrepot de 1 000 m2
+
+- Voies de circulation : 1 500 a 3 000 euros
+- Zones de stockage : 1 000 a 2 000 euros
+- Marquage securite : 500 a 1 000 euros
+- **Total estime** : 3 000 a 6 000 euros
+
+## Comment reduire les couts ?
+
+### Optimisation du projet
+
+1. **Grouper les travaux** avec d'autres entreprises du batiment
+2. **Choisir le bon moment** : eviter les periodes de pointe
+3. **Preparer le terrain** : nettoyage prealable
+
+### Le bon compromis qualite/prix
+
+- Peinture standard pour zones peu sollicitees
+- Resine pour zones a fort trafic
+- Thermoplastique uniquement si necessaire
+
+## Demandez votre devis gratuit
+
+Notre entreprise de marquage au sol vous propose un devis detaille gratuit sous 48h. Nos tarifs sont transparents et sans surprise.
+`,
+
+  'entretien-duree-vie': `
+## Entretien et duree de vie du marquage au sol
+
+Un marquage au sol bien entretenu conserve son efficacite et sa visibilite plus longtemps. Decouvrez nos conseils pour maximiser la duree de vie de votre investissement.
+
+## Duree de vie selon le type de marquage
+
+### Peinture routiere
+
+- **Interieur** : 2 a 4 ans
+- **Exterieur** : 1 a 3 ans
+- **Zone fort trafic** : 6 mois a 1 an
+
+### Resine epoxy
+
+- **Interieur** : 5 a 10 ans
+- **Exterieur** : 3 a 5 ans
+- **Avec traitement UV** : jusqu'a 7 ans en exterieur
+
+### Thermoplastique
+
+- **Voirie** : 8 a 12 ans
+- **Parking** : 10 a 15 ans
+- **Avec billes reflechissantes** : visibilite optimale 5-8 ans
+
+## Facteurs d'usure prematuree
+
+### Facteurs mecaniques
+
+- Trafic intense de vehicules lourds
+- Manoeuvres repetees (braquage)
+- Passage de chariots elevateurs
+
+### Facteurs climatiques
+
+- Exposition UV prolongee
+- Cycles gel/degel
+- Humidite permanente
+
+### Facteurs chimiques
+
+- Hydrocarbures (huile, essence)
+- Produits de nettoyage agressifs
+- Sel de deverglacage
+
+## Conseils d'entretien
+
+### Entretien regulier
+
+1. **Nettoyage mensuel** : balayage et lavage a l'eau
+2. **Inspection trimestrielle** : verification de l'usure
+3. **Retouches annuelles** : zones les plus sollicitees
+
+### Ce qu'il faut eviter
+
+- Nettoyeurs haute pression trop puissants
+- Produits chimiques corrosifs
+- Raclage mecanique
+
+## Quand refaire le marquage ?
+
+### Signes d'usure a surveiller
+
+- Decoloration superieure a 30%
+- Ecaillage ou decollement
+- Perte de visibilite nocturne
+- Non-conformite reglementaire
+
+### Notre service de maintenance
+
+Notre entreprise de marquage au sol propose des contrats d'entretien annuels incluant inspection et retouches. Prolongez la vie de votre marquage avec un suivi professionnel.
+`,
+
+  'places-pmr-obligations': `
+# Places PMR : obligations legales et normes d'accessibilite
+
+## Introduction : l'accessibilite, un droit fondamental pour tous
+
+L'accessibilite des personnes a mobilite reduite (PMR) represente bien plus qu'une simple obligation reglementaire : c'est un droit fondamental garantissant l'egalite des chances pour tous les citoyens. En France, plus de 12 millions de personnes sont concernees par un handicap, qu'il soit moteur, sensoriel ou cognitif. Parmi elles, environ 850 000 personnes utilisent quotidiennement un fauteuil roulant pour leurs deplacements.
+
+Le stationnement adapte constitue souvent le premier point de contact entre ces usagers et les etablissements publics ou prives. Une place PMR mal concue, insuffisamment dimensionnee ou mal signalee peut transformer un simple deplacement en veritable parcours du combattant. C'est pourquoi la legislation francaise a progressivement renforce les exigences en matiere d'accessibilite, imposant aux gestionnaires de parkings des obligations precises et contraignantes.
+
+Que vous soyez gestionnaire d'un etablissement recevant du public (ERP), proprietaire d'un parking d'entreprise ou syndic de copropriete, comprendre et appliquer ces obligations legales n'est pas seulement une question de conformite reglementaire. C'est aussi un engagement citoyen et une demarche d'inclusion sociale qui beneficie a l'ensemble de la societe.
+
+## Section 1 : Cadre legal de l'accessibilite PMR en France
+
+### La loi fondatrice du 11 fevrier 2005
+
+La loi n°2005-102 du 11 fevrier 2005 pour l'egalite des droits et des chances, la participation et la citoyennete des personnes handicapees constitue le texte fondateur de l'accessibilite en France. Cette loi revolutionnaire a pose le principe d'accessibilite universelle, imposant que tout etablissement recevant du public soit accessible aux personnes handicapees, quel que soit leur handicap.
+
+L'article 45 de cette loi stipule expressement que "les obligations de mise en accessibilite s'appliquent aux etablissements recevant du public, aux installations ouvertes au public et aux lieux de travail". Cette disposition englobe evidemment les parkings et aires de stationnement, qu'ils soient publics ou prives des lors qu'ils sont ouverts a une clientele ou des visiteurs exterieurs.
+
+La loi de 2005 a fixe initialement une echeance au 1er janvier 2015 pour la mise en conformite de tous les ERP existants. Face aux difficultes rencontrees par les gestionnaires, plusieurs reports ont ete accordes, mais l'obligation demeure pleinement applicable.
+
+### L'arrete du 1er aout 2006 : le texte technique de reference
+
+L'arrete du 1er aout 2006 fixant les dispositions prises pour l'application des articles R. 111-19 a R. 111-19-3 et R. 111-19-6 du code de la construction et de l'habitation constitue le texte technique precisant les modalites pratiques d'application de la loi de 2005. Ce texte, regulierement modifie, definit avec precision :
+
+- Le nombre minimal de places PMR a amenager selon la capacite totale du parking
+- Les dimensions exactes de ces places (largeur, longueur, pente maximale)
+- Les caracteristiques de la bande de circulation laterale permettant le transfert
+- Les specifications relatives a la signalisation horizontale et verticale
+- Les modalites de raccordement aux cheminements accessibles
+
+L'arrete prevoit notamment que le nombre de places adaptees doit representer au minimum 2% du nombre total de places, avec un arrondi a l'unite superieure. Ainsi, un parking de 60 places devra compter au minimum 2 places PMR (60 x 2% = 1,2 arrondi a 2).
+
+### Application aux ERP et parkings prives
+
+La reglementation distingue plusieurs categories d'etablissements :
+
+**Les etablissements recevant du public (ERP)** sont classes en 5 categories selon leur capacite d'accueil. Tous sont soumis aux obligations d'accessibilite, y compris leurs parkings associes. Sont notamment concernes :
+- Les commerces et centres commerciaux
+- Les bureaux accessibles au public
+- Les etablissements de sante
+- Les batiments administratifs
+- Les hotels et restaurants
+- Les salles de spectacle et equipements sportifs
+
+**Les parkings prives ouverts au public** sont egalement concernes des lors qu'ils accueillent une clientele exterieure, meme si l'etablissement principal n'est pas un ERP au sens strict. Un parking d'entreprise reserve aux salaries n'est en revanche pas soumis a ces obligations, sauf s'il accueille regulierement des visiteurs.
+
+**Les coproprietes** avec parking collectif doivent egalement prevoir des places adaptees, selon des modalites definies par l'arrete du 24 decembre 2015. Au moins 5% des places doivent etre adaptees ou facilement adaptables aux personnes handicapees.
+
+### Evolution reglementaire recente
+
+La reglementation en matiere d'accessibilite a connu plusieurs evolutions importantes ces dernieres annees :
+
+**L'ordonnance du 26 septembre 2014** a cree les Agendas d'Accessibilite Programmee (Ad'AP), permettant aux gestionnaires d'ERP de poursuivre leurs travaux de mise en conformite au-dela de l'echeance initiale de 2015, selon un calendrier approuve par l'administration.
+
+**L'arrete du 8 decembre 2014** a assoupli certaines dispositions pour les ERP existants, notamment en matiere de devers et de pentes, tout en maintenant les exigences pour les constructions neuves.
+
+**Le decret du 17 mai 2019** a renforce les sanctions applicables en cas de non-respect des obligations d'accessibilite, avec des amendes pouvant atteindre 45 000 euros pour les personnes morales.
+
+Ces evolutions temoignent de la volonte du legislateur de maintenir un equilibre entre exigence d'accessibilite et faisabilite pratique, tout en garantissant une amelioration progressive et effective de l'accessibilite du cadre bati.
+
+## Section 2 : Nombre de places PMR obligatoires - calcul et repartition
+
+### La regle des 2% minimum avec arrondi superieur
+
+La regle de base fixee par l'arrete du 1er aout 2006 est simple dans son principe : tout parking doit comporter au minimum 2% de places adaptees aux personnes handicapees. Cette proportion s'applique au nombre total de places du parking, qu'elles soient couvertes ou en plein air, payantes ou gratuites.
+
+Le calcul s'effectue selon la formule suivante : **Nombre de places PMR = (Nombre total de places x 2%) arrondi a l'unite superieure**
+
+Cette regle de l'arrondi a l'unite superieure est fondamentale et obligatoire. Elle signifie qu'un parking de 30 places devra comporter 1 place PMR (30 x 2% = 0,6 arrondi a 1), tandis qu'un parking de 60 places en necessitera 2 (60 x 2% = 1,2 arrondi a 2).
+
+**Exemples pratiques de calcul :**
+- Parking de 25 places : 1 place PMR (25 x 0,02 = 0,5 → 1)
+- Parking de 75 places : 2 places PMR (75 x 0,02 = 1,5 → 2)
+- Parking de 100 places : 2 places PMR (100 x 0,02 = 2)
+- Parking de 150 places : 3 places PMR (150 x 0,02 = 3)
+- Parking de 200 places : 4 places PMR (200 x 0,02 = 4)
+
+### Cas particuliers des parkings de plus de 500 places
+
+Pour les parkings d'une capacite superieure a 500 places, la reglementation prevoit des dispositions specifiques. La regle des 2% continue de s'appliquer pour les 500 premieres places, soit un minimum de 10 places PMR. Au-dela, le nombre de places supplementaires est determine au cas par cas, en fonction de plusieurs criteres :
+
+- La destination du parking (usage public, commercial, professionnel)
+- La proximite d'etablissements specialises accueillant des personnes handicapees
+- Les caracteristiques du bassin de population desservi
+- La presence d'autres parkings accessibles a proximite
+
+Dans la pratique, la plupart des gestionnaires continuent d'appliquer le ratio de 2% sur l'ensemble de la capacite, ce qui constitue une approche securisante sur le plan juridique et conforme a l'esprit de la loi.
+
+### Distinction entre parkings existants et neufs
+
+La reglementation etablit une distinction importante entre les parkings neufs (construits apres le 1er janvier 2007) et les parkings existants (anterieurs a cette date) :
+
+**Pour les parkings neufs**, les exigences sont maximales :
+- Application stricte de la regle des 2% minimum
+- Respect integral de toutes les normes dimensionnelles
+- Aucune tolerance sur les pentes et devers
+- Obligation de raccordement direct a un cheminement accessible
+
+**Pour les parkings existants**, certains assouplissements sont prevus :
+- Possibilite de justifier de contraintes techniques insurmontables pour reduire le nombre de places adaptees, sous reserve de l'accord de la commission de securite
+- Tolerances sur certaines dimensions en cas d'impossibilite technique averee
+- Possibilite de regrouper les places adaptees dans une zone specifique du parking
+
+Toutefois, ces assouplissements ne dispensent pas du respect du principe d'accessibilite. Ils doivent etre justifies par une etude technique serieuse et ne peuvent etre invoques par simple commodite economique. Un gestionnaire invoquant des contraintes techniques devra en apporter la preuve materielle et proposer des solutions compensatoires.
+
+### Repartition et localisation strategique
+
+Au-dela du nombre, la localisation des places PMR est essentielle. L'arrete du 1er aout 2006 impose que ces places soient situees "a proximite de l'entree du batiment ou de l'ascenseur" et raccordees a un cheminement accessible.
+
+**Criteres de positionnement optimal :**
+- Distance minimale par rapport a l'entree accessible de l'etablissement (idealement moins de 30 metres)
+- Absence d'obstacles ou de ressauts sur le cheminement entre la place et l'entree
+- Protection contre les intemperies si possible (preferablement sous abri)
+- Visibilite depuis la voie de circulation pour faciliter leur reperage
+- Proximite d'un passage pieton protege si la place donne sur une voie de circulation
+
+Dans un parking a plusieurs niveaux, il est recommande de repartir les places PMR sur les niveaux les plus proches de l'entree ou de l'ascenseur, plutot que de les concentrer sur un seul niveau.
+
+## Section 3 : Dimensions et amenagements techniques obligatoires
+
+### Largeur minimale de 3,30 metres
+
+La largeur reglementaire d'une place PMR est fixee a 3,30 metres minimum, contre 2,30 metres pour une place standard. Cette largeur supplementaire de 1 metre est indispensable pour permettre l'ouverture complete des portieres et le deploiement d'un fauteuil roulant.
+
+Cette dimension de 3,30 metres doit etre respectee sur toute la longueur de la place. Elle s'entend "dans œuvre", c'est-a-dire entre les marquages ou entre un marquage et un obstacle (mur, poteau, bordure). Il ne s'agit donc pas d'une largeur moyenne, mais d'une largeur minimale constante.
+
+**Erreurs frequentes a eviter :**
+- Mesurer la largeur au centre mais negliger les extremites (poteaux, angles de murs)
+- Inclure la largeur du marquage lui-meme dans la mesure
+- Creer une place en "trapeze" ou la largeur varie
+- Positionner la place dans un angle ou les murs reduisent l'espace utilisable
+
+En pratique, il est recommande de prevoir 3,50 metres de largeur pour s'assurer du respect de la norme meme en cas d'imprécision dans l'execution du marquage.
+
+### Longueur standard de 5 metres
+
+La longueur minimale d'une place PMR est fixee a 5 metres, soit la meme dimension qu'une place standard. Cette longueur permet d'accueillir la plupart des vehicules, y compris les vehicules adaptes qui peuvent etre legerement plus longs en raison de leurs amenagements specifiques.
+
+Comme pour la largeur, cette dimension s'entend dans œuvre, c'est-a-dire entre les marquages ou obstacles. Elle doit etre effective sur toute la largeur de la place.
+
+Pour les places en epi ou perpendiculaires, il faut veiller a ce que la longueur de 5 metres ne soit pas reduite par la presence d'un mur de fond, d'une bordure ou d'un autre obstacle. Un espace de debattement doit egalement etre preserve a l'avant de la place pour permettre les manœuvres.
+
+### Bande de transfert laterale de 0,80 metre
+
+La bande de transfert constitue l'element le plus specifique d'une place PMR. Il s'agit d'une bande laterale de 0,80 metre minimum, positionnee sur toute la longueur de la place, permettant a une personne en fauteuil roulant de sortir de son vehicule.
+
+**Caracteristiques obligatoires de la bande de transfert :**
+
+**Largeur :** 0,80 metre au minimum absolu, 1 metre recommande pour plus de confort
+**Longueur :** toute la longueur de la place, soit 5 metres
+**Surface :** plate, stable, non meuble et antiderapante
+**Pente :** identique a celle de la place elle-meme (2% maximum)
+**Devers :** 1% maximum
+**Raccordement :** la bande doit etre raccordee sans ressaut au cheminement accessible
+
+La bande de transfert peut etre :
+- **Laterale exclusive** : reservee a une seule place PMR (cas le plus frequent)
+- **Partagee** : commune a deux places PMR adjacentes (solution optimisant l'espace)
+
+Dans le cas d'une bande partagee entre deux places PMR, sa largeur totale doit etre d'au moins 1,60 metre (0,80 m x 2). Cette solution permet de gagner de l'space mais impose que les deux places PMR soient toujours cote a cote.
+
+**Marquage de la bande de transfert :** La bande doit etre clairement identifiee par un marquage au sol, generalement constitue de bandes obliques bleues et blanches, signalant qu'il s'agit d'une zone de transfert a ne pas encombrer. Le stationnement ou meme l'arret momentane sur cette bande est strictement interdit.
+
+### Pente maximale de 2% et devers de 1%
+
+Les contraintes de pente et de devers sont essentielles pour la securite et le confort des personnes a mobilite reduite :
+
+**La pente longitudinale** (dans le sens de la longueur de la place) ne doit pas exceder 2%. Au-dela, le vehicule risque de rouler et le deploiement du fauteuil devient dangereux. Pour memoire, une pente de 2% correspond a une denivellation de 2 centimetres par metre lineaire.
+
+**Le devers** (pente laterale, perpendiculaire a la place) doit etre inferieur ou egal a 1%. Un devers excessif complique le transfert du fauteuil et peut provoquer son glissement lateral.
+
+**Outils de verification :**
+- Niveau a bulle digital permettant une mesure precise
+- Regle de maçon de 2 metres minimum
+- Application smartphone calibree (precision variable)
+
+Pour les parkings en rampe, il est fortement deconseille de positionner les places PMR directement sur la rampe. Si cela est inevitable en raison de contraintes techniques, un palier plat doit imperativement etre amenage.
+
+### Revetement de sol et qualite de surface
+
+Le revetement de la place PMR et de sa bande de transfert doit presenter certaines caracteristiques :
+
+- **Fermete :** support stable sans deformation sous le poids
+- **Caractere non meuble :** pas de gravier, sable ou materiau instable
+- **Adherence :** coefficient de frottement suffisant meme par temps humide
+- **Planitude :** absence de trous, deformations ou ressauts de plus de 2 cm
+
+Le bitume lisse, le beton ou les revetements resines sont des solutions adaptees. Les paves auto-bloquants peuvent convenir s'ils sont parfaitement stabilises et joints.
+
+## Section 4 : Signalisation obligatoire des places PMR
+
+### Marquage au sol : pictogramme et couleur bleue
+
+Le marquage au sol des places PMR repond a des normes precises visant a assurer leur identification immediate par tous les usagers.
+
+**Le pictogramme normalise :** Il represente une personne en fauteuil roulant de profil, dans un carre blanc sur fond bleu. Ce symbole universel est defini par la norme ISO 7001. Ses dimensions minimales sont de 0,50 metre x 0,60 metre pour une visibilite optimale.
+
+**Positionnement du pictogramme :** Il doit etre appose au centre de la place, clairement visible meme lorsqu'un vehicule est stationne. Certains gestionnaires choisissent de le placer a l'avant de la place pour une meilleure visibilite, ce qui est egalement accepte.
+
+**La couleur bleue reglementaire :** L'ensemble de la place doit etre delimitee par un marquage bleu. Cette couleur, codifiee (reference RAL 5017 ou equivalent), est reservee exclusivement aux places PMR. Le marquage comprend :
+- Le contour de la place en traits bleus larges (10 a 15 cm)
+- Le remplissage de la bande de transfert en hachures bleues et blanches
+- Le pictogramme handicape en blanc sur fond bleu
+
+**Materiaux de marquage recommandes :**
+- Peinture routiere speciale bleue, resistant au trafic
+- Resine thermoplastique pour une durabilite maximale (8 a 10 ans)
+- Enduit a froid pour les renovations
+
+La qualite du marquage est essentielle : un marquage efface ou peu visible reduit considerablement l'efficacite de la place PMR et expose le gestionnaire a des reclamations.
+
+### Panneau vertical B6d : hauteur et positionnement
+
+Le panneau vertical B6d est obligatoire pour signaler une place PMR. Il s'agit d'un panneau carre a fond bleu portant le pictogramme blanc de la personne handicapee, identique au marquage au sol.
+
+**Caracteristiques reglementaires du panneau B6d :**
+- Format : carre de 35 cm x 35 cm minimum (ou format rond de 35 cm de diametre)
+- Couleur : fond bleu RAL 5017, pictogramme blanc
+- Materiau : aluminium, PVC rigide ou materiau retroreflechissant
+- Fixation : potelet, mat ou fixation murale selon configuration
+
+**Hauteur d'installation :** Le panneau doit etre installe a une hauteur comprise entre 2,00 et 2,20 metres depuis le sol jusqu'au bord inferieur du panneau. Cette hauteur assure :
+- Une visibilite a distance pour les conducteurs approchant
+- Une protection contre le vandalisme
+- Une non-obstruction par les vehicules stationnes
+
+**Positionnement :** Le panneau doit etre place :
+- A l'avant ou sur le cote de la place PMR
+- Visible depuis la voie de circulation principale
+- Si possible en retrait pour eviter les chocs de vehicules
+
+Dans un parking avec plusieurs places PMR, chaque place doit disposer de son propre panneau ou, a defaut, un panneau general doit indiquer clairement le nombre de places concernees avec une fleche directionnelle.
+
+### Mention GIG-GIC et informations complementaires
+
+Depuis l'arrete du 3 decembre 2018, une mention supplementaire peut etre apposee sur le panneau B6d pour preciser les conditions d'utilisation de la place PMR.
+
+**La mention "GIG-GIC" :**
+Ces sigles designent respectivement la Carte Grand Invalide de Guerre et la Carte Grand Invalide Civil (desormais remplacees par la Carte Mobilite Inclusion avec mention "Stationnement"). Cette mention rappelle que seuls les titulaires de ces cartes sont autorises a stationner sur la place.
+
+**Formulation type :** "Reserve aux titulaires de la carte mobilite inclusion mention stationnement ou carte de stationnement pour personnes handicapees"
+
+**Sanctions pour stationnement abusif :** Le panneau peut egalement mentionner le montant de l'amende encourue en cas de stationnement non autorise, soit 135 euros (amende de 4eme classe) et un risque de mise en fourriere du vehicule.
+
+**Informations complementaires facultatives :**
+- Numero de telephone pour signaler un stationnement abusif
+- Mention du reglement interieur du parking
+- Horaires d'application si la reservation n'est pas permanente
+
+### Signalisation directionnelle dans les parkings complexes
+
+Dans les parkings de grande taille ou a etages multiples, une signalisation directionnelle complete est indispensable pour guider les usagers vers les places PMR.
+
+**Elements de signalisation directionnelle :**
+- **Fleches au sol** indiquant la direction des places PMR des l'entree du parking
+- **Panneaux directionnels** a chaque intersection ou changement de niveau
+- **Mention du nombre de places disponibles** a l'entree de chaque zone
+- **Pictogrammes de grande taille** sur les murs aux emplacements strategiques
+
+Cette signalisation doit former un parcours logique et continu depuis l'entree du parking jusqu'aux places PMR, sans ambiguite ni interruption.
+
+## Section 5 : Sanctions en cas de non-conformite
+
+### Amendes administratives encourues
+
+Le non-respect des obligations en matiere d'accessibilite PMR expose les gestionnaires d'etablissements et de parkings a des sanctions administratives et penales significatives.
+
+**Sanctions pour les gestionnaires d'ERP :**
+
+L'article L. 111-8-3-1 du Code de la construction et de l'habitation prevoit une amende administrative dont le montant varie selon la gravite des manquements :
+- **Personne physique :** jusqu'a 1 500 euros par infraction constatee
+- **Personne morale :** jusqu'a 5 000 euros par infraction constatee
+
+En cas de recidive dans un delai de trois ans, ces montants sont doubles :
+- **Personne physique :** jusqu'a 3 000 euros
+- **Personne morale :** jusqu'a 10 000 euros
+
+L'article L. 152-4 du Code de la construction prevoit en outre des sanctions penales pouvant atteindre 45 000 euros d'amende pour les personnes morales en cas de non-respect caracterise des obligations d'accessibilite.
+
+**Nature des infractions sanctionnables :**
+- Nombre de places PMR insuffisant
+- Dimensions non conformes (largeur, longueur, bande de transfert)
+- Absence ou insuffisance de signalisation
+- Places PMR non raccordees a un cheminement accessible
+- Pente ou devers excedant les normes
+- Places PMR utilisees a d'autres fins (stockage, vehicules de service)
+
+Les sanctions sont appliquees par l'autorite administrative apres constatation de l'infraction par un organisme agree ou les services de l'Etat.
+
+### Fermeture administrative de l'etablissement
+
+Dans les cas les plus graves, notamment lorsque les manquements a l'accessibilite constituent un danger pour le public ou revelent une volonte deliberee de contourner la reglementation, l'autorite administrative peut prononcer une fermeture temporaire ou definitive de l'etablissement.
+
+**Procedure de fermeture :**
+
+1. **Mise en demeure :** L'autorite administrative adresse d'abord une mise en demeure au gestionnaire de se mettre en conformite dans un delai determine (generalement 3 a 6 mois selon l'ampleur des travaux).
+
+2. **Constatation du manquement persistant :** A l'issue du delai, un controle est effectue. Si les manquements persistent, une procedure contradictoire est engagee.
+
+3. **Decision de fermeture :** Le prefet peut ordonner la fermeture de tout ou partie de l'etablissement jusqu'a mise en conformite complete.
+
+Cette mesure extreme reste rare mais constitue une menace serieuse pour les etablissements recalcitrants. Elle entraine evidemment des consequences economiques majeures pour le gestionnaire.
+
+### Responsabilite civile en cas d'accident
+
+Au-dela des sanctions administratives et penales, le gestionnaire d'un parking non conforme engage sa responsabilite civile en cas d'accident impliquant une personne handicapee.
+
+**Fondements de la responsabilite civile :**
+
+Si une personne a mobilite reduite est victime d'un accident dans un parking non conforme (chute lors du transfert sur une place trop etroite, accident sur un cheminement inadapte), le gestionnaire peut etre tenu pour responsable sur le fondement :
+- De l'article 1240 du Code civil (responsabilite pour faute)
+- De l'article 1242 du Code civil (responsabilite du fait des choses)
+- De l'obligation de securite incombant au gardien de l'etablissement
+
+**Consequences financieres :**
+- Indemnisation des prejudices corporels (souvent tres eleves)
+- Indemnisation du prejudice moral
+- Prise en charge des frais de soins et d'adaptation
+- En cas de faute grave, l'assurance peut refuser sa garantie
+
+**Jurisprudence notable :** La jurisprudence tend a retenir la responsabilite des gestionnaires des lors que le manquement aux normes d'accessibilite a contribue a la realisation du dommage, meme partiellement.
+
+### Delais de mise en conformite et tolerance administrative
+
+Pour les parkings existants, des delais de mise en conformite ont ete accordes dans le cadre des Agendas d'Accessibilite Programmee (Ad'AP).
+
+**Le dispositif Ad'AP :** Institue par l'ordonnance du 26 septembre 2014, il permettait aux gestionnaires d'etablissements non conformes de poursuivre ou d'entreprendre leurs travaux de mise en accessibilite selon un calendrier echelonne, sous reserve de depot et d'approbation d'un dossier avant le 27 septembre 2015.
+
+**Situation actuelle :** Les Ad'AP arrives a echeance, les etablissements doivent desormais etre conformes. Tout manquement constate peut donc faire l'objet de sanctions immediates.
+
+**Cas particuliers et derogations :** Des derogations peuvent etre accordees en cas d'impossibilite technique averee, de contraintes liees a la preservation du patrimoine ou de disproportion manifeste entre l'amelioration apportee et ses consequences. Ces derogations doivent etre sollicitees aupres de la commission consultative departementale de securite et d'accessibilite et sont strictement encadrees.
+
+## Conclusion : vers une accessibilite universelle
+
+Les obligations legales relatives aux places PMR s'inscrivent dans une demarche globale d'accessibilite universelle visant a garantir l'autonomie et l'inclusion de tous les citoyens, quelles que soient leurs capacites physiques ou sensorielles.
+
+Au-dela de la simple conformite reglementaire, l'amenagement de places PMR conformes temoigne d'un engagement societal fort en faveur de l'egalite des chances. Chaque place correctement realisee, chaque marquage lisible, chaque signalisation adequate contribue a faciliter le quotidien de centaines de milliers de personnes en France.
+
+Les gestionnaires d'etablissements et de parkings ont donc une responsabilite importante. S'ils peuvent parfois percevoir ces obligations comme des contraintes, il convient de les considerer comme des opportunites : opportunite d'accueillir une clientele plus large, opportunite de valoriser leur image citoyenne, opportunite de participer a une societe plus inclusive.
+
+La reglementation, bien que technique et parfois complexe, est desormais bien etablie et stabilisee. Les outils et competences pour la mettre en œuvre existent. Les entreprises specialisees en marquage au sol, comme la notre, disposent de l'expertise necessaire pour vous accompagner dans vos projets de mise en conformite ou de creation de parkings neufs.
+
+N'attendez pas une mise en demeure ou une sanction pour agir. Un audit de vos installations existantes, suivi d'un plan de mise en conformite progressive si necessaire, constitue la meilleure approche. Non seulement vous vous mettrez a l'abri des sanctions, mais vous contribuerez surtout a rendre notre environnement quotidien plus accessible et plus equitable.
+
+**Notre entreprise de marquage au sol se tient a votre disposition pour :**
+- Auditer vos installations existantes et identifier les non-conformites
+- Concevoir un plan de marquage conforme aux normes en vigueur
+- Realiser les travaux de marquage et de signalisation
+- Vous conseiller sur les meilleures solutions techniques et economiques
+
+Ensemble, œuvrons pour une accessibilite effective et de qualite, au service de tous.
+`,
+
+  'marquage-entrepot-bonnes-pratiques': `
+## Marquage d'entrepot logistique : guide des bonnes pratiques
+
+Un entrepot bien organise grace au marquage au sol optimise les flux, reduit les accidents et ameliore la productivite. Decouvrez les bonnes pratiques pour votre site logistique.
+
+## Les objectifs du marquage logistique
+
+### Securite
+
+- Separation pietons/engins
+- Identification des zones dangereuses
+- Marquage des issues de secours
+
+### Organisation
+
+- Definition des zones de stockage
+- Optimisation des flux de circulation
+- Identification des emplacements
+
+### Productivite
+
+- Reduction des temps de deplacement
+- Facilitation du picking
+- Gestion visuelle des stocks
+
+## Les zones a delimiter
+
+### Voies de circulation
+
+- **Voies principales** : 4 a 6 metres de large
+- **Voies secondaires** : 3 a 4 metres
+- **Couleur** : blanc ou jaune
+
+### Zones de stockage
+
+- **Rack** : delimitation au sol sous chaque travee
+- **Zone de masse** : perimetres clairement definis
+- **Identification** : codes alphanumeriques
+
+### Zones fonctionnelles
+
+- **Reception** : zone de dechargement
+- **Expedition** : zone de chargement
+- **Quarantaine** : produits en attente
+- **Preparation** : zones de picking
+
+## Le code couleur recommande
+
+### Standard logistique
+
+- **Blanc** : voies de circulation generales
+- **Jaune** : zones de danger, obstacles
+- **Bleu** : zones de travail, postes fixes
+- **Vert** : zones de stockage, produits conformes
+- **Rouge** : zones interdites, quarantaine
+- **Orange** : zones de transit, temporaire
+
+## Le marquage des quais
+
+### Elements essentiels
+
+- Numero de quai visible (sol + mur)
+- Delimitation de la zone de manoeuvre
+- Zone de securite (bandes jaune/noir)
+- Butoirs de quai
+
+### Dimensions
+
+- Zone de manoeuvre : 12 metres minimum
+- Largeur de quai : 3,50 metres standard
+- Zone de securite : 1 metre autour
+
+## Les solutions de marquage
+
+### Peinture au sol
+
+- Economique et rapide
+- Duree de vie : 2-4 ans
+- Ideal pour les zones peu sollicitees
+
+### Resine epoxy
+
+- Haute resistance mecanique
+- Duree de vie : 5-10 ans
+- Recommandee pour les voies principales
+
+### Marquage adhesif
+
+- Installation sans immobilisation
+- Remplacement facile
+- Ideal pour les configurations evolutives
+
+## Notre methode d'intervention
+
+Notre entreprise de marquage au sol realise l'etude, le plan de marquage et l'execution dans le respect de vos contraintes operationnelles. Nous intervenons de nuit ou le week-end pour minimiser l'impact sur votre activite.
+`,
+
+  'signalisation-horizontale-verticale': `
+## Signalisation horizontale vs verticale : guide comparatif
+
+La signalisation routiere et industrielle se divise en deux categories : horizontale (au sol) et verticale (panneaux). Comprendre leurs differences permet d'optimiser la securite de vos espaces.
+
+## La signalisation horizontale
+
+### Definition
+
+La signalisation horizontale designe l'ensemble des marques appliquees sur la chaussee ou le sol : lignes, pictogrammes, fleches, symboles.
+
+### Types de marquage
+
+- **Lignes continues** : interdiction de franchissement
+- **Lignes discontinues** : franchissement autorise
+- **Fleches directionnelles** : indication de direction
+- **Pictogrammes** : velo, PMR, STOP
+- **Zebras** : zones neutralisees
+
+### Avantages
+
+- Visibilite directe dans le champ de vision
+- Guidage naturel des usagers
+- Information continue sur le parcours
+- Cout d'installation modere
+
+### Limites
+
+- Usure avec le temps et le trafic
+- Visibilite reduite par mauvais temps
+- Entretien regulier necessaire
+
+## La signalisation verticale
+
+### Definition
+
+La signalisation verticale comprend tous les panneaux, totems et elements dresses perpendiculairement a la voie.
+
+### Categories de panneaux
+
+- **Danger** : triangle rouge
+- **Interdiction** : rond rouge
+- **Obligation** : rond bleu
+- **Indication** : carre bleu/vert
+- **Direction** : fleche avec destination
+
+### Avantages
+
+- Visibilite a distance
+- Resistance aux intemperies
+- Information anticipee
+- Duree de vie elevee
+
+### Limites
+
+- Cout d'installation plus eleve
+- Risque d'obstacle en cas de choc
+- Peut etre masque par vegetation ou vehicules
+
+## La complementarite des deux systemes
+
+### Principe de redondance
+
+Une signalisation efficace combine les deux approches :
+- Le panneau annonce a distance
+- Le marquage confirme au moment du passage
+
+### Exemples de combinaisons
+
+| Situation | Vertical | Horizontal |
+|-----------|----------|------------|
+| STOP | Panneau octogonal | Ligne + texte STOP |
+| Passage pieton | Panneau A13b | Bandes zebrees |
+| Place PMR | Panneau B6d | Pictogramme bleu |
+| Limitation vitesse | Panneau B14 | Chiffre au sol |
+
+## Recommandations selon le contexte
+
+### Parking d'entreprise
+
+- Priorite au marquage horizontal
+- Panneaux aux entrees/sorties
+- Miroirs dans les angles morts
+
+### Site industriel
+
+- Marquage au sol intensif
+- Panneaux d'obligation/interdiction
+- Signalisation lumineuse si necessaire
+
+### Voirie publique
+
+- Reglementation stricte
+- Combinaison systematique
+- Homologation des produits
+
+## Notre expertise en signalisation
+
+Notre entreprise de marquage au sol maitrise les deux types de signalisation. Nous concevons des plans de signalisation complets et coherents pour tous vos espaces.
+`,
+
+  'marquage-exterieur-materiaux': `
+## Marquage exterieur : quels materiaux resistants choisir ?
+
+Le marquage au sol exterieur est soumis a des contraintes specifiques : UV, intemperies, variations de temperature. Le choix du bon materiau est crucial pour la durabilite de votre investissement.
+
+## Les contraintes du marquage exterieur
+
+### Agressions climatiques
+
+- **UV** : decoloration, degradation des liants
+- **Pluie** : infiltration, decollement
+- **Gel** : eclatement, fissuration
+- **Chaleur** : ramollissement, fluage
+
+### Contraintes mecaniques
+
+- Trafic vehicules legers et lourds
+- Manoeuvres de braquage
+- Passage de pietons
+- Stationnement prolonge
+
+## Les materiaux adaptes a l'exterieur
+
+### Peinture routiere acrylique
+
+**Caracteristiques :**
+- Base eau, sechage rapide
+- Bonne tenue aux UV
+- Duree de vie : 1-2 ans
+
+**Applications :**
+- Parkings a faible trafic
+- Marquages temporaires
+- Budget limite
+
+### Peinture polyurethane
+
+**Caracteristiques :**
+- Excellente resistance chimique
+- Tenue UV superieure
+- Duree de vie : 2-4 ans
+
+**Applications :**
+- Parkings a trafic moyen
+- Zones de service
+- Voies de circulation
+
+### Resine methacrylate (MMA)
+
+**Caracteristiques :**
+- Sechage ultra-rapide (30 min)
+- Tres haute resistance mecanique
+- Duree de vie : 5-8 ans
+
+**Applications :**
+- Voiries a fort trafic
+- Pistes cyclables
+- Zones industrielles exterieures
+
+### Thermoplastique
+
+**Caracteristiques :**
+- Application a chaud (180-220°C)
+- Resistance extreme a l'usure
+- Duree de vie : 8-12 ans
+
+**Applications :**
+- Routes et autoroutes
+- Parkings grande surface
+- Zones de fort trafic
+
+## Tableau comparatif
+
+| Materiau | Duree vie | Resistance UV | Prix/ml | Sechage |
+|----------|-----------|---------------|---------|---------|
+| Acrylique | 1-2 ans | Moyenne | 3-6€ | 1h |
+| Polyurethane | 2-4 ans | Bonne | 6-12€ | 2-4h |
+| MMA | 5-8 ans | Excellente | 12-20€ | 30min |
+| Thermoplastique | 8-12 ans | Excellente | 20-40€ | 5min |
+
+## Nos recommandations par usage
+
+### Parking visiteurs/clients
+
+- **Recommandation** : Polyurethane ou MMA
+- **Raison** : bon compromis cout/duree
+
+### Parking poids lourds
+
+- **Recommandation** : Thermoplastique
+- **Raison** : resistance maximale aux contraintes
+
+### Voies de circulation externe
+
+- **Recommandation** : MMA ou thermoplastique
+- **Raison** : trafic continu, securite
+
+## L'importance de la preparation
+
+Quel que soit le materiau, la preparation du support est essentielle :
+- Nettoyage haute pression
+- Sechage complet (hygrometrie < 8%)
+- Primaire d'accrochage si necessaire
+- Temperature d'application respectee
+
+Notre entreprise de marquage au sol utilise exclusivement des materiaux certifies et adaptes a chaque projet exterieur.
+`,
+
+  'cas-client-parking': `
+## Cas client : transformation complete d'un parking de 200 places
+
+Decouvrez comment notre entreprise de marquage au sol a transforme le parking d'une entreprise en Ile-de-France. Un projet complet realise en 3 jours avec une satisfaction client maximale.
+
+## Le contexte du projet
+
+### L'entreprise cliente
+
+- **Secteur** : Tertiaire (bureaux)
+- **Localisation** : Boulogne-Billancourt (92)
+- **Surface** : 4 500 m2
+- **Capacite** : 200 places de stationnement
+
+### La problematique
+
+Le parking existant presentait plusieurs defauts :
+- Marquage use et peu visible
+- Places non conformes aux normes PMR
+- Absence de signalisation de securite
+- Circulation confuse
+
+### Les objectifs
+
+1. Mise en conformite reglementaire
+2. Optimisation du nombre de places
+3. Amelioration de la circulation
+4. Securisation des acces pietons
+
+## Notre intervention
+
+### Phase 1 : Audit et conception
+
+- Releve des existants
+- Etude de la reglementation applicable
+- Proposition de plan optimise
+- Validation avec le client
+
+### Phase 2 : Preparation
+
+- Nettoyage haute pression
+- Effacement de l'ancien marquage
+- Traitement des fissures
+- Sechage 24h
+
+### Phase 3 : Realisation
+
+- Piquetage et tracage
+- Application peinture polyurethane
+- Marquage places PMR
+- Installation signalisation verticale
+
+## Les resultats obtenus
+
+### Avant / Apres
+
+| Critere | Avant | Apres |
+|---------|-------|-------|
+| Places standard | 185 | 192 |
+| Places PMR | 2 | 5 |
+| Voies pietonnes | 0 | 2 |
+| Signalisation | Partielle | Complete |
+
+### Gains constates
+
+- **+7 places** de stationnement
+- **Conformite PMR** respectee
+- **Zero accident** depuis la realisation
+- **Satisfaction** employes et visiteurs
+
+## Temoignage client
+
+> "L'equipe a ete professionnelle et reactive. Le planning a ete respecte et le resultat depasse nos attentes. Notre parking est transforme !"
+>
+> *- Responsable Services Generaux*
+
+## Details techniques
+
+### Materiaux utilises
+
+- Peinture polyurethane blanche (lignes)
+- Peinture bleue PMR (places handicapees)
+- Peinture jaune (zones interdites)
+- Thermoplastique (fleches directionnelles)
+
+### Delais d'execution
+
+- Preparation : 1 jour
+- Marquage : 2 jours
+- Signalisation : 0.5 jour
+- **Total** : 3.5 jours
+
+### Budget
+
+- Etude et conception : inclus
+- Preparation support : 1 200€
+- Marquage au sol : 8 500€
+- Signalisation verticale : 1 800€
+- **Total HT** : 11 500€
+
+## Votre projet nous interesse
+
+Vous souhaitez transformer votre parking ? Notre entreprise de marquage au sol realise une etude gratuite et vous propose un devis personnalise sous 48h.
+`
+};

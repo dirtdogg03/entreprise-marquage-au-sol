@@ -27,7 +27,7 @@ export function generateLocalBusinessSchema() {
     '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/#organization`,
     name: COMPANY_NAME,
-    description: 'Entreprise specialisee dans le marquage au sol et la signalisation en Ile-de-France. Parking, entrepot, industriel, PMR.',
+    description: 'Entreprise spécialisée dans le marquage au sol et la signalisation en Île-de-France. Parking, entrepôt, industriel, PMR.',
     url: SITE_URL,
     telephone: COMPANY_PHONE,
     email: COMPANY_EMAIL,
@@ -42,7 +42,7 @@ export function generateLocalBusinessSchema() {
     },
     areaServed: {
       '@type': 'State',
-      name: 'Ile-de-France',
+      name: 'Île-de-France',
       containedIn: {
         '@type': 'Country',
         name: 'France'
@@ -80,7 +80,7 @@ export function generateLocalBusinessSchema() {
           '@type': 'Person',
           name: 'Jean-Pierre M.'
         },
-        reviewBody: 'Excellent travail de marquage sur notre parking d\'entreprise. Equipe professionnelle et rapide.',
+        reviewBody: 'Excellent travail de marquage sur notre parking d\'entreprise. Équipe professionnelle et rapide.',
         datePublished: '2024-11-15'
       },
       {
@@ -94,7 +94,7 @@ export function generateLocalBusinessSchema() {
           '@type': 'Person',
           name: 'Sophie L.'
         },
-        reviewBody: 'Tres satisfaite du marquage PMR realise. Conforme aux normes et travail soigne.',
+        reviewBody: 'Très satisfaite du marquage PMR réalisé. Conforme aux normes et travail soigné.',
         datePublished: '2024-10-22'
       }
     ]
@@ -136,7 +136,7 @@ export function generateServiceSchema(service: Service) {
     },
     areaServed: {
       '@type': 'State',
-      name: 'Ile-de-France',
+      name: 'Île-de-France',
       containedIn: {
         '@type': 'Country',
         name: 'France'
@@ -161,7 +161,7 @@ export function generateServiceSchema(service: Service) {
         '@id': `${SITE_URL}/#organization`
       }
     },
-    // Proprietes enrichies
+    // Propriétés enrichies
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: service.name,
@@ -174,7 +174,7 @@ export function generateServiceSchema(service: Service) {
         position: index + 1
       }))
     },
-    // Disponibilite et contact
+    // Disponibilité et contact
     potentialAction: {
       '@type': 'OrderAction',
       target: {
@@ -197,8 +197,8 @@ export function generateServiceLocationSchema(service: Service, location: Locati
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE_URL}/services/${service.slug}/${location.slug}`,
-    name: `${service.name} a ${location.name}`,
-    description: `${service.description} Intervention a ${location.name} et environs.`,
+    name: `${service.name} à ${location.name}`,
+    description: `${service.description} Intervention à ${location.name} et environs.`,
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${SITE_URL}/#organization`,
@@ -294,7 +294,7 @@ export function generateArticleSchema(article: Article, category: Category) {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/blog/${category.slug}/${article.slug}`
     },
-    // Proprietes enrichies pour SEO avance
+    // Propriétés enrichies pour SEO avancé
     wordCount: wordCount,
     articleSection: category.name,
     keywords: article.tags.join(', '),
@@ -305,7 +305,7 @@ export function generateArticleSchema(article: Article, category: Category) {
       '@type': 'SpeakableSpecification',
       cssSelector: ['article h1', 'article h2', 'article p']
     },
-    // Potentiel d'affichage en position zero
+    // Potentiel d'affichage en position zéro
     isPartOf: {
       '@type': 'Blog',
       '@id': `${SITE_URL}/blog`,
@@ -318,7 +318,7 @@ export function generateArticleSchema(article: Article, category: Category) {
   };
 }
 
-// Schema HowTo pour articles tutoriels (extraction des etapes depuis le contenu)
+// Schema HowTo pour articles tutoriels (extraction des étapes depuis le contenu)
 export function generateHowToSchema(
   article: Article,
   category: Category,
@@ -368,7 +368,7 @@ export function generateCitySchema(location: Location) {
     '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/villes/${location.slug}`,
     name: `${COMPANY_NAME} - ${location.name}`,
-    description: `Services de marquage au sol professionnel a ${location.name}. Parking, entrepot, industriel, PMR. Intervention rapide en ${location.department}.`,
+    description: `Services de marquage au sol professionnel à ${location.name}. Parking, entrepôt, industriel, PMR. Intervention rapide en ${location.department}.`,
     url: `${SITE_URL}/villes/${location.slug}`,
     telephone: COMPANY_PHONE,
     email: COMPANY_EMAIL,
@@ -406,7 +406,7 @@ export function generateServicesListSchema(services: Service[]) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Services de marquage au sol',
-    description: 'Liste complete de nos services de marquage au sol et signalisation en Ile-de-France',
+    description: 'Liste complète de nos services de marquage au sol et signalisation en Île-de-France',
     numberOfItems: services.length,
     itemListElement: services.map((service, index) => ({
       '@type': 'ListItem',
@@ -424,8 +424,8 @@ export function generateBlogCategoriesListSchema(categories: Category[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Categories du blog',
-    description: 'Toutes les categories d\'articles sur le marquage au sol',
+    name: 'Catégories du blog',
+    description: 'Toutes les catégories d\'articles sur le marquage au sol',
     numberOfItems: categories.length,
     itemListElement: categories.map((category, index) => ({
       '@type': 'ListItem',
@@ -444,7 +444,7 @@ export function generateBlogCollectionSchema(articles: Article[], categories: Ca
     '@type': 'CollectionPage',
     '@id': `${SITE_URL}/blog`,
     name: 'Blog Marquage au Sol',
-    description: 'Conseils, guides et actualites sur le marquage au sol professionnel',
+    description: 'Conseils, guides et actualités sur le marquage au sol professionnel',
     url: `${SITE_URL}/blog`,
     isPartOf: {
       '@type': 'WebSite',
@@ -478,7 +478,7 @@ export function generateWebSiteSchema() {
     '@id': `${SITE_URL}/#website`,
     name: COMPANY_NAME,
     url: SITE_URL,
-    description: 'Specialiste du marquage au sol et signalisation en Ile-de-France',
+    description: 'Spécialiste du marquage au sol et signalisation en Île-de-France',
     publisher: {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`
@@ -509,7 +509,7 @@ export function generateOrganizationSchema() {
       width: 512,
       height: 512
     },
-    description: 'Entreprise specialisee dans le marquage au sol et la signalisation en Ile-de-France',
+    description: 'Entreprise spécialisée dans le marquage au sol et la signalisation en Île-de-France',
     address: {
       '@type': 'PostalAddress',
       ...COMPANY_ADDRESS

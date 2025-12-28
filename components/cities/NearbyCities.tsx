@@ -17,7 +17,7 @@ export default function NearbyCities({ location }: NearbyCitiesProps) {
     })
     .filter((l): l is Location => l !== undefined);
 
-  // Si pas assez de villes proches, ajouter d'autres villes du meme departement
+  // Si pas assez de villes proches, ajouter d'autres villes du même département
   if (nearbyCities.length < 4) {
     const sameDeptCities = locations.filter(
       l => l.departmentCode === location.departmentCode &&
@@ -46,7 +46,7 @@ export default function NearbyCities({ location }: NearbyCitiesProps) {
             Villes <span className="text-route-500">Proches</span> de {location.name}
           </h2>
           <p className="mt-4 text-lg text-asphalt-600">
-            Nous intervenons egalement dans les communes voisines de {location.name}
+            Nous intervenons également dans les communes voisines de {location.name}
           </p>
         </motion.div>
 

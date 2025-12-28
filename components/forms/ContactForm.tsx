@@ -53,10 +53,10 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="heading-display-md text-asphalt-900 mb-3">
-          Demande envoyee !
+          Demande envoyée !
         </h3>
         <p className="text-asphalt-600 max-w-md mx-auto">
-          Notre equipe vous recontactera sous 24h pour etablir votre devis gratuit.
+          Notre équipe vous recontactera sous 24h pour établir votre devis gratuit.
         </p>
       </motion.div>
     );
@@ -102,7 +102,7 @@ export default function ContactForm() {
         {/* Phone */}
         <div>
           <label htmlFor="phone" className="label-signal">
-            Telephone *
+            Téléphone *
           </label>
           <input
             type="tel"
@@ -146,11 +146,11 @@ export default function ContactForm() {
           onChange={handleChange}
           className="input-signal"
         >
-          <option value="">Selectionnez un service</option>
+          <option value="">Sélectionnez un service</option>
           <option value="marquage-parking">Marquage au sol parking</option>
-          <option value="marquage-entrepot">Marquage au sol entrepot</option>
+          <option value="marquage-entrepot">Marquage au sol entrepôt</option>
           <option value="marquage-industriel">Marquage au sol industriel</option>
-          <option value="places-pmr">Places handicapees PMR</option>
+          <option value="places-pmr">Places handicapées PMR</option>
           <option value="signalisation">Signalisation verticale</option>
           <option value="autre">Autre</option>
         </select>
@@ -169,7 +169,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           className="input-signal resize-none"
-          placeholder="Decrivez votre projet : surface, type de marquage souhaite, contraintes particulieres..."
+          placeholder="Décrivez votre projet : surface, type de marquage souhaité, contraintes particulières..."
         />
       </div>
 

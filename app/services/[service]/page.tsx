@@ -40,23 +40,23 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const serviceFaqs = [
     {
       question: `Quel est le prix du ${service.name.toLowerCase()} ?`,
-      answer: `Le prix depend de la surface a traiter, du type de marquage et des contraintes specifiques. Contactez-nous pour un devis gratuit personnalise. Nous intervenons sous 48h pour la visite technique.`,
+      answer: `Le prix dépend de la surface à traiter, du type de marquage et des contraintes spécifiques. Contactez-nous pour un devis gratuit personnalisé. Nous intervenons sous 48h pour la visite technique.`,
     },
     {
-      question: `Quelle est la duree d'intervention pour ${service.name.toLowerCase()} ?`,
-      answer: `La duree depend de la surface et de la complexite du projet. En moyenne, comptez 1 a 3 jours pour un parking standard. Nous pouvons intervenir la nuit ou le week-end pour ne pas perturber votre activite.`,
+      question: `Quelle est la durée d'intervention pour ${service.name.toLowerCase()} ?`,
+      answer: `La durée dépend de la surface et de la complexité du projet. En moyenne, comptez 1 à 3 jours pour un parking standard. Nous pouvons intervenir la nuit ou le week-end pour ne pas perturber votre activité.`,
     },
     {
       question: `Le ${service.name.toLowerCase()} est-il conforme aux normes ?`,
-      answer: `Absolument. Tous nos marquages respectent les normes NF en vigueur, les reglementations PMR pour l'accessibilite et les normes de securite industrielle. Une attestation de conformite vous est remise.`,
+      answer: `Absolument. Tous nos marquages respectent les normes NF en vigueur, les réglementations PMR pour l'accessibilité et les normes de sécurité industrielle. Une attestation de conformité vous est remise.`,
     },
     {
       question: `Quelle garantie pour ${service.name.toLowerCase()} ?`,
-      answer: `Nous garantissons nos travaux 5 ans minimum. Nos peintures et resines professionnelles assurent une durabilite optimale selon les conditions d'utilisation.`,
+      answer: `Nous garantissons nos travaux 5 ans minimum. Nos peintures et résines professionnelles assurent une durabilité optimale selon les conditions d'utilisation.`,
     },
     {
       question: `Intervenez-vous dans ma ville pour ${service.name.toLowerCase()} ?`,
-      answer: `Nous intervenons dans toute l'Ile-de-France : Paris et tous les departements (92, 93, 94, 91, 78, 95, 77). Devis et visite technique gratuits.`,
+      answer: `Nous intervenons dans toute l'Île-de-France : Paris et tous les départements (92, 93, 94, 91, 78, 95, 77). Devis et visite technique gratuits.`,
     },
   ];
 
@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <CTABanner
         title={`Besoin de ${service.name.toLowerCase()} ?`}
-        description="Devis gratuit sous 24h. Intervention rapide en Ile-de-France."
+        description="Devis gratuit sous 24h. Intervention rapide en Île-de-France."
         ctaText="Demander un devis"
         ctaHref="/contact"
       />

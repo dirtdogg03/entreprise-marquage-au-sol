@@ -17,32 +17,32 @@ interface FAQSectionProps {
 const defaultFaqs: FAQItem[] = [
   {
     question: 'Quels types de marquage au sol proposez-vous ?',
-    answer: 'Nous proposons tous types de marquage : marquage parking (places, fleches, numeros), marquage entrepot (zones de stockage, voies de circulation, zones de securite), marquage industriel, places PMR, passages pietons, et signalisation au sol specifique selon vos besoins.',
+    answer: 'Nous proposons tous types de marquage : marquage parking (places, flèches, numéros), marquage entrepôt (zones de stockage, voies de circulation, zones de sécurité), marquage industriel, places PMR, passages piétons, et signalisation au sol spécifique selon vos besoins.',
   },
   {
-    question: 'Quelle est la duree de vie du marquage au sol ?',
-    answer: 'La duree de vie depend du type de peinture et de l\'usage. Nos peintures professionnelles garantissent 3 a 5 ans minimum en exterieur et 5 a 10 ans en interieur. Nous utilisons des resines epoxy et peintures polyurethane haute resistance pour une durabilite maximale.',
+    question: 'Quelle est la durée de vie du marquage au sol ?',
+    answer: 'La durée de vie dépend du type de peinture et de l\'usage. Nos peintures professionnelles garantissent 3 à 5 ans minimum en extérieur et 5 à 10 ans en intérieur. Nous utilisons des résines époxy et peintures polyuréthane haute résistance pour une durabilité maximale.',
   },
   {
     question: 'Intervenez-vous en dehors des heures de travail ?',
-    answer: 'Oui, nous pouvons intervenir la nuit, le week-end ou pendant les fermetures pour ne pas perturber votre activite. Nous nous adaptons a vos contraintes operationnelles.',
+    answer: 'Oui, nous pouvons intervenir la nuit, le week-end ou pendant les fermetures pour ne pas perturber votre activité. Nous nous adaptons à vos contraintes opérationnelles.',
   },
   {
-    question: 'Quel est le delai d\'intervention ?',
-    answer: 'Nous intervenons sous 24 a 48h en Ile-de-France pour les urgences. Pour les projets planifies, le delai moyen est de 1 a 2 semaines apres validation du devis. La visite technique est gratuite et realisee sous 48h.',
+    question: 'Quel est le délai d\'intervention ?',
+    answer: 'Nous intervenons sous 24 à 48h en Île-de-France pour les urgences. Pour les projets planifiés, le délai moyen est de 1 à 2 semaines après validation du devis. La visite technique est gratuite et réalisée sous 48h.',
   },
   {
     question: 'Vos marquages sont-ils conformes aux normes ?',
-    answer: 'Absolument. Tous nos marquages respectent les normes NF P98-350 pour le marquage routier, les normes PMR pour l\'accessibilite, et les reglementations de securite industrielle. Nous fournissons une attestation de conformite a la fin de chaque intervention.',
+    answer: 'Absolument. Tous nos marquages respectent les normes NF P98-350 pour le marquage routier, les normes PMR pour l\'accessibilité, et les réglementations de sécurité industrielle. Nous fournissons une attestation de conformité à la fin de chaque intervention.',
   },
   {
     question: 'Proposez-vous des devis gratuits ?',
-    answer: 'Oui, le devis est 100% gratuit et sans engagement. Il comprend une visite technique sur site, une analyse de vos besoins, un plan detaille avec les mesures, et un chiffrage precis. Vous recevez le devis sous 24h apres la visite.',
+    answer: 'Oui, le devis est 100% gratuit et sans engagement. Il comprend une visite technique sur site, une analyse de vos besoins, un plan détaillé avec les mesures, et un chiffrage précis. Vous recevez le devis sous 24h après la visite.',
   },
 ];
 
 export default function FAQSection({
-  title = 'Questions frequentes',
+  title = 'Questions fréquentes',
   description = 'Tout ce que vous devez savoir sur nos services de marquage au sol',
   faqs = defaultFaqs,
 }: FAQSectionProps) {

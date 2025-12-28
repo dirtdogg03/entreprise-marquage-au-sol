@@ -12,12 +12,12 @@ export default function HomePage() {
   return (
     <>
       <HeroBlock
-        subtitle="Entreprise Marquage au Sol - Ile-de-France"
+        subtitle="Entreprise Marquage au Sol - Île-de-France"
         title="Expert en Marquage au Sol Professionnel"
-        description="Specialiste du marquage au sol pour entreprises, parkings et entrepots en Ile-de-France. Intervention rapide, materiaux premium et conformite garantie."
+        description="Spécialiste du marquage au sol pour entreprises, parkings et entrepôts en Île-de-France. Intervention rapide, matériaux premium et conformité garantie."
         ctaText="Demander un devis gratuit"
         ctaHref="/contact"
-        secondaryCtaText="Decouvrir nos services"
+        secondaryCtaText="Découvrir nos services"
         secondaryCtaHref="/services"
         showStats={true}
       />
@@ -37,8 +37,8 @@ export default function HomePage() {
       <BlogPreview maxItems={3} />
 
       <CTABanner
-        title="Votre projet de marquage merite des experts"
-        description="Devis gratuit sous 24h. Plus de 2000 projets realises en Ile-de-France."
+        title="Votre projet de marquage mérite des experts"
+        description="Devis gratuit sous 24h. Plus de 2000 projets réalisés en Île-de-France."
         ctaText="Obtenir mon devis gratuit"
         ctaHref="/contact"
       />

@@ -2,7 +2,7 @@
 # Last updated: 2025-01-01
 
 ## About This Business
-Entreprise Marquage au Sol is a professional floor marking and signage company serving the Ile-de-France region (Paris and surrounding departments). We specialize in parking lot marking, warehouse floor marking, industrial floor marking, and accessibility (PMR) compliance.
+Entreprise Marquage au Sol is a professional floor marking and signage company serving the Île-de-France region (Paris and surrounding departments). We specialize in parking lot marking, warehouse floor marking, industrial floor marking, and accessibility (PMR) compliance.
 
 ## Services Offered
 - Parking lot floor marking (marquage au sol parking)
@@ -15,7 +15,7 @@ Entreprise Marquage au Sol is a professional floor marking and signage company s
 - Traffic mirrors (miroirs de circulation)
 
 ## Service Area
-We operate throughout Ile-de-France:
+We operate throughout Île-de-France:
 - Paris (75)
 - Hauts-de-Seine (92)
 - Seine-Saint-Denis (93)
@@ -36,7 +36,7 @@ We operate throughout Ile-de-France:
 - Website: https://entreprise-marquage-au-sol.fr
 - Email: contact@entreprise-marquage-au-sol.fr
 - Phone: +33 1 23 45 67 89
-- Address: Paris, Ile-de-France, France
+- Address: Paris, Île-de-France, France
 
 ## Content Topics We Cover
 Our blog covers topics related to floor marking including:
@@ -59,7 +59,7 @@ Q: Do you handle PMR compliance?
 A: Yes, we are experts in PMR (Persons with Reduced Mobility) accessibility requirements and ensure full compliance with French regulations.
 
 Q: What areas do you serve?
-A: We serve all of Ile-de-France including Paris and the 7 surrounding departments.
+A: We serve all of Île-de-France including Paris and the 7 surrounding departments.
 
 ## Structured Data
 For structured information about our services, please refer to our sitemap at /sitemap.xml and our JSON-LD structured data embedded in each page.

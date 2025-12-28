@@ -57,7 +57,7 @@ export default function ContactPage() {
               <span className="text-route-600">Contactez</span>-nous
             </h1>
             <p className="mt-6 text-lg leading-8 text-asphalt-600">
-              Demandez votre devis gratuit pour votre projet de marquage au sol. Notre equipe vous repond sous 24h.
+              Demandez votre devis gratuit pour votre projet de marquage au sol. Notre équipe vous répond sous 24h.
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
               Zone d&apos;intervention
             </h2>
             <p className="mt-4 text-asphalt-600">
-              Nous intervenons dans toute l&apos;Ile-de-France
+              Nous intervenons dans toute l&apos;Île-de-France
             </p>
           </div>
           <div className="rounded-2xl bg-white p-8 ring-1 ring-asphalt-200 shadow-sm">
@@ -113,7 +113,7 @@ export default function ContactPage() {
               href="/departements"
               className="inline-flex items-center gap-2 text-route-600 hover:text-route-700 font-medium"
             >
-              Voir tous nos departements
+              Voir tous nos départements
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -130,7 +130,7 @@ export default function ContactPage() {
               Explorez nos ressources
             </h2>
             <p className="mt-4 text-asphalt-600">
-              Decouvrez nos services et conseils pratiques
+              Découvrez nos services et conseils pratiques
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -147,7 +147,7 @@ export default function ContactPage() {
                 Nos services
               </h3>
               <p className="mt-2 text-sm text-asphalt-600">
-                Decouvrez notre gamme complete de services de marquage au sol
+                Découvrez notre gamme complète de services de marquage au sol
               </p>
             </Link>
 
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 Notre blog
               </h3>
               <p className="mt-2 text-sm text-asphalt-600">
-                Conseils, guides et actualites sur le marquage au sol
+                Conseils, guides et actualités sur le marquage au sol
               </p>
             </Link>
 
@@ -178,10 +178,10 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-asphalt-900 group-hover:text-route-600">
-                A propos
+                À propos
               </h3>
               <p className="mt-2 text-sm text-asphalt-600">
-                Decouvrez notre entreprise et notre expertise
+                Découvrez notre entreprise et notre expertise
               </p>
             </Link>
           </div>

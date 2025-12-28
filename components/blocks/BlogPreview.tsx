@@ -21,13 +21,13 @@ export default function BlogPreview({ maxItems = 3 }: BlogPreviewProps) {
         <div className="flex items-end justify-between mb-12">
           <div>
             <span className="inline-flex items-center rounded-full bg-route-100 px-3 py-1 text-sm font-medium text-route-700 mb-4">
-              Conseils & Actualites
+              Conseils & Actualités
             </span>
             <h2 className="text-3xl font-bold text-asphalt-900">
               Derniers articles du blog
             </h2>
             <p className="mt-4 text-lg text-asphalt-600 max-w-2xl">
-              Guides pratiques, reglementations et bonnes pratiques pour vos projets de marquage au sol
+              Guides pratiques, réglementations et bonnes pratiques pour vos projets de marquage au sol
             </p>
           </div>
           <Link
@@ -63,7 +63,7 @@ export default function BlogPreview({ maxItems = 3 }: BlogPreviewProps) {
 
         {/* Categories preview */}
         <div className="mt-12 pt-8 border-t border-asphalt-200">
-          <h3 className="text-sm font-medium text-asphalt-500 mb-4">Parcourir par categorie</h3>
+          <h3 className="text-sm font-medium text-asphalt-500 mb-4">Parcourir par catégorie</h3>
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
               <Link

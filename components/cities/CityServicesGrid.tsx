@@ -99,7 +99,7 @@ interface CityServicesGridProps {
 }
 
 export default function CityServicesGrid({ location }: CityServicesGridProps) {
-  // Separer les services par categorie
+  // Séparer les services par catégorie
   const marquageServices = services.filter(s => s.category === 'marquage');
   const signalisationServices = services.filter(s => s.category === 'signalisation');
 
@@ -115,10 +115,10 @@ export default function CityServicesGrid({ location }: CityServicesGridProps) {
         >
           <span className="label-mono-route mb-4 block">17 services disponibles</span>
           <h2 className="heading-display-md">
-            Nos <span className="text-route-500">Services</span> a {location.name}
+            Nos <span className="text-route-500">Services</span> à {location.name}
           </h2>
           <p className="mt-4 text-lg text-asphalt-600">
-            Solutions completes de marquage au sol et signalisation pour tous vos espaces professionnels a {location.name} et environs
+            Solutions complètes de marquage au sol et signalisation pour tous vos espaces professionnels à {location.name} et environs
           </p>
         </motion.div>
 
@@ -194,7 +194,7 @@ function ServiceCard({ service, location, index }: { service: Service; location:
           {/* Location badge */}
           <div className="mt-4">
             <span className="label-mono px-2 py-1 bg-route-50 text-route-700 border border-route-200">
-              a {location.name}
+              à {location.name}
             </span>
           </div>
 

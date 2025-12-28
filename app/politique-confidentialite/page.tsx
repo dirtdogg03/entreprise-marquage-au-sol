@@ -64,7 +64,7 @@ export default function PolitiqueConfidentialitePage() {
             <h2>1. Introduction</h2>
             <p>
               Entreprise Marquage au Sol, specialiste du marquage au sol et de la signalisation horizontale
-              en Ile-de-France, s&apos;engage a proteger la vie privee des utilisateurs de son site internet
+              en Île-de-France, s&apos;engage à protéger la vie privee des utilisateurs de son site internet
               entreprise-marquage-au-sol.fr.
             </p>
             <p>
@@ -79,7 +79,7 @@ export default function PolitiqueConfidentialitePage() {
             </p>
             <ul>
               <li><strong>Entreprise :</strong> Entreprise Marquage au Sol</li>
-              <li><strong>Adresse :</strong> Ile-de-France, France</li>
+              <li><strong>Adresse :</strong> Île-de-France, France</li>
               <li><strong>Email :</strong> contact@entreprise-marquage-au-sol.fr</li>
               <li><strong>Telephone :</strong> 01 23 45 67 89</li>
             </ul>

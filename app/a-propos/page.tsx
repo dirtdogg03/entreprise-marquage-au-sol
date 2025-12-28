@@ -5,24 +5,24 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 import CTABanner from '@/components/blocks/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'A Propos | Entreprise Marquage au Sol Ile-de-France',
-  description: 'Decouvrez Entreprise Marquage au Sol : 15 ans d\'experience en marquage au sol professionnel en Ile-de-France. Equipe certifiee, materiaux premium, intervention rapide.',
+  title: 'À Propos | Entreprise Marquage au Sol Île-de-France',
+  description: 'Découvrez Entreprise Marquage au Sol : 15 ans d\'expérience en marquage au sol professionnel en Île-de-France. Équipe certifiée, matériaux premium, intervention rapide.',
   alternates: {
     canonical: '/a-propos',
   },
 };
 
 const stats = [
-  { value: '15+', label: 'Annees d\'experience' },
-  { value: '2000+', label: 'Projets realises' },
+  { value: '15+', label: 'Années d\'expérience' },
+  { value: '2000+', label: 'Projets réalisés' },
   { value: '98%', label: 'Clients satisfaits' },
-  { value: '8', label: 'Departements couverts' },
+  { value: '8', label: 'Départements couverts' },
 ];
 
 const values = [
   {
     title: 'Excellence',
-    description: 'Nous nous engageons a delivrer un travail de qualite superieure, en utilisant les meilleurs materiaux et techniques du marche.',
+    description: 'Nous nous engageons à délivrer un travail de qualité supérieure, en utilisant les meilleurs matériaux et techniques du marché.',
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -30,8 +30,8 @@ const values = [
     ),
   },
   {
-    title: 'Reactivite',
-    description: 'Intervention sous 24 a 48h en Ile-de-France. Nous comprenons l\'urgence de vos projets et nous adaptons a vos contraintes.',
+    title: 'Réactivité',
+    description: 'Intervention sous 24 à 48h en Île-de-France. Nous comprenons l\'urgence de vos projets et nous adaptons à vos contraintes.',
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -40,7 +40,7 @@ const values = [
   },
   {
     title: 'Expertise',
-    description: 'Nos equipes sont formees et certifiees pour garantir un travail conforme aux normes NF et PMR en vigueur.',
+    description: 'Nos équipes sont formées et certifiées pour garantir un travail conforme aux normes NF et PMR en vigueur.',
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -49,7 +49,7 @@ const values = [
   },
   {
     title: 'Transparence',
-    description: 'Devis detaille gratuit sous 24h, sans surprise. Nous vous accompagnons de l\'etude a la realisation.',
+    description: 'Devis détaillé gratuit sous 24h, sans surprise. Nous vous accompagnons de l\'étude à la réalisation.',
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -62,7 +62,7 @@ const certifications = [
   'Certification NF Marquage Routier',
   'Habilitation PMR',
   'Qualification QUALIBAT',
-  'Assurance decennale',
+  'Assurance décennale',
 ];
 
 export default function AProposPage() {
@@ -109,7 +109,7 @@ export default function AProposPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-asphalt-600">
               Entreprise Marquage au Sol est specialisee dans le tracage et la signalisation
-              horizontale pour les professionnels en Ile-de-France. Notre mission : vous offrir
+              horizontale pour les professionnels en Île-de-France. Notre mission : vous offrir
               un marquage durable, conforme et realise dans les delais.
             </p>
           </div>
@@ -142,20 +142,20 @@ export default function AProposPage() {
               </h2>
               <div className="space-y-4 text-asphalt-600">
                 <p>
-                  Fondee il y a plus de 15 ans par des professionnels du BTP, Entreprise Marquage
-                  au Sol s&apos;est specialisee dans le marquage au sol et la signalisation horizontale
-                  pour repondre aux besoins croissants des entreprises franciliennes.
+                  Fondée il y a plus de 15 ans par des professionnels du BTP, Entreprise Marquage
+                  au Sol s&apos;est spécialisée dans le marquage au sol et la signalisation horizontale
+                  pour répondre aux besoins croissants des entreprises franciliennes.
                 </p>
                 <p>
-                  Au fil des annees, nous avons developpe une expertise reconnue dans le tracage
+                  Au fil des années, nous avons développé une expertise reconnue dans le traçage
                   de parkings, la signalisation industrielle et le marquage de zones PMR, en
                   collaborant avec des entreprises de toutes tailles : PME, grands groupes,
-                  collectivites et gestionnaires immobiliers.
+                  collectivités et gestionnaires immobiliers.
                 </p>
                 <p>
-                  Aujourd&apos;hui, notre equipe de techniciens qualifies intervient dans les 8
-                  departements d&apos;Ile-de-France, avec un objectif constant : la satisfaction
-                  client a travers un travail soigne, rapide et conforme aux normes.
+                  Aujourd&apos;hui, notre équipe de techniciens qualifiés intervient dans les 8
+                  départements d&apos;Île-de-France, avec un objectif constant : la satisfaction
+                  client à travers un travail soigné, rapide et conforme aux normes.
                 </p>
               </div>
             </div>
@@ -164,8 +164,8 @@ export default function AProposPage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white p-8">
                     <div className="text-6xl font-bold mb-2">15+</div>
-                    <div className="text-xl">ans d&apos;experience</div>
-                    <div className="mt-4 text-route-100">en Ile-de-France</div>
+                    <div className="text-xl">ans d&apos;expérience</div>
+                    <div className="mt-4 text-route-100">en Île-de-France</div>
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export default function AProposPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white">Nos certifications</h2>
             <p className="mt-4 text-lg text-asphalt-300">
-              Des garanties professionnelles pour votre tranquillite
+              Des garanties professionnelles pour votre tranquillité
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -237,7 +237,7 @@ export default function AProposPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-asphalt-900">Zone d&apos;intervention</h2>
             <p className="mt-4 text-lg text-asphalt-600">
-              Nous intervenons dans toute l&apos;Ile-de-France
+              Nous intervenons dans toute l&apos;Île-de-France
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -268,7 +268,7 @@ export default function AProposPage() {
               href="/departements"
               className="inline-flex items-center gap-2 text-route-600 hover:text-route-700 font-medium"
             >
-              Voir tous nos departements
+              Voir tous nos départements
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -279,8 +279,8 @@ export default function AProposPage() {
 
       {/* CTA */}
       <CTABanner
-        title="Pret a demarrer votre projet ?"
-        description="Contactez-nous pour un devis gratuit sous 24h. Notre equipe se tient a votre disposition."
+        title="Prêt à démarrer votre projet ?"
+        description="Contactez-nous pour un devis gratuit sous 24h. Notre équipe se tient à votre disposition."
         ctaText="Demander un devis"
         ctaHref="/contact"
       />

@@ -76,7 +76,7 @@ export default function Header() {
             </div>
             <div className="hidden sm:block">
               <span className="font-black text-asphalt-800 text-lg tracking-tight">ENTREPRISE</span>
-              <span className="font-black text-route-500 text-lg tracking-tight ml-1">MARQUAGE</span>
+              <span className="font-black text-route-500 text-lg tracking-tight ml-1">MARQUAGE AU SOL</span>
             </div>
           </Link>
         </div>
@@ -274,14 +274,14 @@ export default function Header() {
                   {/* Footer with call to action */}
                   <div className="px-6 py-4 bg-asphalt-50 border-t border-asphalt-200 flex items-center justify-between">
                     <p className="text-sm text-asphalt-600">
-                      <span className="font-medium text-route-600">8 departements</span> couverts en Ile-de-France
+                      <span className="font-medium text-route-600">8 départements</span> couverts en Île-de-France
                     </p>
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 text-sm font-medium text-route-600 hover:text-route-700"
                       onClick={() => setActiveMenu(null)}
                     >
-                      Verifier ma zone
+                      Vérifier ma zone
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>

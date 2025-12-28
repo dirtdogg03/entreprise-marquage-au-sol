@@ -27,7 +27,7 @@ const contactDetails = [
   },
   {
     title: 'Adresse',
-    value: 'Ile-de-France',
+    value: 'Île-de-France',
     href: null,
     description: 'Intervention dans tous les departements',
     icon: (

@@ -5,13 +5,13 @@ import { Article, Category } from './data/articles';
 
 const SITE_NAME = 'Entreprise Marquage au Sol';
 const SITE_URL = 'https://entreprise-marquage-au-sol.fr';
-const DEFAULT_DESCRIPTION = 'Entreprise specialisee dans le marquage au sol et la signalisation en Ile-de-France. Parking, entrepot, industriel, PMR. Devis gratuit.';
+const DEFAULT_DESCRIPTION = 'Entreprise spécialisée dans le marquage au sol et la signalisation en Île-de-France. Parking, entrepôt, industriel, PMR. Devis gratuit.';
 
 export function generateHomeMetadata(): Metadata {
   return {
-    title: `${SITE_NAME} | Marquage Parking, Entrepot, Industriel en Ile-de-France`,
+    title: `${SITE_NAME} | Marquage Parking, Entrepôt, Industriel en Île-de-France`,
     description: DEFAULT_DESCRIPTION,
-    keywords: ['entreprise marquage au sol', 'marquage parking', 'marquage entrepot', 'signalisation', 'Ile-de-France'],
+    keywords: ['entreprise marquage au sol', 'marquage parking', 'marquage entrepôt', 'signalisation', 'Île-de-France'],
     openGraph: {
       title: `${SITE_NAME} | Marquage Professionnel`,
       description: DEFAULT_DESCRIPTION,
@@ -19,13 +19,13 @@ export function generateHomeMetadata(): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title: SITE_NAME,
       description: DEFAULT_DESCRIPTION,
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: SITE_URL,
@@ -47,16 +47,16 @@ export function generateHomeMetadata(): Metadata {
 export function generateServiceMetadata(service: Service): Metadata {
   const title = `${service.name} | ${SITE_NAME}`;
 
-  // Meta description optimisee: <155 caracteres avec benefices et CTA
+  // Meta description optimisée: <155 caractères avec bénéfices et CTA
   const shortDesc = service.shortDescription.length > 80
     ? service.shortDescription.substring(0, 77) + '...'
     : service.shortDescription;
-  const description = `${shortDesc} Intervention 48h en Ile-de-France. Devis gratuit, garantie 5 ans.`;
+  const description = `${shortDesc} Intervention 48h en Île-de-France. Devis gratuit, garantie 5 ans.`;
 
   return {
     title,
     description,
-    keywords: [...service.keywords, 'entreprise marquage au sol', 'Ile-de-France'],
+    keywords: [...service.keywords, 'entreprise marquage au sol', 'Île-de-France'],
     openGraph: {
       title,
       description,
@@ -64,13 +64,13 @@ export function generateServiceMetadata(service: Service): Metadata {
       siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'website',
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}`,
@@ -86,13 +86,13 @@ export function generateServiceMetadata(service: Service): Metadata {
 }
 
 export function generateServiceLocationMetadata(service: Service, location: Location): Metadata {
-  // SEO Exact Match: Title sans preposition "a" pour matcher les requetes utilisateurs
+  // SEO Exact Match: Title sans préposition "à" pour matcher les requêtes utilisateurs
   // Ex: "Marquage au Sol Parking Paris - Devis Gratuit 75"
   const title = `${service.name} ${location.name} - Devis Gratuit ${location.departmentCode}`;
 
-  // Description avec "a" pour langage naturel + code postal
+  // Description avec "à" pour langage naturel + code postal
   const postalCode = location.postalCodes[0] || '';
-  const description = `Expert en ${service.name.toLowerCase()} a ${location.name} (${postalCode}). Intervention rapide en ${location.department}. Devis gratuit sous 24h. Garantie 5 ans.`;
+  const description = `Expert en ${service.name.toLowerCase()} à ${location.name} (${postalCode}). Intervention rapide en ${location.department}. Devis gratuit sous 24h. Garantie 5 ans.`;
 
   return {
     title,
@@ -125,8 +125,8 @@ export function generateServiceLocationMetadata(service: Service, location: Loca
 export function generateArticleMetadata(article: Article, category: Category): Metadata {
   const title = `${article.title} | Blog ${SITE_NAME}`;
 
-  // Meta description optimisee: <155 caracteres avec CTA
-  // Prendre le debut de l'excerpt et ajouter un CTA
+  // Meta description optimisée: <155 caractères avec CTA
+  // Prendre le début de l'excerpt et ajouter un CTA
   const truncatedExcerpt = article.excerpt.length > 120
     ? article.excerpt.substring(0, 117) + '...'
     : article.excerpt;
@@ -147,13 +147,13 @@ export function generateArticleMetadata(article: Article, category: Category): M
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: [article.author],
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      // Images generees dynamiquement via opengraph-image.tsx
+      // Images générées dynamiquement via opengraph-image.tsx
     },
     alternates: {
       canonical: `${SITE_URL}/blog/${category.slug}/${article.slug}`,
@@ -170,7 +170,7 @@ export function generateArticleMetadata(article: Article, category: Category): M
 
 export function generateContactMetadata(): Metadata {
   const title = `Contact | ${SITE_NAME}`;
-  const description = 'Demandez un devis gratuit pour vos travaux de marquage au sol. Reponse sous 24h, intervention rapide en Ile-de-France.';
+  const description = 'Demandez un devis gratuit pour vos travaux de marquage au sol. Réponse sous 24h, intervention rapide en Île-de-France.';
 
   return {
     title,
@@ -199,13 +199,13 @@ export function generateContactMetadata(): Metadata {
 }
 
 export function generateCityMetadata(location: Location): Metadata {
-  // SEO Exact Match: Title sans preposition "a" pour matcher les requetes utilisateurs
+  // SEO Exact Match: Title sans préposition "à" pour matcher les requêtes utilisateurs
   // Ex: "Marquage au Sol Paris (75001) - Devis Gratuit"
   const postalCode = location.postalCodes[0] || '';
   const title = `Marquage au Sol ${location.name} (${postalCode}) - Devis Gratuit`;
 
-  // Description avec "a" pour langage naturel
-  const description = `Expert en marquage au sol a ${location.name} (${location.department}). Parking, entrepot, industriel, PMR. Intervention rapide sous 24-48h. Devis gratuit et garantie 5 ans.`;
+  // Description avec "à" pour langage naturel
+  const description = `Expert en marquage au sol à ${location.name} (${location.department}). Parking, entrepôt, industriel, PMR. Intervention rapide sous 24-48h. Devis gratuit et garantie 5 ans.`;
 
   return {
     title,

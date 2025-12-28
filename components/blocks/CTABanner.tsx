@@ -13,7 +13,7 @@ interface CTABannerProps {
 
 export default function CTABanner({
   title = "Besoin d'un devis pour votre projet de marquage ?",
-  description = "Notre equipe vous repond sous 24h. Devis gratuit et sans engagement.",
+  description = "Notre équipe vous répond sous 24h. Devis gratuit et sans engagement.",
   ctaText = "Demander un devis gratuit",
   ctaHref = "/contact",
   phone = "01 23 45 67 89"

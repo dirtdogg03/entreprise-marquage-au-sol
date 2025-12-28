@@ -26,11 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Entreprise Marquage au Sol | Marquage Parking, Entrepot, Industriel en Ile-de-France",
+    default: "Entreprise Marquage au Sol | Marquage Parking, Entrepôt, Industriel en Île-de-France",
     template: "%s | Entreprise Marquage au Sol"
   },
-  description: "Entreprise specialisee dans le marquage au sol et la signalisation en Ile-de-France. Parking, entrepot, industriel, PMR. Devis gratuit.",
-  keywords: ["entreprise marquage au sol", "marquage parking", "marquage entrepot", "signalisation", "Ile-de-France", "Paris"],
+  description: "Entreprise spécialisée dans le marquage au sol et la signalisation en Île-de-France. Parking, entrepôt, industriel, PMR. Devis gratuit.",
+  keywords: ["entreprise marquage au sol", "marquage parking", "marquage entrepôt", "signalisation", "Île-de-France", "Paris"],
   authors: [{ name: "Entreprise Marquage au Sol" }],
   creator: "Entreprise Marquage au Sol",
   publisher: "Entreprise Marquage au Sol",
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://entreprise-marquage-au-sol.fr",
     siteName: "Entreprise Marquage au Sol",
-    title: "Entreprise Marquage au Sol | Expert Ile-de-France",
-    description: "Specialiste du marquage au sol et signalisation. Parking, entrepot, industriel. Intervention rapide, devis gratuit.",
+    title: "Entreprise Marquage au Sol | Expert Île-de-France",
+    description: "Spécialiste du marquage au sol et signalisation. Parking, entrepôt, industriel. Intervention rapide, devis gratuit.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Entreprise Marquage au Sol",
-    description: "Specialiste du marquage au sol en Ile-de-France",
+    description: "Spécialiste du marquage au sol en Île-de-France",
   },
   robots: {
     index: true,

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
   if (!author) return {};
 
   const title = `${author.name} - ${author.role} | Entreprise Marquage au Sol`;
-  const description = `Decouvrez l'expertise de ${author.name}, ${author.role}. ${author.experience} d'experience en marquage au sol professionnel en Ile-de-France.`;
+  const description = `Decouvrez l'expertise de ${author.name}, ${author.role}. ${author.experience} d'experience en marquage au sol professionnel en Île-de-France.`;
 
   return {
     title,

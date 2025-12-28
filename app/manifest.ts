@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Entreprise Marquage au Sol',
     short_name: 'Marquage Sol',
-    description: 'Specialiste du marquage au sol et signalisation en Ile-de-France',
+    description: 'Spécialiste du marquage au sol et signalisation en Île-de-France',
     start_url: '/',
     display: 'standalone',
     background_color: '#FAFAFA',

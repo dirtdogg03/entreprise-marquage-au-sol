@@ -20,7 +20,7 @@ export async function GET() {
     pageUrl: SITE_URL,
     imageUrl: `${SITE_URL}/images/logo.webp`,
     title: 'Entreprise Marquage au Sol - Logo',
-    caption: 'Specialiste du marquage au sol en Ile-de-France',
+    caption: 'Spécialiste du marquage au sol en Île-de-France',
     geoLocation: 'Paris, France',
   });
 
@@ -31,7 +31,7 @@ export async function GET() {
       imageUrl: `${SITE_URL}/images/services/${service.slug}.webp`,
       title: service.name,
       caption: service.description.substring(0, 150),
-      geoLocation: 'Ile-de-France, France',
+      geoLocation: 'Île-de-France, France',
     });
   }
 

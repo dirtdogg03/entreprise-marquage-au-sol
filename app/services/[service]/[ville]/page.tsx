@@ -75,24 +75,24 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
   // Use varied FAQs or fall back to template FAQs
   const locationFaqs = variedContent?.faqs || [
     {
-      question: `Ou intervenez-vous a ${location.name} pour ${service.name.toLowerCase()} ?`,
-      answer: `Nous intervenons dans tout ${location.name} et les villes environnantes : ${location.nearby.join(', ')}. Notre equipe se deplace gratuitement pour etablir un devis sur site.`,
+      question: `Où intervenez-vous à ${location.name} pour ${service.name.toLowerCase()} ?`,
+      answer: `Nous intervenons dans tout ${location.name} et les villes environnantes : ${location.nearby.join(', ')}. Notre équipe se déplace gratuitement pour établir un devis sur site.`,
     },
     {
-      question: `Quel est le delai d'intervention a ${location.name} ?`,
-      answer: `Nous intervenons sous 24 a 48h a ${location.name} (${location.departmentCode}). La visite technique est gratuite et le devis est remis sous 24h.`,
+      question: `Quel est le délai d'intervention à ${location.name} ?`,
+      answer: `Nous intervenons sous 24 à 48h à ${location.name} (${location.departmentCode}). La visite technique est gratuite et le devis est remis sous 24h.`,
     },
     {
-      question: `Combien coute ${service.name.toLowerCase()} a ${location.name} ?`,
-      answer: `Le prix depend de la surface, du type de marquage et des contraintes du site. Contactez-nous pour un devis gratuit personnalise. Nos tarifs sont competitifs pour la region ${location.department}.`,
+      question: `Combien coûte ${service.name.toLowerCase()} à ${location.name} ?`,
+      answer: `Le prix dépend de la surface, du type de marquage et des contraintes du site. Contactez-nous pour un devis gratuit personnalisé. Nos tarifs sont compétitifs pour la région ${location.department}.`,
     },
     {
-      question: `Travaillez-vous le week-end a ${location.name} ?`,
-      answer: `Oui, nous pouvons intervenir la nuit, le week-end ou pendant vos fermetures pour ne pas perturber votre activite a ${location.name}.`,
+      question: `Travaillez-vous le week-end à ${location.name} ?`,
+      answer: `Oui, nous pouvons intervenir la nuit, le week-end ou pendant vos fermetures pour ne pas perturber votre activité à ${location.name}.`,
     },
     {
-      question: `Vos marquages a ${location.name} sont-ils garantis ?`,
-      answer: `Tous nos travaux de ${service.name.toLowerCase()} a ${location.name} sont garantis 5 ans minimum. Nous utilisons des materiaux professionnels haute resistance.`,
+      question: `Vos marquages à ${location.name} sont-ils garantis ?`,
+      answer: `Tous nos travaux de ${service.name.toLowerCase()} à ${location.name} sont garantis 5 ans minimum. Nous utilisons des matériaux professionnels haute résistance.`,
     },
   ];
 
@@ -119,7 +119,7 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
         location={{ name: location.name, department: location.department }}
       />
 
-      {/* Contenu local varie si disponible */}
+      {/* Contenu local varié si disponible */}
       {variedContent && (
         <ServiceLocalContent
           content={variedContent.content}
@@ -137,14 +137,14 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
       />
 
       <FAQSection
-        title={`${service.name} a ${location.name}`}
-        description={`Questions frequentes sur nos services a ${location.name}`}
+        title={`${service.name} à ${location.name}`}
+        description={`Questions fréquentes sur nos services à ${location.name}`}
         faqs={locationFaqs}
       />
 
       <CTABanner
-        title={`${service.name} a ${location.name}`}
-        description={`Devis gratuit sous 24h pour votre projet a ${location.name} et environs.`}
+        title={`${service.name} à ${location.name}`}
+        description={`Devis gratuit sous 24h pour votre projet à ${location.name} et environs.`}
         ctaText="Demander un devis"
         ctaHref="/contact"
       />

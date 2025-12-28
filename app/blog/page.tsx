@@ -8,7 +8,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Blog | Conseils Marquage au Sol',
-  description: 'Conseils, guides et actualites sur le marquage au sol professionnel. Reglementation, securite, bonnes pratiques pour parking et entrepot.',
+  description: 'Conseils, guides et actualités sur le marquage au sol professionnel. Réglementation, sécurité, bonnes pratiques pour parking et entrepôt.',
   alternates: {
     canonical: '/blog',
   },
@@ -57,7 +57,7 @@ export default function BlogPage() {
               Notre <span className="text-route-600">Blog</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-asphalt-600">
-              Conseils, guides pratiques et actualites sur le marquage au sol professionnel
+              Conseils, guides pratiques et actualités sur le marquage au sol professionnel
             </p>
           </div>
         </div>
@@ -74,8 +74,8 @@ export default function BlogPage() {
 
       {/* CTA */}
       <CTABanner
-        title="Besoin de conseils personnalises ?"
-        description="Nos experts sont la pour vous accompagner dans votre projet de marquage."
+        title="Besoin de conseils personnalisés ?"
+        description="Nos experts sont là pour vous accompagner dans votre projet de marquage."
         ctaText="Contactez-nous"
         ctaHref="/contact"
       />

@@ -20,13 +20,13 @@ const departments = [
 const footerNavigation = {
   services: services.slice(0, 6).map(s => ({ name: s.name, href: `/services/${s.slug}` })),
   company: [
-    { name: 'A propos', href: '/a-propos' },
+    { name: 'À propos', href: '/a-propos' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
   ],
   legal: [
-    { name: 'Mentions legales', href: '/mentions-legales' },
-    { name: 'Politique de confidentialite', href: '/politique-confidentialite' },
+    { name: 'Mentions légales', href: '/mentions-legales' },
+    { name: 'Politique de confidentialité', href: '/politique-confidentialite' },
   ],
 };
 
@@ -54,13 +54,13 @@ export default function Footer() {
               </div>
               <div>
                 <span className="text-white font-black text-lg tracking-tight">ENTREPRISE</span>
-                <span className="text-route-500 font-black text-lg tracking-tight ml-1">MARQUAGE</span>
+                <span className="text-route-500 font-black text-lg tracking-tight ml-1">MARQUAGE AU SOL</span>
               </div>
             </div>
 
             <p className="text-asphalt-300 text-sm max-w-xs leading-relaxed">
-              Specialiste du marquage au sol et de la signalisation en Ile-de-France.
-              Parking, entrepot, industriel, PMR.
+              Spécialiste du marquage au sol et de la signalisation en Île-de-France.
+              Parking, entrepôt, industriel, PMR.
             </p>
 
             {/* Contact boxes - Signal Expert style */}
@@ -195,7 +195,7 @@ export default function Footer() {
                   ))}
                 </ul>
 
-                <h3 className="label-mono text-route-500 mb-4 mt-8">Legal</h3>
+                <h3 className="label-mono text-route-500 mb-4 mt-8">Légal</h3>
                 <ul className="space-y-3">
                   {footerNavigation.legal.map((item) => (
                     <li key={item.name}>
@@ -213,14 +213,14 @@ export default function Footer() {
         {/* Bottom - Signal Expert style with route border */}
         <div className="mt-12 border-t-2 border-route-500 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="label-mono text-asphalt-300">
-            &copy; {new Date().getFullYear()} Entreprise Marquage au Sol. Tous droits reserves.
+            &copy; {new Date().getFullYear()} Entreprise Marquage au Sol. Tous droits réservés.
           </p>
           <p className="label-mono text-asphalt-300 flex items-center gap-2">
             <svg className="w-4 h-4 text-route-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
             </svg>
-            Intervention en Ile-de-France
+            Intervention en Île-de-France
           </p>
         </div>
       </div>

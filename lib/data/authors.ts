@@ -18,26 +18,26 @@ export const authors: Author[] = [
   {
     id: 'equipe-marquage',
     slug: 'equipe-technique',
-    name: 'Equipe Technique',
+    name: 'Équipe Technique',
     role: 'Experts en Marquage au Sol',
-    bio: `Notre equipe technique regroupe des professionnels du marquage au sol avec plus de 15 ans d'experience cumlee dans le secteur. Specialises dans les interventions en Ile-de-France, nous maitrisons toutes les techniques de marquage : peinture routiere, resine epoxy, thermoplastique et signalisation horizontale.
+    bio: `Notre équipe technique regroupe des professionnels du marquage au sol avec plus de 15 ans d'expérience cumulée dans le secteur. Spécialisés dans les interventions en Île-de-France, nous maîtrisons toutes les techniques de marquage : peinture routière, résine époxy, thermoplastique et signalisation horizontale.
 
-Chaque membre de l'equipe est forme aux normes en vigueur (Code de la route, accessibilite PMR, ICPE pour les sites industriels) et possede les certifications necessaires pour intervenir sur tous types de surfaces : parkings, entrepots, usines, centres commerciaux.
+Chaque membre de l'équipe est formé aux normes en vigueur (Code de la route, accessibilité PMR, ICPE pour les sites industriels) et possède les certifications nécessaires pour intervenir sur tous types de surfaces : parkings, entrepôts, usines, centres commerciaux.
 
-Notre expertise couvre l'ensemble du processus : diagnostic initial, choix des materiaux adaptes, preparation des surfaces, application et controle qualite. Nous assurons un suivi rigoureux de chaque projet pour garantir durabilite et conformite.`,
+Notre expertise couvre l'ensemble du processus : diagnostic initial, choix des matériaux adaptés, préparation des surfaces, application et contrôle qualité. Nous assurons un suivi rigoureux de chaque projet pour garantir durabilité et conformité.`,
     expertise: [
       'Marquage au sol parking et stationnement',
       'Marquage industriel et logistique',
       'Signalisation horizontale',
-      'Normes PMR et accessibilite',
-      'Reglementations ICPE',
-      'Materiaux haute performance',
+      'Normes PMR et accessibilité',
+      'Réglementations ICPE',
+      'Matériaux haute performance',
     ],
     experience: '15+ ans',
     certifications: [
       'Formation Marquage Routier SETRA',
       'Habilitation travaux sur voirie',
-      'Formation Securite PRAP',
+      'Formation Sécurité PRAP',
       'Certification Qualibat',
     ],
     image: '/images/authors/equipe-technique.webp',

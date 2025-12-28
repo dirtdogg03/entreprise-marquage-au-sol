@@ -29,10 +29,10 @@ export default function LocalCoverage() {
             <span className="label-mono text-route-500 mb-4 block">Zones d&apos;intervention</span>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Intervention dans toute<br />
-              <span className="text-route-500">l&apos;Ile-de-France</span>
+              <span className="text-route-500">l&apos;Île-de-France</span>
             </h2>
             <p className="mt-4 text-lg text-asphalt-300">
-              Notre equipe intervient rapidement dans tous les departements d&apos;Ile-de-France : Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d&apos;Oise et Seine-et-Marne.
+              Notre équipe intervient rapidement dans tous les départements d&apos;Île-de-France : Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d&apos;Oise et Seine-et-Marne.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">

@@ -24,7 +24,7 @@ export default function MentionsLegalesPage() {
               <p>
                 Le site entreprise-marquage-au-sol.fr est edite par :<br />
                 <strong className="text-asphalt-900">Entreprise Marquage au Sol</strong><br />
-                Siege social : Ile-de-France, France<br />
+                Siège social : Île-de-France, France<br />
                 Telephone : 01 23 45 67 89<br />
                 Email : contact@entreprise-marquage-au-sol.fr
               </p>

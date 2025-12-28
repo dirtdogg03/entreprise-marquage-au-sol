@@ -100,7 +100,7 @@ export default function ServicesGrid({
             Nos <span className="text-route-500">Services</span> de Marquage
           </h2>
           <p className="mt-4 text-lg text-asphalt-600">
-            Solutions completes de marquage au sol et signalisation pour tous types d&apos;espaces professionnels
+            Solutions complètes de marquage au sol et signalisation pour tous types d&apos;espaces professionnels
           </p>
         </motion.div>
 

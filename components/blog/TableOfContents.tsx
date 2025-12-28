@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import GithubSlugger from 'github-slugger';
 
 interface TocItem {
   id: string;
@@ -20,26 +21,29 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDesktopExpanded, setIsDesktopExpanded] = useState(false);
 
-  // Extract H2 headings only from markdown content (not H3)
+  // Extract H2 headings from both Markdown (##) and HTML (<h2>) content
   useEffect(() => {
-    const headingRegex = /^(#{2})\s+(.+)$/gm;
+    const slugger = new GithubSlugger();
     const items: TocItem[] = [];
+
+    // Regex for Markdown ## headings
+    const markdownRegex = /^##\s+(.+)$/gm;
     let match;
 
-    while ((match = headingRegex.exec(content)) !== null) {
-      const level = match[1].length;
-      const text = match[2].replace(/\*\*/g, '').trim();
-      // Generate slug from heading text
-      const id = text
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '') // Remove accents
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special chars
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Remove consecutive hyphens
-        .substring(0, 60);
+    while ((match = markdownRegex.exec(content)) !== null) {
+      const text = match[1].replace(/\*\*/g, '').trim();
+      // Use github-slugger for consistent IDs with rehype-slug
+      const id = slugger.slug(text);
+      items.push({ id, text, level: 2 });
+    }
 
-      items.push({ id, text, level });
+    // Regex for HTML <h2> headings (handles tags with attributes)
+    const htmlRegex = /<h2[^>]*>([^<]+)<\/h2>/gi;
+
+    while ((match = htmlRegex.exec(content)) !== null) {
+      const text = match[1].trim();
+      const id = slugger.slug(text);
+      items.push({ id, text, level: 2 });
     }
 
     setTocItems(items);
@@ -110,9 +114,9 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
 
   return (
     <>
-      {/* Desktop TOC - Sticky sidebar */}
+      {/* Desktop TOC - Fixed sidebar (no sticky) */}
       <nav
-        className="hidden xl:block sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto"
+        className="hidden xl:block"
         aria-label="Table des matieres"
       >
         <div className="bg-white border border-asphalt-200 rounded-lg p-4 shadow-sm">

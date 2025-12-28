@@ -56,7 +56,7 @@ export default function BlogPageContent({ sortedArticles }: BlogPageContentProps
       {featuredArticle && (
         <section className="py-12 lg:py-16 bg-asphalt-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-asphalt-900 mb-8">Article a la une</h2>
+            <h2 className="text-2xl font-bold text-asphalt-900 mb-8">Article à la une</h2>
             <ArticleCard article={featuredArticle} featured />
           </div>
         </section>

@@ -94,8 +94,8 @@ export default function CityHero({ location }: CityHeroProps) {
               variants={itemVariants}
               className="mt-6 text-lg leading-relaxed text-asphalt-600 max-w-xl"
             >
-              Expert en marquage au sol a {location.name} ({postalCode}).
-              Intervention rapide pour parking, entrepot, industriel et places PMR.
+              Expert en marquage au sol à {location.name} ({postalCode}).
+              Intervention rapide pour parking, entrepôt, industriel et places PMR.
               Devis gratuit sous 24h.
             </motion.p>
 
@@ -151,7 +151,7 @@ export default function CityHero({ location }: CityHeroProps) {
           >
             <div className="prism-border p-5 lg:p-6">
               <h2 className="text-lg font-bold text-asphalt-900 mb-4">
-                Devis Gratuit a {location.name}
+                Devis Gratuit à {location.name}
               </h2>
               <ContactForm />
             </div>
@@ -175,7 +175,7 @@ export default function CityHero({ location }: CityHeroProps) {
           </div>
           <div className="stat-box">
             <div className="stat-box-value">15+</div>
-            <div className="stat-box-label">Annees d&apos;experience</div>
+            <div className="stat-box-label">Années d&apos;expérience</div>
           </div>
           <div className="stat-box">
             <div className="stat-box-value">5 ans</div>
@@ -196,7 +196,7 @@ export default function CityHero({ location }: CityHeroProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
               </svg>
             </div>
-            <span className="label-mono text-asphalt-700">Certifie NF</span>
+            <span className="label-mono text-asphalt-700">Certifié NF</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="icon-signal w-8 h-8">

@@ -15,8 +15,8 @@ interface HeroBlockProps {
 }
 
 const stats = [
-  { value: '15+', label: 'Annees d\'experience' },
-  { value: '2000+', label: 'Projets realises' },
+  { value: '15+', label: 'Années d\'expérience' },
+  { value: '2000+', label: 'Projets réalisés' },
   { value: '98%', label: 'Clients satisfaits' },
   { value: '24h', label: 'Intervention rapide' },
 ];

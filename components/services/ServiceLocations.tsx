@@ -54,7 +54,7 @@ export default function ServiceLocations({ service, locations }: ServiceLocation
         >
           <h2 className="text-3xl font-bold tracking-tight text-asphalt-900 sm:text-4xl">
             {service.name} en{' '}
-            <span className="text-route-600">Ile-de-France</span>
+            <span className="text-route-600">Île-de-France</span>
           </h2>
           <p className="mt-4 text-lg text-asphalt-600">
             Nous intervenons dans toutes les villes de la region parisienne

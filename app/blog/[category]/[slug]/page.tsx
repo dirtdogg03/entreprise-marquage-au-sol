@@ -187,7 +187,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {articleFaqs.length > 0 && (
                 <div className="mt-12">
                   <FAQSection
-                    title="Questions frequentes"
+                    title="Questions fréquentes"
                     faqs={articleFaqs}
                   />
                 </div>
@@ -195,7 +195,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
               {/* Tags */}
               <div className="mt-12 pt-8 border-t border-asphalt-200">
-                <h3 className="text-sm font-medium text-asphalt-500 mb-4">Mots-cles</h3>
+                <h3 className="text-sm font-medium text-asphalt-500 mb-4">Mots-clés</h3>
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag) => (
                     <span
@@ -237,7 +237,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       {/* CTA */}
       <CTABanner
         title="Besoin d'un devis pour votre projet ?"
-        description="Contactez-nous pour une etude personnalisee gratuite."
+        description="Contactez-nous pour une étude personnalisée gratuite."
         ctaText="Demander un devis"
         ctaHref="/contact"
       />

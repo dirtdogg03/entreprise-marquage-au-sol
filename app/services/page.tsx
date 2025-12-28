@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Nos Services de Marquage au Sol | Entreprise Marquage au Sol',
-  description: 'Decouvrez tous nos services de marquage au sol et signalisation : parking, entrepot, industriel, PMR, securite. Intervention en Ile-de-France.',
+  description: 'Découvrez tous nos services de marquage au sol et signalisation : parking, entrepôt, industriel, PMR, sécurité. Intervention en Île-de-France.',
   alternates: {
     canonical: '/services',
   },
@@ -16,19 +16,19 @@ export const metadata: Metadata = {
 const serviceFaqs = [
   {
     question: 'Quels types de surfaces pouvez-vous marquer ?',
-    answer: 'Nous intervenons sur tous types de surfaces : beton, enrobe, asphalte, resine, carrelage industriel. Nos techniciens adaptent les techniques et produits selon la nature du sol pour garantir une adherence optimale.',
+    answer: 'Nous intervenons sur tous types de surfaces : béton, enrobé, asphalte, résine, carrelage industriel. Nos techniciens adaptent les techniques et produits selon la nature du sol pour garantir une adhérence optimale.',
   },
   {
-    question: 'Proposez-vous des marquages personnalises ?',
-    answer: 'Oui, nous realisons tous types de marquages personnalises : logos d\'entreprise, pictogrammes specifiques, couleurs sur mesure, numerotations personnalisees. Nos designers creent les gabarits selon vos specifications.',
+    question: 'Proposez-vous des marquages personnalisés ?',
+    answer: 'Oui, nous réalisons tous types de marquages personnalisés : logos d\'entreprise, pictogrammes spécifiques, couleurs sur mesure, numérotations personnalisées. Nos designers créent les gabarits selon vos spécifications.',
   },
   {
-    question: 'Comment choisir entre peinture et resine ?',
-    answer: 'La peinture convient aux zones a trafic modere et offre un bon rapport qualite/prix. La resine epoxy est recommandee pour les zones a fort trafic (entrepots, industries) car elle offre une resistance superieure a l\'abrasion et aux produits chimiques.',
+    question: 'Comment choisir entre peinture et résine ?',
+    answer: 'La peinture convient aux zones à trafic modéré et offre un bon rapport qualité/prix. La résine époxy est recommandée pour les zones à fort trafic (entrepôts, industries) car elle offre une résistance supérieure à l\'abrasion et aux produits chimiques.',
   },
   {
-    question: 'Intervenez-vous pour des retouches ou renovations ?',
-    answer: 'Absolument. Nous proposons des services de renovation et rafraichissement de marquages existants. Nous pouvons egalement effacer d\'anciens marquages avant de realiser de nouvelles signalisations.',
+    question: 'Intervenez-vous pour des retouches ou rénovations ?',
+    answer: 'Absolument. Nous proposons des services de rénovation et rafraîchissement de marquages existants. Nous pouvons également effacer d\'anciens marquages avant de réaliser de nouvelles signalisations.',
   },
 ];
 
@@ -71,7 +71,7 @@ export default function ServicesPage() {
               Tous nos <span className="text-route-600">Services</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-asphalt-600">
-              Solutions completes de marquage au sol et signalisation pour entreprises, parkings, entrepots et sites industriels en Ile-de-France.
+              Solutions complètes de marquage au sol et signalisation pour entreprises, parkings, entrepôts et sites industriels en Île-de-France.
             </p>
           </div>
         </div>
@@ -83,14 +83,14 @@ export default function ServicesPage() {
       {/* FAQ */}
       <FAQSection
         title="Questions sur nos services"
-        description="Les reponses a vos questions les plus frequentes"
+        description="Les réponses à vos questions les plus fréquentes"
         faqs={serviceFaqs}
       />
 
       {/* CTA */}
       <CTABanner
         title="Un projet de marquage ?"
-        description="Contactez-nous pour un devis personnalise gratuit et sans engagement."
+        description="Contactez-nous pour un devis personnalisé gratuit et sans engagement."
         ctaText="Demander un devis"
         ctaHref="/contact"
       />
