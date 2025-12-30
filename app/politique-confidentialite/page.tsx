@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Politique de Confidentialite | Entreprise Marquage au Sol',
-  description: 'Decouvrez notre politique de confidentialite : collecte de donnees, cookies, droits RGPD. Entreprise Marquage au Sol protege vos donnees personnelles.',
+  title: 'Politique de Confidentialité | Entreprise Marquage au Sol',
+  description: 'Découvrez notre politique de confidentialité : collecte de données, cookies, droits RGPD. Entreprise Marquage au Sol protège vos données personnelles.',
   alternates: {
     canonical: '/politique-confidentialite',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function PolitiqueConfidentialitePage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Accueil', url: '/' },
-    { name: 'Politique de confidentialite', url: '/politique-confidentialite' },
+    { name: 'Politique de confidentialité', url: '/politique-confidentialite' },
   ]);
 
   return (
@@ -38,7 +38,7 @@ export default function PolitiqueConfidentialitePage() {
                 </Link>
               </li>
               <li className="text-asphalt-400">/</li>
-              <li className="text-route-600">Politique de confidentialite</li>
+              <li className="text-route-600">Politique de confidentialité</li>
             </ol>
           </nav>
         </div>
@@ -48,10 +48,10 @@ export default function PolitiqueConfidentialitePage() {
       <section className="relative py-12 lg:py-16 bg-asphalt-50">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-asphalt-900 sm:text-4xl">
-            Politique de confidentialite
+            Politique de confidentialité
           </h1>
           <p className="mt-4 text-lg text-asphalt-600">
-            Derniere mise a jour : Decembre 2024
+            Dernière mise à jour : Décembre 2024
           </p>
         </div>
       </section>
@@ -63,81 +63,81 @@ export default function PolitiqueConfidentialitePage() {
 
             <h2>1. Introduction</h2>
             <p>
-              Entreprise Marquage au Sol, specialiste du marquage au sol et de la signalisation horizontale
-              en Île-de-France, s&apos;engage à protéger la vie privee des utilisateurs de son site internet
+              Entreprise Marquage au Sol, spécialiste du marquage au sol et de la signalisation horizontale
+              en Île-de-France, s&apos;engage à protéger la vie privée des utilisateurs de son site internet
               entreprise-marquage-au-sol.fr.
             </p>
             <p>
-              Cette politique de confidentialite decrit comment nous collectons, utilisons et protegeons
-              vos donnees personnelles conformement au Reglement General sur la Protection des Donnees (RGPD)
-              et a la loi Informatique et Libertes.
+              Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons
+              vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD)
+              et à la loi Informatique et Libertés.
             </p>
 
             <h2>2. Responsable du traitement</h2>
             <p>
-              Le responsable du traitement des donnees personnelles est :
+              Le responsable du traitement des données personnelles est :
             </p>
             <ul>
               <li><strong>Entreprise :</strong> Entreprise Marquage au Sol</li>
               <li><strong>Adresse :</strong> Île-de-France, France</li>
               <li><strong>Email :</strong> contact@entreprise-marquage-au-sol.fr</li>
-              <li><strong>Telephone :</strong> 01 23 45 67 89</li>
+              <li><strong>Téléphone :</strong> 01 23 45 67 89</li>
             </ul>
 
-            <h2>3. Donnees collectees</h2>
+            <h2>3. Données collectées</h2>
             <p>
-              Nous collectons les donnees personnelles suivantes :
+              Nous collectons les données personnelles suivantes :
             </p>
 
-            <h3>3.1 Donnees fournies volontairement</h3>
+            <h3>3.1 Données fournies volontairement</h3>
             <ul>
-              <li>Nom et prenom</li>
+              <li>Nom et prénom</li>
               <li>Adresse email</li>
-              <li>Numero de telephone</li>
+              <li>Numéro de téléphone</li>
               <li>Nom de l&apos;entreprise</li>
               <li>Adresse du chantier</li>
               <li>Description du projet de marquage au sol</li>
             </ul>
 
-            <h3>3.2 Donnees collectees automatiquement</h3>
+            <h3>3.2 Données collectées automatiquement</h3>
             <ul>
               <li>Adresse IP</li>
               <li>Type de navigateur et version</li>
-              <li>Pages visitees et temps de visite</li>
+              <li>Pages visitées et temps de visite</li>
               <li>Source de trafic (moteur de recherche, lien direct, etc.)</li>
-              <li>Donnees de cookies (voir section Cookies)</li>
+              <li>Données de cookies (voir section Cookies)</li>
             </ul>
 
-            <h2>4. Finalites du traitement</h2>
+            <h2>4. Finalités du traitement</h2>
             <p>
-              Vos donnees personnelles sont traitees pour les finalites suivantes :
+              Vos données personnelles sont traitées pour les finalités suivantes :
             </p>
             <ul>
-              <li><strong>Reponse a vos demandes :</strong> traitement des demandes de devis pour nos services de marquage au sol</li>
-              <li><strong>Communication :</strong> envoi d&apos;informations relatives a votre projet</li>
-              <li><strong>Amelioration du site :</strong> analyse statistique pour ameliorer notre site et nos services</li>
-              <li><strong>Obligations legales :</strong> respect des obligations comptables et fiscales</li>
+              <li><strong>Réponse à vos demandes :</strong> traitement des demandes de devis pour nos services de marquage au sol</li>
+              <li><strong>Communication :</strong> envoi d&apos;informations relatives à votre projet</li>
+              <li><strong>Amélioration du site :</strong> analyse statistique pour améliorer notre site et nos services</li>
+              <li><strong>Obligations légales :</strong> respect des obligations comptables et fiscales</li>
             </ul>
 
-            <h2>5. Base legale du traitement</h2>
+            <h2>5. Base légale du traitement</h2>
             <p>
-              Le traitement de vos donnees repose sur :
+              Le traitement de vos données repose sur :
             </p>
             <ul>
               <li><strong>Votre consentement :</strong> pour l&apos;envoi de communications commerciales</li>
-              <li><strong>L&apos;execution d&apos;un contrat :</strong> pour repondre a vos demandes de devis</li>
-              <li><strong>L&apos;interet legitime :</strong> pour l&apos;amelioration de nos services</li>
-              <li><strong>Les obligations legales :</strong> pour la conservation des donnees comptables</li>
+              <li><strong>L&apos;exécution d&apos;un contrat :</strong> pour répondre à vos demandes de devis</li>
+              <li><strong>L&apos;intérêt légitime :</strong> pour l&apos;amélioration de nos services</li>
+              <li><strong>Les obligations légales :</strong> pour la conservation des données comptables</li>
             </ul>
 
-            <h2>6. Duree de conservation</h2>
+            <h2>6. Durée de conservation</h2>
             <p>
-              Vos donnees personnelles sont conservees pendant :
+              Vos données personnelles sont conservées pendant :
             </p>
             <ul>
-              <li><strong>Demandes de devis :</strong> 3 ans a compter du dernier contact</li>
-              <li><strong>Donnees clients :</strong> 5 ans apres la fin de la relation commerciale</li>
-              <li><strong>Donnees de facturation :</strong> 10 ans (obligation legale)</li>
+              <li><strong>Demandes de devis :</strong> 3 ans à compter du dernier contact</li>
+              <li><strong>Données clients :</strong> 5 ans après la fin de la relation commerciale</li>
+              <li><strong>Données de facturation :</strong> 10 ans (obligation légale)</li>
               <li><strong>Cookies :</strong> 13 mois maximum</li>
             </ul>
 
@@ -148,67 +148,67 @@ export default function PolitiqueConfidentialitePage() {
 
             <h3>7.1 Cookies essentiels</h3>
             <p>
-              Necessaires au fonctionnement du site, ils ne peuvent pas etre desactives.
+              Nécessaires au fonctionnement du site, ils ne peuvent pas être désactivés.
             </p>
 
             <h3>7.2 Cookies analytiques</h3>
             <p>
               Nous utilisons des outils d&apos;analyse (type Google Analytics) pour comprendre
               comment les visiteurs utilisent notre site. Ces cookies collectent des informations
-              de maniere anonyme.
+              de manière anonyme.
             </p>
 
             <h3>7.3 Gestion des cookies</h3>
             <p>
-              Vous pouvez configurer votre navigateur pour refuser les cookies ou etre averti
-              lorsqu&apos;un cookie est envoye. Notez que certaines fonctionnalites du site
+              Vous pouvez configurer votre navigateur pour refuser les cookies ou être averti
+              lorsqu&apos;un cookie est envoyé. Notez que certaines fonctionnalités du site
               pourraient ne pas fonctionner correctement sans cookies.
             </p>
 
-            <h2>8. Partage des donnees</h2>
+            <h2>8. Partage des données</h2>
             <p>
-              Vos donnees personnelles peuvent etre partagees avec :
+              Vos données personnelles peuvent être partagées avec :
             </p>
             <ul>
-              <li><strong>Nos sous-traitants :</strong> hebergeur web, service d&apos;emailing (sous contrat de confidentialite)</li>
-              <li><strong>Autorites competentes :</strong> en cas d&apos;obligation legale</li>
+              <li><strong>Nos sous-traitants :</strong> hébergeur web, service d&apos;emailing (sous contrat de confidentialité)</li>
+              <li><strong>Autorités compétentes :</strong> en cas d&apos;obligation légale</li>
             </ul>
             <p>
-              Nous ne vendons jamais vos donnees personnelles a des tiers.
+              Nous ne vendons jamais vos données personnelles à des tiers.
             </p>
 
-            <h2>9. Securite des donnees</h2>
+            <h2>9. Sécurité des données</h2>
             <p>
-              Nous mettons en oeuvre des mesures de securite appropriees pour proteger vos donnees :
+              Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :
             </p>
             <ul>
               <li>Chiffrement SSL/TLS pour toutes les communications</li>
-              <li>Acces restreint aux donnees personnelles</li>
-              <li>Sauvegardes regulieres et securisees</li>
-              <li>Mise a jour reguliere de nos systemes de securite</li>
+              <li>Accès restreint aux données personnelles</li>
+              <li>Sauvegardes régulières et sécurisées</li>
+              <li>Mise à jour régulière de nos systèmes de sécurité</li>
             </ul>
 
             <h2>10. Vos droits</h2>
             <p>
-              Conformement au RGPD, vous disposez des droits suivants :
+              Conformément au RGPD, vous disposez des droits suivants :
             </p>
             <ul>
-              <li><strong>Droit d&apos;acces :</strong> obtenir une copie de vos donnees personnelles</li>
-              <li><strong>Droit de rectification :</strong> corriger vos donnees inexactes</li>
-              <li><strong>Droit a l&apos;effacement :</strong> demander la suppression de vos donnees</li>
-              <li><strong>Droit a la limitation :</strong> limiter le traitement de vos donnees</li>
-              <li><strong>Droit a la portabilite :</strong> recevoir vos donnees dans un format structure</li>
-              <li><strong>Droit d&apos;opposition :</strong> vous opposer au traitement de vos donnees</li>
-              <li><strong>Droit de retirer votre consentement :</strong> a tout moment</li>
+              <li><strong>Droit d&apos;accès :</strong> obtenir une copie de vos données personnelles</li>
+              <li><strong>Droit de rectification :</strong> corriger vos données inexactes</li>
+              <li><strong>Droit à l&apos;effacement :</strong> demander la suppression de vos données</li>
+              <li><strong>Droit à la limitation :</strong> limiter le traitement de vos données</li>
+              <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+              <li><strong>Droit d&apos;opposition :</strong> vous opposer au traitement de vos données</li>
+              <li><strong>Droit de retirer votre consentement :</strong> à tout moment</li>
             </ul>
             <p>
-              Pour exercer ces droits, contactez-nous a : <strong>contact@entreprise-marquage-au-sol.fr</strong>
+              Pour exercer ces droits, contactez-nous à : <strong>contact@entreprise-marquage-au-sol.fr</strong>
             </p>
 
-            <h2>11. Reclamation</h2>
+            <h2>11. Réclamation</h2>
             <p>
-              Si vous estimez que vos droits ne sont pas respectes, vous pouvez introduire
-              une reclamation aupres de la CNIL (Commission Nationale de l&apos;Informatique et des Libertes) :
+              Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire
+              une réclamation auprès de la CNIL (Commission Nationale de l&apos;Informatique et des Libertés) :
             </p>
             <ul>
               <li><strong>Site web :</strong> www.cnil.fr</li>
@@ -217,19 +217,19 @@ export default function PolitiqueConfidentialitePage() {
 
             <h2>12. Modifications</h2>
             <p>
-              Nous nous reservons le droit de modifier cette politique de confidentialite a tout moment.
-              Les modifications entrent en vigueur des leur publication sur cette page.
-              Nous vous encourageons a consulter regulierement cette page.
+              Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment.
+              Les modifications entrent en vigueur dès leur publication sur cette page.
+              Nous vous encourageons à consulter régulièrement cette page.
             </p>
 
             <h2>13. Contact</h2>
             <p>
-              Pour toute question concernant cette politique de confidentialite ou vos donnees personnelles,
+              Pour toute question concernant cette politique de confidentialité ou vos données personnelles,
               contactez-nous :
             </p>
             <ul>
               <li><strong>Email :</strong> contact@entreprise-marquage-au-sol.fr</li>
-              <li><strong>Telephone :</strong> 01 23 45 67 89</li>
+              <li><strong>Téléphone :</strong> 01 23 45 67 89</li>
               <li><strong>Formulaire :</strong> <Link href="/contact" className="text-route-600 hover:underline">Page Contact</Link></li>
             </ul>
           </div>
@@ -244,7 +244,7 @@ export default function PolitiqueConfidentialitePage() {
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-                Mentions legales
+                Mentions légales
               </Link>
               <Link
                 href="/contact"

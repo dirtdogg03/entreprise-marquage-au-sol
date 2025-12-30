@@ -63,7 +63,7 @@ export default function ProcessSteps() {
           className="mx-auto max-w-2xl text-center mb-12 lg:mb-16"
         >
           <h2 className="heading-lg text-secondary-900">
-            Comment ca <span className="text-primary-600">fonctionne</span> ?
+            Comment ça <span className="text-primary-600">fonctionne</span> ?
           </h2>
           <p className="mt-4 text-lg text-secondary-600">
             Un processus simple et efficace pour un résultat parfait
