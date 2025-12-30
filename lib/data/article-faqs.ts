@@ -584,6 +584,62 @@ export const articleFaqs: Record<string, ArticleFAQ[]> = {
       question: 'Comment justifier un budget marquage auprès de la direction ?',
       answer: 'Présentez un business case chiffré : coût des accidents passés, estimation des gains de productivité, comparaison avec le coût de l\'investissement. Ajoutez les aspects conformité (éviter les sanctions) et image de marque. Le ROI parle aux décideurs.'
     }
+  ],
+
+  // ========== ARTICLES PRIX / BUDGET ==========
+
+  'prix-resine-sol-m2': [
+    {
+      question: 'Quel est le prix moyen de la résine de sol au m² en 2025 ?',
+      answer: 'Le prix varie selon le type de résine : époxy standard 25-45 €/m², époxy haute performance 45-70 €/m², polyuréthane 50-80 €/m², résine méthacrylate 60-90 €/m². Ces prix incluent la fourniture et la pose par un professionnel. Ajoutez 10-20 €/m² si le support nécessite une préparation importante.'
+    },
+    {
+      question: 'La résine de sol est-elle plus chère qu\'une peinture classique ?',
+      answer: 'Oui, mais l\'investissement est rentable. La résine coûte 2-3 fois plus cher qu\'une peinture (15-25 €/m² pour la peinture vs 40-70 €/m² pour la résine), mais elle dure 3-4 fois plus longtemps (10-15 ans vs 3-5 ans). Sur 15 ans, la résine revient souvent moins cher grâce à l\'absence de renouvellements.'
+    },
+    {
+      question: 'Pourquoi faire appel à un professionnel plutôt que de poser la résine soi-même ?',
+      answer: 'L\'application professionnelle garantit : préparation du support adaptée (ponçage, primaire), épaisseur régulière et conforme, durcissement optimal, finition sans bulles ni défauts, et une garantie décennale. Une erreur DIY (mauvais dosage, humidité) peut nécessiter tout reprendre, coûtant plus cher qu\'une pose pro.'
+    },
+    {
+      question: 'Quels facteurs font varier le prix d\'une résine de sol ?',
+      answer: 'Les principaux facteurs sont : le type de résine (époxy, polyuréthane, méthacrylate), l\'état du support (préparation légère ou lourde), la surface totale (dégressif au-delà de 100 m²), les finitions souhaitées (antidérapant, couleur, paillettes), et la région d\'intervention (+15-25% en Île-de-France).'
+    },
+    {
+      question: 'Combien coûte la résine de sol pour un garage de 40 m² ?',
+      answer: 'Pour un garage particulier de 40 m², comptez entre 1 600 et 2 800 € TTC pose comprise. Détail : préparation du sol 200-400 €, résine époxy standard 1 200-1 800 €, finition antidérapante 200-400 €. Les professionnels proposent souvent des forfaits avantageux pour les garages.'
+    },
+    {
+      question: 'La résine de sol est-elle éligible à des aides ou déductions fiscales ?',
+      answer: 'Pour les professionnels, oui : la résine de sol est une charge déductible du résultat fiscal, amortissable sur 10-15 ans. Pour les particuliers, pas d\'aide spécifique, mais la TVA à 10% s\'applique si le logement a plus de 2 ans. Certaines résines thermiques peuvent être éligibles aux CEE.'
+    }
+  ],
+
+  'prix-peinture-sol-professionnel': [
+    {
+      question: 'Quel est le tarif d\'un professionnel pour peindre un sol ?',
+      answer: 'Le tarif professionnel varie selon le type de peinture : acrylique 15-25 €/m², époxy 25-50 €/m², polyuréthane 35-60 €/m². Ces prix incluent la main d\'œuvre et les matériaux. La préparation du sol (nettoyage, ponçage, primaire) peut ajouter 5-15 €/m² selon l\'état initial.'
+    },
+    {
+      question: 'Peinture sol : quels avantages à passer par un professionnel ?',
+      answer: 'Un professionnel apporte : diagnostic précis du support, choix du produit adapté à l\'usage, préparation optimale (la clé de la durabilité), application uniforme sans traces ni bulles, temps de séchage respecté, et garantie sur les travaux. Le résultat dure 2-3 fois plus longtemps qu\'une application amateur.'
+    },
+    {
+      question: 'Combien coûte la peinture d\'un parking de 200 m² ?',
+      answer: 'Pour un parking de 200 m², comptez 4 000 à 10 000 € selon le type de peinture. Peinture routière standard : 4 000-5 000 €. Peinture époxy renforcée : 6 000-8 000 €. Avec marquage des places, numérotation et pictogrammes PMR : 8 000-10 000 €. Demandez plusieurs devis pour comparer.'
+    },
+    {
+      question: 'Quelle est la différence de prix entre peinture époxy et polyuréthane ?',
+      answer: 'L\'époxy coûte 25-50 €/m² et dure 5-10 ans, idéale en intérieur. Le polyuréthane coûte 35-60 €/m² et dure 8-15 ans, résistant aux UV donc adapté à l\'extérieur. Le surcoût du polyuréthane (20-40%) est compensé par sa durabilité supérieure en conditions extérieures ou de fort trafic.'
+    },
+    {
+      question: 'Peut-on négocier le prix d\'un devis de peinture sol ?',
+      answer: 'Oui, une marge de 10-15% est généralement négociable sur les grandes surfaces (>100 m²). Leviers de négociation : regrouper plusieurs zones, accepter une période creuse, payer un acompte important, ou confier l\'entretien futur au même prestataire. Ne négociez jamais sur la qualité des produits.'
+    },
+    {
+      question: 'Quel délai pour peindre un sol professionnel ?',
+      answer: 'Comptez 2-5 jours selon la surface et la préparation nécessaire. Jour 1 : nettoyage et préparation. Jour 2-3 : application primaire + couches de peinture. Jour 4-5 : séchage et remise en service. Le sol est praticable après 24-48h pour la circulation piétonne, 72h pour les véhicules.'
+    }
   ]
 };
 

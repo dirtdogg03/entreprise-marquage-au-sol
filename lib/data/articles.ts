@@ -75,7 +75,7 @@ export const articles: Article[] = [
     tags: ['marquage au sol', 'peinture', 'résine', 'thermoplastique', 'époxy'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['marquage-exterieur-materiaux'],
+    relatedArticles: ['marquage-exterieur-materiaux', 'prix-resine-sol-m2', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
   },
   {
@@ -129,7 +129,7 @@ export const articles: Article[] = [
     tags: ['prix', 'devis', 'budget', 'tarif', 'coût'],
     featured: true,
     isPillar: true,
-    relatedArticles: ['entretien-duree-vie', 'cas-client-parking'],
+    relatedArticles: ['entretien-duree-vie', 'cas-client-parking', 'prix-resine-sol-m2', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'signalisation-verticale']
   },
   {
@@ -215,7 +215,7 @@ export const articles: Article[] = [
     image: '/images/blog/marquage-exterieur-materiaux.jpg',
     tags: ['extérieur', 'matériaux', 'résistance', 'UV', 'peinture'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage'],
+    relatedArticles: ['choisir-type-marquage', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-routier-au-sol', 'marquage-au-sol-parking', 'marquage-au-sol-voirie']
   },
   {
@@ -250,7 +250,7 @@ export const articles: Article[] = [
     image: '/images/blog/epoxy-vs-polyurethane.jpg',
     tags: ['époxy', 'polyuréthane', 'peinture sol', 'comparatif', 'industrie'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage', 'resine-sol-avantages'],
+    relatedArticles: ['choisir-type-marquage', 'resine-sol-avantages', 'prix-resine-sol-m2', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-entrepot', 'marquage-au-sol-usine']
   },
   {
@@ -267,7 +267,7 @@ export const articles: Article[] = [
     image: '/images/blog/resine-sol-avantages.jpg',
     tags: ['résine', 'revêtement sol', 'époxy', 'polyuréthane', 'durabilité'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage', 'epoxy-vs-polyurethane'],
+    relatedArticles: ['choisir-type-marquage', 'epoxy-vs-polyurethane', 'prix-resine-sol-m2'],
     relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-usine', 'marquage-garage-automobile']
   },
   {
@@ -458,7 +458,7 @@ export const articles: Article[] = [
     image: '/images/blog/choisir-prestataire.jpg',
     tags: ['devis', 'prix', 'comparatif', 'budget', 'négociation'],
     featured: false,
-    relatedArticles: ['prix-marquage-guide', 'roi-marquage-sol'],
+    relatedArticles: ['prix-marquage-guide', 'roi-marquage-sol', 'prix-resine-sol-m2', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
   },
   {
@@ -475,7 +475,7 @@ export const articles: Article[] = [
     image: '/images/blog/renovation-marquage.jpg',
     tags: ['rénovation', 'création', 'budget', 'diagnostic', 'préparation'],
     featured: false,
-    relatedArticles: ['entretien-duree-vie', 'prix-marquage-guide'],
+    relatedArticles: ['entretien-duree-vie', 'prix-marquage-guide', 'prix-resine-sol-m2', 'prix-peinture-sol-professionnel'],
     relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel']
   },
   {
@@ -494,6 +494,41 @@ export const articles: Article[] = [
     featured: true,
     relatedArticles: ['prix-marquage-guide', 'devis-marquage-comparer'],
     relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
+  },
+  // === NOUVEAUX ARTICLES - Prix et Tarifs ===
+  {
+    id: 'prix-resine-sol-m2',
+    slug: 'prix-resine-sol-m2-tarifs-2025',
+    title: 'Prix résine de sol au m² : tarifs 2025 et devis professionnel',
+    excerpt: 'Découvrez les prix de la résine de sol au m² en 2025 : coût des matériaux, tarif de pose par un professionnel, comparatif époxy vs polyuréthane.',
+    content: articleContents['prix-resine-sol-m2'] || '',
+    categoryId: 'budget',
+    author: 'Entreprise Marquage au Sol',
+    publishedAt: '2025-01-25',
+    updatedAt: '2025-01-25',
+    readTime: 8,
+    image: '/images/blog/prix-resine-sol-m2.jpg',
+    tags: ['résine sol', 'prix m2', 'devis', 'époxy', 'polyuréthane', 'tarif'],
+    featured: false,
+    relatedArticles: ['resine-sol-avantages', 'epoxy-vs-polyurethane', 'prix-marquage-guide'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-entrepot', 'marquage-au-sol-parking-prive', 'marquage-garage-automobile']
+  },
+  {
+    id: 'prix-peinture-sol-professionnel',
+    slug: 'prix-peinture-sol-professionnel-tarifs-m2',
+    title: 'Prix peinture sol par un professionnel : tarifs m² et devis',
+    excerpt: 'Guide complet des prix de peinture de sol par un professionnel : tarifs au m², coût peinture époxy, polyuréthane, antidérapante. Demandez votre devis.',
+    content: articleContents['prix-peinture-sol-professionnel'] || '',
+    categoryId: 'budget',
+    author: 'Entreprise Marquage au Sol',
+    publishedAt: '2025-01-24',
+    updatedAt: '2025-01-24',
+    readTime: 7,
+    image: '/images/blog/prix-peinture-sol-professionnel.jpg',
+    tags: ['peinture sol', 'prix m2', 'professionnel', 'époxy', 'industriel', 'tarif'],
+    featured: false,
+    relatedArticles: ['prix-resine-sol-m2', 'epoxy-vs-polyurethane', 'prix-marquage-guide'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-parking', 'marquage-au-sol-entrepot', 'marquage-au-sol-usine']
   }
 ];
 
