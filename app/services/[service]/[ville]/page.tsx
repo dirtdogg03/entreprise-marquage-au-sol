@@ -11,6 +11,7 @@ import ServiceHero from '@/components/services/ServiceHero';
 import ServiceBenefits from '@/components/services/ServiceBenefits';
 import ServiceLocalContent from '@/components/services/ServiceLocalContent';
 import NearbyLocations from '@/components/services/NearbyLocations';
+import ServiceRelatedArticles from '@/components/services/ServiceRelatedArticles';
 
 interface ServiceLocationPageProps {
   params: Promise<{ service: string; ville: string }>;
@@ -135,6 +136,8 @@ export default async function ServiceLocationPage({ params }: ServiceLocationPag
         currentLocation={location}
         locations={locations}
       />
+
+      <ServiceRelatedArticles serviceSlug={service.slug} />
 
       <FAQSection
         title={`${service.name} à ${location.name}`}

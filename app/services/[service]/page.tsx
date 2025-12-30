@@ -11,6 +11,7 @@ import ServiceHero from '@/components/services/ServiceHero';
 import ServiceBenefits from '@/components/services/ServiceBenefits';
 import ServiceLocations from '@/components/services/ServiceLocations';
 import RelatedServices from '@/components/services/RelatedServices';
+import ServiceRelatedArticles from '@/components/services/ServiceRelatedArticles';
 
 interface ServicePageProps {
   params: Promise<{ service: string }>;
@@ -84,6 +85,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <ServiceLocations service={service} locations={locations} />
 
       <RelatedServices service={service} />
+
+      <ServiceRelatedArticles serviceSlug={service.slug} />
 
       <FAQSection
         title={`Questions sur ${service.name}`}

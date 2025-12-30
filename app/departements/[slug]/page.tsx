@@ -11,6 +11,24 @@ interface DepartmentPageProps {
   params: Promise<{ slug: string }>;
 }
 
+/**
+ * Retourne le slug de la ville principale (préfecture) pour un département
+ * Utilisé pour les liens services qui doivent pointer vers service+ville
+ */
+function getMainCitySlug(departmentCode: string): string {
+  const mainCities: Record<string, string> = {
+    '75': 'paris',
+    '92': 'nanterre',
+    '93': 'bobigny',
+    '94': 'creteil',
+    '91': 'evry-courcouronnes',
+    '78': 'versailles',
+    '77': 'melun',
+    '95': 'cergy',
+  };
+  return mainCities[departmentCode] || 'paris';
+}
+
 export async function generateStaticParams() {
   return getAllDepartmentSlugs().map((slug) => ({
     slug,
@@ -225,7 +243,7 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
             {mainServices.map((service) => (
               <Link
                 key={service.id}
-                href={`/services/${service.slug}`}
+                href={`/services/${service.slug}/${getMainCitySlug(department.code)}`}
                 className="group p-6 rounded-xl bg-white ring-1 ring-asphalt-200 hover:ring-route-500 hover:shadow-lg transition-all"
               >
                 <h3 className="font-semibold text-asphalt-900 group-hover:text-route-600 transition-colors">

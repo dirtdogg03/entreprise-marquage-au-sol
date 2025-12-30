@@ -94,7 +94,7 @@ export const articles: Article[] = [
     featured: true,
     isPillar: true,
     relatedArticles: ['places-pmr-obligations', 'signalisation-horizontale-verticale'],
-    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale']
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale', 'marquage-au-sol-barriere-levante']
   },
   {
     id: 'normes-securite-industriel',
@@ -146,7 +146,8 @@ export const articles: Article[] = [
     image: '/images/blog/entretien-marquage.jpg',
     tags: ['entretien', 'durée de vie', 'maintenance', 'rénovation'],
     featured: false,
-    relatedArticles: ['prix-marquage-guide']
+    relatedArticles: ['prix-marquage-guide'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel']
   },
   {
     id: 'places-pmr-obligations',
@@ -163,7 +164,7 @@ export const articles: Article[] = [
     tags: ['PMR', 'handicapé', 'accessibilité', 'obligations', 'loi'],
     featured: false,
     relatedArticles: ['reglementation-parking-2025'],
-    relatedServices: ['places-handicapees-pmr', 'marquage-au-sol-parking', 'installation-panneaux-parking']
+    relatedServices: ['places-handicapees-pmr', 'marquage-au-sol-parking', 'installation-panneaux-parking', 'marquage-au-sol-porte-de-garage']
   },
   {
     id: 'marquage-entrepot-bonnes-pratiques',
@@ -181,7 +182,7 @@ export const articles: Article[] = [
     featured: true,
     isPillar: true,
     relatedArticles: ['cas-client-parking'],
-    relatedServices: ['marquage-au-sol-entrepot', 'marquage-zones-pietonnes', 'signalisation-verticale']
+    relatedServices: ['marquage-au-sol-entrepot', 'marquage-zones-pietonnes', 'signalisation-verticale', 'marquage-au-sol-portail-coulissant', 'marquage-au-sol-portail-battant']
   },
   {
     id: 'signalisation-horizontale-verticale',
@@ -214,7 +215,8 @@ export const articles: Article[] = [
     image: '/images/blog/marquage-exterieur-materiaux.jpg',
     tags: ['extérieur', 'matériaux', 'résistance', 'UV', 'peinture'],
     featured: false,
-    relatedArticles: ['choisir-type-marquage']
+    relatedArticles: ['choisir-type-marquage'],
+    relatedServices: ['marquage-routier-au-sol', 'marquage-au-sol-parking', 'marquage-au-sol-voirie']
   },
   {
     id: 'cas-client-parking',
@@ -231,7 +233,7 @@ export const articles: Article[] = [
     tags: ['cas client', 'parking', 'avant après', 'témoignage', 'entreprise'],
     featured: true,
     relatedArticles: ['marquage-entrepot-bonnes-pratiques', 'prix-marquage-guide'],
-    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-parking-entreprise', 'signalisation-verticale']
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-parking-entreprise', 'signalisation-verticale', 'marquage-au-sol-porte-de-garage', 'marquage-au-sol-portail-coulissant', 'marquage-au-sol-portail-battant', 'marquage-au-sol-barriere-levante']
   },
   // === NOUVEAUX ARTICLES - Cluster Matériaux ===
   {
@@ -352,7 +354,8 @@ export const articles: Article[] = [
     image: '/images/blog/signalisation-obligatoire.jpg',
     tags: ['couleur', 'code', 'norme', 'signalisation', 'sécurité'],
     featured: false,
-    relatedArticles: ['normes-securite-industriel', 'zones-danger-delimitation']
+    relatedArticles: ['normes-securite-industriel', 'zones-danger-delimitation'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-zones-pietonnes', 'marquage-au-sol-entrepot']
   },
   {
     id: 'non-conformite-sanctions',
@@ -368,7 +371,8 @@ export const articles: Article[] = [
     image: '/images/blog/normes-nf-marquage.jpg',
     tags: ['conformité', 'sanctions', 'réglementation', 'responsabilité', 'juridique'],
     featured: false,
-    relatedArticles: ['reglementation-parking-2025', 'code-couleur-marquage']
+    relatedArticles: ['reglementation-parking-2025', 'code-couleur-marquage'],
+    relatedServices: ['marquage-au-sol-parking', 'places-handicapees-pmr', 'signalisation-verticale']
   },
   // === NOUVEAUX ARTICLES - Cluster Sécurité ===
   {
@@ -402,7 +406,8 @@ export const articles: Article[] = [
     image: '/images/blog/securite-entrepot.jpg',
     tags: ['antidérapant', 'chute', 'sécurité', 'glissade', 'prévention'],
     featured: false,
-    relatedArticles: ['normes-securite-industriel', 'resine-sol-avantages']
+    relatedArticles: ['normes-securite-industriel', 'resine-sol-avantages'],
+    relatedServices: ['marquage-au-sol-industriel', 'marquage-au-sol-entrepot', 'marquage-au-sol-usine']
   },
   {
     id: 'flux-pietons-vehicules',
@@ -453,7 +458,8 @@ export const articles: Article[] = [
     image: '/images/blog/choisir-prestataire.jpg',
     tags: ['devis', 'prix', 'comparatif', 'budget', 'négociation'],
     featured: false,
-    relatedArticles: ['prix-marquage-guide', 'roi-marquage-sol']
+    relatedArticles: ['prix-marquage-guide', 'roi-marquage-sol'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
   },
   {
     id: 'renovation-creation-marquage',
@@ -469,7 +475,8 @@ export const articles: Article[] = [
     image: '/images/blog/renovation-marquage.jpg',
     tags: ['rénovation', 'création', 'budget', 'diagnostic', 'préparation'],
     featured: false,
-    relatedArticles: ['entretien-duree-vie', 'prix-marquage-guide']
+    relatedArticles: ['entretien-duree-vie', 'prix-marquage-guide'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel']
   },
   {
     id: 'roi-marquage-sol',
@@ -485,7 +492,8 @@ export const articles: Article[] = [
     image: '/images/blog/optimiser-parking.jpg',
     tags: ['ROI', 'investissement', 'rentabilité', 'productivité', 'sécurité'],
     featured: true,
-    relatedArticles: ['prix-marquage-guide', 'devis-marquage-comparer']
+    relatedArticles: ['prix-marquage-guide', 'devis-marquage-comparer'],
+    relatedServices: ['marquage-au-sol-parking', 'marquage-au-sol-industriel', 'marquage-au-sol-entrepot']
   }
 ];
 
